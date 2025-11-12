@@ -1,3 +1,7 @@
 - Sonja Putaala: sonjaputaala
 - Tuire Huutonen: tuippa
 - Joni Liuku: Jonius53
+- Sari Paso: saripaso
+- Marko Keskitalo: talonmarko
+
+index, info, points sivut käyttävät main.js ja styles.css
