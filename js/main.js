@@ -4,13 +4,18 @@ const username = localStorage.getItem('username')
 const welcomeMsg = document.getElementById('welcome-msg')
 
 const checkForUsername = () => {
+    if (username != null) {
+        welcomeMsg.textContent = `Tervetuloa pelaamaan, ${username}!`
+    } else {
+        showUsernameInput()
+    }
+}
+
+const showUsernameInput = () => {
     if (username === null) {
         usernameContainer.style.display = 'block'
         const usernameForm = document.getElementById('username')
         usernameForm.addEventListener('submit', setUserName)
-    }
-    if (username != null) {
-        welcomeMsg.textContent = `Tervetuloa pelaamaan, ${username}!`
     }
 }
 
