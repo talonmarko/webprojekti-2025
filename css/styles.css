@@ -1,0 +1,13 @@
+:root {
+  --bright-green: #1AFF8C;
+}
+
+.green-btn {
+    padding: 18px 22px;
+    border-radius: 8px;
+    background-color: var(--bright-green);
+}
+
+#username-container {
+    display: none;
+}
