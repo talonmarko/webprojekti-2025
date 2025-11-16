@@ -11,3 +11,50 @@
 #username-container {
     display: none;
 }
+
+.info-main {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: #4C1D20;
+  color: white;  
+  font-family: "DM Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+.info-main > h1 {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  justify-self: center;
+  text-decoration: underline;
+  font-size: 1.3em;
+  padding: 1.5em;
+}
+.info-container-img {
+  display: grid;
+  grid-template-rows: auto auto auto auto auto;
+  padding: 10px;
+  margin: 5px;
+}
+.info-img {
+  height: 150px;
+  padding: 10px;
+  justify-self: center;
+}
+.info-container-text {
+  display: grid;
+  grid-template-rows: auto auto auto auto auto;
+  padding: 10px;
+  margin: 10px;
+}
+.info-maker-text {
+  background-color: #693D40;
+  padding: 10px;
+  margin: 10px;
+}
+.info-maker-text > h1 {
+  padding: 10px 5px;
+  text-decoration: underline;
+}
+.info-maker-text > p {
+  padding: 10px 5px;
+}
