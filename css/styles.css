@@ -78,6 +78,8 @@ body {
 .avatar-section h2 {
   margin-bottom: 1.2rem;
   font-size: 1.6rem;
+  font-family: 'DM Sans';
+  font-weight: 800;
 }
 
 .avatar-grid {
@@ -126,6 +128,8 @@ body {
 
 .scoreboard h2 {
   margin-bottom: 1.2rem;
+  font-family: 'DM Sans';
+  font-weight: 800;
   font-size: 1.6rem;
   display: flex;
   align-items: center;
