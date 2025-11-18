@@ -1,36 +1,40 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500');
 
 :root {
+  --darker-red: #3A1417;
+  --red: #4C1D20;
+  --lighter-red: #693D40;
   --bright-green: #1AFF8C;
 }
 
 .green-btn {
-    padding: 18px 22px;
-    border-radius: 8px;
-    background-color: var(--bright-green);
+  padding: 18px 22px;
+  border-radius: 8px;
+  background-color: var(--bright-green);
 }
 
 body {
   margin: 0;
   font-family: "DM Mono", monospace;
-  background-color:#4C1D20;
+  background-color: #4C1D20;
   color: #ffffff;
 }
 
 #username-container {
-    display: none;
+  display: none;
 }
 
 .info-main {
   display: grid;
   grid-template-columns: auto auto auto;
   background-color: #4C1D20;
-  color: white;  
+  color: white;
   font-family: "DM Mono", monospace;
   font-weight: 400;
   font-style: normal;
 }
-.info-main > h1 {
+
+.info-main>h1 {
   grid-column-start: 1;
   grid-column-end: 4;
   justify-self: center;
@@ -38,33 +42,39 @@ body {
   font-size: 1.3em;
   padding: 1.5em;
 }
+
 .info-container-img {
   display: grid;
   grid-template-rows: auto auto auto auto auto;
   padding: 10px;
   margin: 5px;
 }
+
 .info-img {
   height: 150px;
   padding: 10px;
   justify-self: center;
 }
+
 .info-container-text {
   display: grid;
   grid-template-rows: auto auto auto auto auto;
   padding: 10px;
   margin: 10px;
 }
+
 .info-maker-text {
   background-color: #693D40;
   padding: 10px;
   margin: 10px;
 }
-.info-maker-text > h1 {
+
+.info-maker-text>h1 {
   padding: 10px 5px;
   text-decoration: underline;
 }
-.info-maker-text > p {
+
+.info-maker-text>p {
   padding: 10px 5px;
 }
 
@@ -87,27 +97,34 @@ body {
 .avatar-grid {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; 
+  justify-content: center;
   gap: 1.5rem;
   max-width: 900px;
 }
+
 .avatar-box {
-  width: calc((100% - 2 * 1.5rem) / 3); 
-  max-width: 280px;                      
+  width: calc((100% - 2 * 1.5rem) / 3);
+  max-width: 280px;
   aspect-ratio: 1/1;
   display: flex;
-  background-color:#693D40;
+  background-color: #693D40;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 1rem;
   border-radius: 10px;
 }
+
 @media (max-width: 800px) {
-  .avatar-box { width: calc((100% - 1.5rem) / 2); } 
+  .avatar-box {
+    width: calc((100% - 1.5rem) / 2);
+  }
 }
+
 @media (max-width: 480px) {
-  .avatar-box { width: 100%; } 
+  .avatar-box {
+    width: 100%;
+  }
 }
 
 .avatar-box img {
@@ -149,7 +166,7 @@ body {
   margin: 6px 0;
   font-size: 1.2rem;
   font-weight: bold;
-  color:#1AFF8C;
+  color: #1AFF8C;
 }
 
 .dots {
