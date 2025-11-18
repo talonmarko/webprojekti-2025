@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/game4styles.css" />
+    <link rel="stylesheet" href="./css/styles.css" />
     <script src="./js/game4.js" defer></script>
+    <title>Liput silmillä – GeoZone</title>
 </head>
 
 <body>
@@ -15,15 +17,19 @@
     </header>
     <span id="welcome-msg"></span>
     <main>
-        <div>
-            <div>Suomen lippu</div>
-            <div>Ruotsin lippu</div>
-            <div>Norjan lippu</div>
-        </div>
-        <div>
-            <div>Suomi</div>
-            <div>Ruotsi</div>
-            <div>Norja</div>
+        <br>
+        <div>Pisteet: <span id="game-score">0</span></div>
+        <div id="game-container">
+            <div id="flags">
+                <div class="game-btn flag">Suomi</div>
+                <div class="game-btn flag">Ruotsi</div>
+                <div class="game-btn flag">Norja</div>
+            </div>
+            <div id="country-names">
+                <div class="game-btn country">Suomi</div>
+                <div class="game-btn country">Ruotsi</div>
+                <div class="game-btn country">Norja</div>
+            </div>
         </div>
     </main>
     <footer>

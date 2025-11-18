@@ -6,6 +6,8 @@ const welcomeMsg = document.getElementById('welcome-msg')
 const checkForUsername = () => {
     if (username != null) {
         welcomeMsg.textContent = `Tervetuloa pelaamaan, ${username}!`
+    } else {
+        showUsernameInput()
     }
 }
 
