@@ -94,14 +94,16 @@ main {
 }
 
 .no-match {
-    animation: not-matching 1s;
+    background-color: red;
+    animation: not-matching 1.2s ease-out .3s forwards;
+    transition: .15s;
 }
 
 .matched {
     color: #222;
     background-color: var(--bright-green);
     opacity: 0.8;
-    animation: matching 1s 1s forwards;
+    animation: matching 1s .8s forwards;
     transition: .3s;
 }
 

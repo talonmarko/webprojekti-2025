@@ -20,6 +20,11 @@ body {
   color: #ffffff;
 }
 
+.logo {
+  margin-left: 20px;
+  height: 40px;
+}
+
 #username-container {
   display: none;
 }
