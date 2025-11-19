@@ -18,52 +18,67 @@ body {
 #username-container {
     display: none;
 }
-
-.info-main {
-  display: grid;
-  grid-template-columns: auto auto auto;
+/* Infopage's css */
+.info-mainpage {
+  display: grid;  
+  max-width: 1050px;
+  margin: 0 auto;
+  grid-template-columns: auto auto auto auto auto;
+  grid-template-rows: auto auto auto auto auto auto;
   background-color: #4C1D20;
   color: white;  
   font-family: "DM Mono", monospace;
   font-weight: 400;
   font-style: normal;
+  grid-template-areas: 
+  '. title title title title .'
+  '. picture text text text .'
+  '. picture text text text .'
+  '. picture text text text .'
+  '. picture text text text .'
+  '. picture text text text .'
+  ;
 }
-.info-main > h1 {
-  grid-column-start: 1;
-  grid-column-end: 4;
+.info-mainpage > h1 {
+  grid-area: title;
   justify-self: center;
   text-decoration: underline;
   font-size: 1.3em;
   padding: 1.5em;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 800;
 }
 .info-container-img {
   display: grid;
-  grid-template-rows: auto auto auto auto auto;
-  padding: 10px;
-  margin: 5px;
+  grid-area: picture;
+  padding: 1em;
+  margin: 1em;
 }
 .info-img {
   height: 150px;
-  padding: 10px;
-  justify-self: center;
+  margin: 0.5em;
+  align-self: center;
 }
 .info-container-text {
   display: grid;
-  grid-template-rows: auto auto auto auto auto;
-  padding: 10px;
-  margin: 10px;
+  grid-area: text;
+  padding: 0.7em;
+  margin: 1em;
 }
 .info-maker-text {
   background-color: #693D40;
-  padding: 10px;
-  margin: 10px;
+  padding: 1em;
+  margin: 0.5em;
+  align-self: center;
 }
 .info-maker-text > h1 {
-  padding: 10px 5px;
+  padding: 1em 0.2em;
   text-decoration: underline;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 800;
 }
 .info-maker-text > p {
-  padding: 10px 5px;
+  padding: 1em 0.2em;
 }
 
 /* profile container */
