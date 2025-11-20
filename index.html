@@ -1,132 +1,161 @@
 <!doctype html>
-<html lang="en">
+<html lang="fi">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Geovisa</title>
-    <meta name="description" content="Brief description of the project." />
-    <!-- Tailwind CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="./css/styles.css" />
-    <!-- <link rel="icon" href="favicon.ico"> -->
-    <script src="./js/main.js" defer></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Geovisa</title>
+  <meta name="description" content="Brief description of the project." />
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="./css/styles.css" />
+  <!-- <link rel="icon" href="favicon.ico"> -->
+  <script src="./js/main.js" defer></script>
 </head>
 
-<body class="bg-[#4C1D20]">
+<body>
 
-<header>
+  <header>
     <nav class="bg-[#3A1417] border-gray-200 p-4">
-        <div class="flex flex-wrap justify-between items-center">
-            <a href="./index.html" class="flex items-center">
-                <img src="./img/logo.png" class="p-4" alt="Geozone Logo" />
-            </a>
+      <div class="flex flex-wrap justify-between items-center">
+        <a href="./index.html" class="flex items-center">
+          <img src="./img/logo.png" class="p-4" alt="Geozone Logo" />
+        </a>
 
-            <div class="flex items-center lg:order-2">
-                <a href="./points.html" class="green-btn text-black font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2">&#9733; Profiili</a>
-                <a href="./info.html" class="text-white font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2">Info</a>
-            </div>
-
-            <div class="justify-between items-center w-full lg:flex lg:w-auto" id="menu">
-                <ul class="flex flex-col mt-4 font-medium p-6 font-[] lg:flex-row space-x-12">
-                    <li>
-                        <a href="./game1.html" class="info-main block p-6 text-white rounded bg-transparent">Peli 1</a>
-                    </li>
-                    <li>
-                        <a href="./game2.html" class="info-main block p-6 text-white rounded bg-transparent">Peli 2</a>
-                    </li>
-                    <li>
-                        <a href="./game3.html" class="info-main block p-6 text-white rounded bg-transparent">Peli 3</a>
-                    </li>
-                    <li>
-                        <a href="./game4.html" class="info-main block p-6 text-white rounded bg-transparent">Peli 4</a>
-                    </li>
-                    <li>
-                        <a href="./game5.html" class="info-main block p-6 text-white rounded bg-transparent">Peli 5</a>
-                    </li>
-                </ul>
-            </div>
+        <div class="flex items-center lg:order-2">
+          <a href="./points.html">
+            <button class="green-btn">&#9733;
+              Profiili</button></a>
+          <a href="./info.html"
+            class="text-white font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2">Info</a>
         </div>
+
+        <div class="justify-between items-center w-full lg:flex lg:w-auto" id="menu">
+          <ul class="flex flex-col mt-4 font-medium p-6 font-[] lg:flex-row space-x-12">
+            <li>
+              <a href="./game1.html" class="info-main block p-6 text-white rounded bg-transparent">Peli 1</a>
+            </li>
+            <li>
+              <a href="./game2.html" class="info-main block p-6 text-white rounded bg-transparent">Peli 2</a>
+            </li>
+            <li>
+              <a href="./game3.html" class="info-main block p-6 text-white rounded bg-transparent">Peli 3</a>
+            </li>
+            <li>
+              <a href="./game4.html" class="info-main block p-6 text-white rounded bg-transparent">Peli 4</a>
+            </li>
+            <li>
+              <a href="./game5.html" class="info-main block p-6 text-white rounded bg-transparent">Peli 5</a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </nav>
-</header>
+  </header>
 
-    <div class="info-main flex justify-center p-4 bg-[#693D40] m-4" id="username-container">
-  <form id="username" class="flex flex-col w-full">
-    <label class="pt-2 text-white" for="username">
-      Tervetuloa pelaamaan! Syötä nimimerkkisi:
-    </label>
+  <section id="user-details">
+    <div id="user-creation-container">
+      <div class="img-container-left">
+      </div>
+      <div>
+        <h2>Kuka olet? Aloita pelaaminen luomalla identiteettisi.</h2>
+        <form id="username-form">
+          <label for="username">
+            Luo nimimerkki:
+          </label>
 
-    <div class="flex items-center mt-4">
-      <input class="p-2" type="text" name="username" required />
-      <button type="submit" class="green-btn text-black ml-2 p-2">Tallenna</button>
-      <span class="w-24 h-24 bg-green-500 ml-auto rounded-full" id="avatar"></span>
+          <div>
+            <input type="text" name="username" placeholder="Nimimerkki" required />
+            <button type="submit" class="green-btn">Tallenna</button>
+          </div>
+        </form>
+      </div>
     </div>
-  </form>
-</div>
-    <span id="welcome-msg"></span>
 
-    <main class="info-main flex flex-col items-center" id="main" role="main" class="container">
-        <section id="hero" aria-labelledby="hero-title">
-            <p class="flex justify-center p-6">Testaa maantiedon osaamisesi hauskoilla peleillä!</p>
-        </section>
-
-        <section id="content" aria-labelledby="content-title">
-            <h3 class="flex justify-center text-2xl">Valitse peli</h3>
-        </section>
-    </main>
-
-<div class="flex flex-wrap justify-center gap-4 p-6">
-  <a href="game1.html" class="block">
-    <div class="flex flex-col items-center justify-center text-center p-6 m-2 h-[400px] w-[400px] bg-[#693D40] text-white rounded-lg">
-      <span>Peli 1</span>
-      <button class="bg-green-500 text-white px-4 py-2 mt-4 rounded">Pelaa 1</button>
+    <div id="user-info-container">
+      <div>
+        <h2 id="welcome-msg"></h2>
+        <span>Pistesaldosi: 0 <span
+            style="padding-bottom: 2px; display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; background-color: rgb(241, 184, 39); border: 3px solid peru; border-radius: 50px; color: peru; transform: translateY(-2px);">₲</span></span>
+        <span>
+          <a href="./points.html">
+            <button class="green-btn">Muokkaa avataria</button>
+          </a>
+        </span>
+      </div>
+      <div>
+        <span id="avatar">
+          <img src="./img/patonkikisu.png" alt="Käyttäjän avatar-kuvake">
+        </span>
+      </div>
     </div>
-  </a>
+  </section>
 
-  <a href="game2.html" class="block">
-    <div class="flex flex-col items-center justify-center text-center p-6 m-2 h-[400px] w-[400px] bg-[#693D40] text-white rounded-lg">
-      <span>Peli 2</span>
-      <button class="bg-green-500 text-white px-4 py-2 mt-4 rounded">Pelaa 2</button>
-    </div>
-  </a>
 
-  <a href="game3.html" class="block">
-    <div class="flex flex-col items-center justify-center text-center p-6 m-2 h-[400px] w-[400px] bg-[#693D40] text-white rounded-lg">
-      <span>Peli 3</span>
-      <button class="bg-green-500 text-white px-4 py-2 mt-4 rounded">Pelaa 3</button>
-    </div>
-  </a>
-</div>
 
-<div class="flex flex-wrap justify-center gap-4 p-6">
-  <a href="game4.html" class="block">
-    <div class="flex flex-col items-center justify-center text-center p-6 m-2 h-[400px] w-[400px] bg-[#693D40] text-white rounded-lg">
-      <span>Peli 4</span>
-      <button class="bg-green-500 text-white px-4 py-2 mt-4 rounded">Pelaa 4</button>
-    </div>
-  </a>
+  <main class="info-main flex flex-col items-center m-10" id="main" role="main" class="container">
+    <section id="content" aria-labelledby="content-title">
+      <h2 class="flex text-4xl">Valitse peli</h2>
+    </section>
 
-  <a href="game5.html" class="block">
-    <div class="flex flex-col items-center justify-center text-center p-6 m-2 h-[400px] w-[400px] bg-[#693D40] text-white rounded-lg">
-      <span>Peli 5</span>
-      <button class="bg-green-500 text-white px-4 py-2 mt-4 rounded">Pelaa 5</button>
-    </div>
-  </a>
-</div>
-
-    <footer class="w-full site-footer">
-        <div class="info-main flex items-center justify-between p-6 bg-[#3A1417] w-full">
-            <p>&copy; <span class="flex-row justify-center text-center px-4"id="year"></span>Ryhmä 1</p>
-            <a href="#">
-                <img src="./img/logo.png" class="flex" alt="Geozone Logo" />
-            </a>
+    <div class="flex flex-wrap justify-center gap-4 p-6">
+      <a href="game1.html" class="block">
+        <div
+          class="flex flex-col items-center justify-center text-center p-6 m-2 h-[400px] w-[400px] bg-[#693D40] text-white rounded-lg">
+          <span>Peli 1</span>
+          <button class="green-btn">Pelaa 1</button>
         </div>
-    </footer>
+      </a>
 
-    <script>
-        // Basic script: set current year 
-        document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
+      <a href="game2.html" class="block">
+        <div
+          class="flex flex-col items-center justify-center text-center p-6 m-2 h-[400px] w-[400px] bg-[#693D40] text-white rounded-lg">
+          <span>Peli 2</span>
+          <button class="green-btn">Pelaa 2</button>
+        </div>
+      </a>
+
+      <a href="game3.html" class="block">
+        <div
+          class="flex flex-col items-center justify-center text-center p-6 m-2 h-[400px] w-[400px] bg-[#693D40] text-white rounded-lg">
+          <span>Peli 3</span>
+          <button class="green-btn">Pelaa 3</button>
+        </div>
+      </a>
+    </div>
+
+    <div class="flex flex-wrap justify-center gap-4 p-6">
+      <a href="game4.html" class="block">
+        <div
+          class="flex flex-col items-center justify-center text-center p-6 m-2 h-[400px] w-[400px] bg-[#693D40] text-white rounded-lg">
+          <span>Peli 4</span>
+          <button class="green-btn">Pelaa 4</button>
+        </div>
+      </a>
+
+      <a href="game5.html" class="block">
+        <div
+          class="flex flex-col items-center justify-center text-center p-6 m-2 h-[400px] w-[400px] bg-[#693D40] text-white rounded-lg">
+          <span>Peli 5</span>
+          <button class="green-btn">Pelaa 5</button>
+        </div>
+      </a>
+    </div>
+  </main>
+
+  <footer class="w-full site-footer">
+    <div class="info-main flex items-center justify-between p-6 bg-[#3A1417] w-full">
+      <p>&copy; <span class="flex-row justify-center text-center px-4" id="year"></span>Ryhmä 1</p>
+      <a href="#">
+        <img src="./img/logo.png" class="flex" alt="Geozone Logo" />
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    // Basic script: set current year 
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 
 </html>
