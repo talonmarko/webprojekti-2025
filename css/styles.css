@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+@import "tailwindcss";
 
 :root {
   --red: #4C1D20;
@@ -12,6 +13,10 @@ body {
   font-family: "DM Mono", monospace;
   background-color: var(--red);
   color: #ffffff;
+}
+
+@theme{
+  --color-brightgreen: #1AFF8C;
 }
 
 h1,
@@ -39,6 +44,11 @@ button {
 .green-btn:hover {
   background-color: black;
   color: white;
+}
+
+.highlight{
+  background-color: #1AFF8C40;
+
 }
 
 /* ---------- Main page username section ---------- */
