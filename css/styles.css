@@ -45,7 +45,7 @@ button {
 
 #user-creation-container {
   margin-top: 50px;
-  width: 1280px;
+  width: 1050px;
   display: flex;
   justify-self: center;
   justify-content: space-between;
@@ -59,7 +59,6 @@ button {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 18px;
   }
 
   h2 {
@@ -82,9 +81,23 @@ button {
   flex-direction: column;
   gap: 18px;
 
+  label {
+    margin-top: 18px;
+  }
+
   div {
+    width: 70%;
     padding: 0;
-    gap: 12px;
+  }
+
+  input {
+    margin-bottom: 18px;
+    padding: 16px 22px;
+    width: 100%;
+    display: block;
+    border-radius: 8px;
+    color: black;
+    font-size: 16px;
   }
 
   button {
@@ -92,17 +105,9 @@ button {
   }
 }
 
-#username-form input {
-  padding: 16px 22px;
-  border-radius: 8px;
-  color: black;
-  font-size: 16px;
-  display: block;
-}
-
 #user-info-container {
   margin-top: 50px;
-  width: 1280px;
+  width: 1050px;
   display: flex;
   justify-self: center;
   background-color: var(--lighter-red);
@@ -233,15 +238,20 @@ button {
 
 .avatar-grid {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   gap: 1.5rem;
-  max-width: 900px;
+  max-width: 1280px;
+  box-sizing: border-box;
+
+  div {
+    width: 50%;
+    box-sizing: border-box;
+  }
 }
 
 .avatar-box {
-  width: calc((100% - 2 * 1.5rem) / 3);
-  max-width: 280px;
+  /* width: calc((100% - 2 * 1.5rem) / 3); */
+  /* max-width: 280px; */
   aspect-ratio: 1/1;
   display: flex;
   background-color: #693D40;
@@ -249,7 +259,50 @@ button {
   justify-content: center;
   align-items: center;
   padding: 1rem;
-  border-radius: 10px;
+  border-radius: 8px;
+  position: relative;
+}
+
+.avatar-icon {
+  border-radius: 50px;
+}
+
+.avatar-icon:hover {
+  cursor: pointer;
+}
+
+.chevron {
+  background-color: rgba(50, 50, 50, 0.8);
+  top: 50%;
+  position: absolute;
+}
+
+.chevron:nth-of-type(2) {
+  left: 12px;
+}
+
+.chevron:nth-of-type(3) {
+  right: 12px;
+}
+
+#setting-btns {
+  margin-top: 18px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.close {
+  background-color: rgba(230, 50, 120, 0.8);
+}
+
+.check {
+  background-color: rgba(50, 230, 120, 0.8);
+}
+
+#confirmation-msg {
+  margin-top: 18px;
+  display: inline-block;
+  width: 70%;
 }
 
 @media (max-width: 800px) {
