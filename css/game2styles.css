@@ -1,0 +1,70 @@
+.game2-mainpage {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+.game2-gamebox {
+    width: 350px;
+    height: 450px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 3em;
+    justify-content: center;
+    align-items: center;
+}
+.game2-box-row {
+    display: flex;
+}
+/* Tiles where you see the letters player inputs */
+.game2-letterbox {
+    /* box borders */
+    border: 2px solid #693D40;
+    width: 40px;
+    height: 40px;
+    margin: 2.5px;
+    padding: 10px;
+    box-sizing: border-box;
+
+    /* Input text */
+    color: white;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Checked tiles. .correct is correct letter and place. .inword is correct letter, wrong place. .incorrect means, there is no this letter in word */
+
+.correct {
+    background-color: #1dc507;
+    color: black;
+    font-weight: bold;
+    border: 2px solid #1dc507;
+}
+
+.inword {
+    background-color: #d9ff00;
+    color: black;
+    text-decoration: underline;
+    border: 2px solid #d9ff00;
+}
+
+.incorrect {
+    background-color: #707070;
+    color: rgb(46, 46, 46);
+    text-decoration: line-through;
+}
+/* Boxes with special characters, witch autofill */
+.no-fill {
+    background-color: #222222;
+    border: 2px solid #222222;
+}
+
+/* Answer text block */
+
+#answer {
+    display: block;
+    padding: 3em;
+    justify-items: center;
+    align-items: center;
+}
