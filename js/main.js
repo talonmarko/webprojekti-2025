@@ -1,98 +1,117 @@
 // Käyttäjänimen asettaminen 
-const userCreationContainer = document.getElementById('user-creation-container')
-const userInfoContainer = document.getElementById('user-info-container')
-const username = localStorage.getItem('username')
-const welcomeMsg = document.getElementById('welcome-msg')
+const userCreationContainer = document.getElementById('user-creation-container');
+const userInfoContainer = document.getElementById('user-info-container');
+const welcomeMsg = document.getElementById('welcome-msg');
 
+const username = localStorage.getItem('username');
 
-
-const checkForUsername = () => {
-    if (username != null) {
-        welcomeMsg.textContent = `Tervetuloa pelaamaan, ${username}!`
-        userInfoContainer.style.display = 'flex'
-        userCreationContainer.style.display = 'none'
-    } else {
-        showUsernameInput()
-    }
+function showUsernameInput() {
+  const usernameForm = document.getElementById('username-form');
+  if (!usernameForm) return;
+  usernameForm.addEventListener('submit', setUserName);
+  userCreationContainer.style.display = 'flex';
+  userInfoContainer.style.display = 'none';
 }
 
-const showUsernameInput = () => {
-    if (username === null) {
-        const usernameForm = document.getElementById('username-form')
-        usernameForm.addEventListener('submit', setUserName)
-        userCreationContainer.style.display = 'flex'
-        userInfoContainer.style.display = 'none'
-    }
+function setUserName(e) {
+  e.preventDefault();
+  const usernameForm = document.getElementById('username-form');
+  const newUsername = new FormData(usernameForm).get('username');
+  if (!newUsername) return;
+  localStorage.setItem('username', newUsername);
+  welcomeMsg.textContent = `Tervetuloa pelaamaan, ${newUsername}!`;
+  userInfoContainer.style.display = 'flex';
+  userCreationContainer.style.display = 'none';
 }
 
-const setUserName = (e) => {
-    e.preventDefault()
-    const usernameForm = document.getElementById('username-form')
-    const formData = new FormData(usernameForm)
-    const newUsername = formData.get('username')
-    console.log(newUsername)
-    localStorage.setItem('username', newUsername)
-    welcomeMsg.textContent = `Tervetuloa pelaamaan, ${newUsername}!`
-    userInfoContainer.style.display = 'flex'
-    userCreationContainer.style.display = 'none'
-}
+function checkForUsername() {
+  if (!welcomeMsg || !userCreationContainer || !userInfoContainer) return;
 
-console.log(username)
-checkForUsername()
-
-// localstorage for scoreboard 
-
-  function initScoreboard() {
-    if (!localStorage.getItem("scores")) {
-      const defaultScores = {
-        game1: 0,
-        game2: 0,
-        game3: 0,
-        game4: 0,
-        game5: 0,
-        total: 0
-      };
-      localStorage.setItem("scores", JSON.stringify(defaultScores));
-    }
+  if (username) {
+    welcomeMsg.textContent = `Tervetuloa pelaamaan, ${username}!`;
+    userInfoContainer.style.display = 'flex';
+    userCreationContainer.style.display = 'none';
+  } else {
+    showUsernameInput();
   }
+}
 
-   // load score from localstorage 
-     function loadScores() {
-     const scores = JSON.parse(localStorage.getItem("scores"));
+// SCOREBOARD
+const GAME_KEYS = ["game1","game2","game3","game4","game5"];
 
-     const rows = document.querySelectorAll(".score-row");
-     const keys = ["game1", "game2", "game3", "game4", "game5"];
+function parseScoresSafe() {
+  try {
+    const raw = localStorage.getItem("scores");
+    if (!raw) return null;
+    const parsed = JSON.parse(raw);
 
-     keys.forEach((key, i) => {
-      const valueSpan = rows[i].querySelector("span:last-child");
-      valueSpan.textContent = scores[key];
-     });
+    if (typeof parsed !== "object" || parsed === null) return null;
 
-    document.querySelector(".score-total span:last-child").textContent = scores.total;
+    const out = {};
+    GAME_KEYS.forEach(k => out[k] = Number(parsed[k] || 0));
+    out.total = Number(parsed.total ?? GAME_KEYS.reduce((sum, k) => sum + out[k], 0));
+    return out;
+  } catch {
+    console.warn("Invalid scores in localStorage");
+    return null;
   }
+}
 
-   // update score total
-     function updateTotal() {
-     const scores = JSON.parse(localStorage.getItem("scores"));
-      scores.total =
-      scores.game1 +
-      scores.game2 +
-      scores.game3 +
-      scores.game4 +
-      scores.game5;
+function initScoreboard() {
+  if (!localStorage.getItem("scores")) {
+    const defaultScores = Object.fromEntries(GAME_KEYS.map(k => [k, 0]));
+    defaultScores.total = 0;
+    localStorage.setItem("scores", JSON.stringify(defaultScores));
+  }
+}
 
-      localStorage.setItem("scores", JSON.stringify(scores));
-      }
+function updateTotal(scores) {
+  scores.total = GAME_KEYS.reduce((sum, k) => sum + (scores[k] || 0), 0);
+  localStorage.setItem("scores", JSON.stringify(scores));
+}
 
-  // public function for games
-     function addPoints(gameNumber, points) {
-     const scores = JSON.parse(localStorage.getItem("scores"));
-     scores[`game${gameNumber}`] += points;
-     localStorage.setItem("scores", JSON.stringify(scores));
-     updateTotal();
-     loadScores();
-     }
+function loadScores() {
+  const scoreboard = document.querySelector(".scoreboard");
+  if (!scoreboard) return;
 
-  // load score when page loads
-     initScoreboard();
-     loadScores();
+  const scores = parseScoresSafe() || GAME_KEYS.reduce((acc, k) => (acc[k]=0, acc), {total:0});
+
+  const rows = scoreboard.querySelectorAll(".score-row");
+  GAME_KEYS.forEach((key, i) => {
+    const el = rows[i]?.querySelector("span:last-child");
+    if (el) el.textContent = scores[key];
+  });
+
+  const totalEl = scoreboard.querySelector(".score-total span:last-child");
+  if (totalEl) totalEl.textContent = scores.total;
+}
+
+function addPoints(gameNumber, points) {
+  const scores = parseScoresSafe() || Object.fromEntries(GAME_KEYS.map(k => [k, 0]));
+  const key = `game${gameNumber}`;
+  scores[key] = (scores[key] || 0) + Number(points || 0);
+  updateTotal(scores);
+  loadScores();
+}
+
+function runScoreboard() {
+  initScoreboard();
+  loadScores();
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", () => {
+    checkForUsername();
+    runScoreboard();
+  });
+} else {
+  checkForUsername();
+  runScoreboard();
+}
+
+// localstorage changes in another tab !!
+window.addEventListener('storage', e => {
+  if (e.key === 'scores') loadScores();
+});
+
+window.addEventListener('pageshow', runScoreboard);

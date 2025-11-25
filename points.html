@@ -4,21 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>GeoZone – Profiili</title>
-
-  <!-- tailwind -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <!-- js -->
-   <script src="./js/main.js"></script>
-  <!-- css -->
-  <link rel="stylesheet" href="./css/styles.css" />
-  <!-- fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;1,500&display=swap" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
-
 </head>
 
 <body>
@@ -54,67 +39,84 @@
 </header>
 
 <main class="profile-container">
-
   <!-- avatars -->
   <section class="avatar-section">
-    <h2>Valitse avatar</h2>
+     <h2>Valitse avatar</h2>
 
-    <div class="avatar-grid">
+     <div class="avatar-grid">
+       <div class="avatar-box">
+       <img src="./img/pilrgim-boi.png" alt="Hahmo 1">
+       <span>Hahmo 1</span>
+     </div>
+
      <div class="avatar-box">
-     <img src="./img/pilrgim-boi.png" alt="Hahmo 1">
-     <span>Hahmo 1</span>
+       <img src="./img/peppi-explorer.png" alt="Hahmo 2">
+       <span>Hahmo 2</span>
+     </div>
+
+     <div class="avatar-box">
+       <img src="./img/patonkikisu.png" alt="Hahmo 3">
+       <span>Hahmo 3</span>
+     </div>
+
+     <div class="avatar-box">
+       <img src="./img/riisihattu-miuku.png" alt="Hahmo 4">
+       <span>Hahmo 4</span>
+     </div>
+
+     <div class="avatar-box">
+       <img src="./img/kannisode-onepiece.png" alt="Hahmo 5">
+       <span>Hahmo 5</span>
+     </div>
    </div>
-
-   <div class="avatar-box">
-     <img src="./img/peppi-explorer.png" alt="Hahmo 2">
-     <span>Hahmo 2</span>
-  </div>
-
-   <div class="avatar-box">
-     <img src="./img/patonkikisu.png" alt="Hahmo 3">
-     <span>Hahmo 3</span>
-  </div>
-
-  <div class="avatar-box">
-     <img src="./img/riisihattu-miuku.png" alt="Hahmo 4">
-     <span>Hahmo 4</span>
-  </div>
-
-   <div class="avatar-box">
-     <img src="./img/kannisode-onepiece.png" alt="Hahmo 5">
-     <span>Hahmo 5</span>
-   </div>
- </div>
  </section>
 
   <!-- scoreboard -->
   <section class="scoreboard">
      <h2>Pistetaulu <span style="color: #1AFF8C; margin-left:20px;">★</span></h2>
 
-     <div class="score-row"><span>Peli 1</span><span class="dots"></span><span> 0</span></div>
-     <div class="score-row"><span>Peli 2</span><span class="dots"></span><span> 10</span></div>
-     <div class="score-row"><span>Peli 3</span><span class="dots"></span><span> 5</span></div>
-     <div class="score-row"><span>Peli 4</span><span class="dots"></span><span> 0</span></div>
-     <div class="score-row"><span>Peli 5</span><span class="dots"></span><span> 0</span></div>
+     <div class="score-row"><span>Peli 1</span><span class="dots"></span><span>0</span></div>
+     <div class="score-row"><span>Peli 2</span><span class="dots"></span><span>0</span></div>
+     <div class="score-row"><span>Peli 3</span><span class="dots"></span><span>0</span></div>
+     <div class="score-row"><span>Peli 4</span><span class="dots"></span><span>0</span></div>
+     <div class="score-row"><span>Peli 5</span><span class="dots"></span><span>0</span></div>
 
      <div class="score-total">
-      <span>Yhteensä</span><span class="dots"></span><span>15</span>
+      <span>Yhteensä</span><span class="dots"></span><span>0</span>
     </div>
   </section>
 
+  <!-- scoraboard testing, DELETE LATER -->
+   <button onclick="addPoints(1, 15)">Add 15 to Peli 1</button>
+   <button onclick="addPoints(2, 1)">Add 1 to Peli 2</button>
+   <button onclick="addPoints(3, 3)">Add 3 to Peli 3</button>
 </main>
 
 <!-- footer -->
 <footer class="w-full site-footer">
   <div class="flex items-center justify-between p-6 bg-[#3A1417] w-full">
     <p>&copy; <span class="text-center px-4" id="year"></span>Ryhmä 1</p>
-    <a href="#"><img src="./img/logo.png" alt="Geozone Logo" /></a>
+    <a href="#"><img src="/img/logo.png" class="p-4" alt="Geozone Logo" /></a>
   </div>
 </footer>
 
 <script>
   document.getElementById("year").textContent = new Date().getFullYear();
 </script>
+
+  <!-- tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- js -->
+  <script src="./js/main.js"></script>
+  <!-- css -->
+  <link rel="stylesheet" href="./css/styles.css" />
+  <!-- fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;1,500&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
 
 </body>
 </html>

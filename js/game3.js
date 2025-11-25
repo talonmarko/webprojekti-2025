@@ -1,2 +1,3 @@
 // for scoreboard
-addPoints(1, 5);
+initScoreboard();
+addPoints(3, 5);
