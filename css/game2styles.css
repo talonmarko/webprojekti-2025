@@ -1,40 +1,102 @@
 .game2-mainpage {
-    max-width: 1100px;
+    max-width: 100%;
+}
+.game2-mainpage h1 {
+    text-align: center;
+    font-size: 3rem;
+    margin: 0.6rem;
+    padding: 1rem;
+}
+.game2-mainpage h3 {
+    text-align: center;
     margin: 0 auto;
+    padding: 0.5rem;
+    text-decoration: underline;
+}
+.game2-mainpage p {
+    text-align: center;
+    max-width: 70%;
+    margin: 0 auto;
+    line-height: 1.5em;
 }
 .game2-gamebox {
-    width: 350px;
-    height: 450px;
+    width: 25rem;
+    height: 30rem;
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
-    padding: 3em;
+    padding: 2em;
     justify-content: center;
     align-items: center;
 }
 .game2-box-row {
     display: flex;
 }
+
 /* Tiles where you see the letters player inputs */
 .game2-letterbox {
     /* box borders */
     border: 2px solid #693D40;
-    width: 40px;
-    height: 40px;
-    margin: 2.5px;
-    padding: 10px;
+    width: 3rem;
+    height: 3rem;
+    margin: 0.14rem;
+    padding: 1rem;
     box-sizing: border-box;
 
     /* Input text */
     color: white;
-    font-size: 20px;
+    font-size: 1.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-/* Checked tiles. .correct is correct letter and place. .inword is correct letter, wrong place. .incorrect means, there is no this letter in word */
+/* Keyboard */
+.game2-keyboard {
+    justify-content: center;
+    align-items: center;
+}
+.game2-keyboardRow {
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center
+}
+.game2-keyboard-box {
+    border: 1px solid #693D40;
+    width: 2.3rem;
+    height: 2.3rem;
+    margin: 0.3rem;
+    padding: 1rem;
+    box-sizing: border-box;
 
+    color: white;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.game2-keyboard-wide {
+    border: 1px solid #693D40;
+    width: 5.25rem;
+    height: 2.3rem;
+    margin: 0.3rem;
+    padding: 1rem;
+    box-sizing: border-box;
+
+    color: white;
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+
+
+/* Checked tiles. .correct is correct letter and place. .inword is correct letter, wrong place. .incorrect means, there is no this letter in word */
 .correct {
     background-color: #1dc507;
     color: black;
@@ -54,6 +116,7 @@
     color: rgb(46, 46, 46);
     text-decoration: line-through;
 }
+
 /* Boxes with special characters, witch autofill */
 .no-fill {
     background-color: #222222;
@@ -61,10 +124,27 @@
 }
 
 /* Answer text block */
-
 #answer {
     display: block;
     padding: 3em;
     justify-items: center;
     align-items: center;
+}
+
+/* Refresh button */
+.rfs_btn{
+    display: block;
+    border: 2px solid #1dc507;
+    justify-items: center;
+    align-items: center;
+    padding: 3em;
+    margin: 1em;
+}
+.rfs_btn:hover {
+    background-color: #1dc507;
+    color: black;
+}
+/* Cat gif */
+.cat_gif{
+    height: 14rem;
 }
