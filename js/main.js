@@ -101,15 +101,13 @@ function runScoreboard() {
 
 if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", () => {
-    checkForUsername();
     runScoreboard();
   });
 } else {
-  checkForUsername();
   runScoreboard();
 }
 
-// localstorage changes in another tab !!
+// when localstorage changes in another tab!!
 window.addEventListener('storage', e => {
   if (e.key === 'scores') loadScores();
 });
