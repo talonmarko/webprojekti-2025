@@ -179,7 +179,7 @@ const welcomeMsg = document.getElementById('welcome-msg')
 let showUserDetails = false
 
 const checkForUsername = () => {
-    if (username != null) {
+    if (username) {
         userDetails.style.display = 'block'
         welcomeMsg.textContent = `Comment ça va, ${username}?`
     } else {

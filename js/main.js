@@ -5,7 +5,7 @@ const username = localStorage.getItem('username')
 const welcomeMsg = document.getElementById('welcome-msg')
 
 const checkForUsername = () => {
-    if (username != null) {
+    if (username) {
         welcomeMsg.textContent = `Tervetuloa pelaamaan, ${username}!`
         userInfoContainer.style.display = 'flex'
         userCreationContainer.style.display = 'none'
@@ -15,7 +15,7 @@ const checkForUsername = () => {
 }
 
 const showUsernameInput = () => {
-    if (username === null) {
+    if (!username) {
         const usernameForm = document.getElementById('username-form')
         usernameForm.addEventListener('submit', setUserName)
         userCreationContainer.style.display = 'flex'
@@ -49,4 +49,5 @@ const showAvatarImg = () => {
 }
 
 showAvatarImg()
+
 checkForUsername()
