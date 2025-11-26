@@ -25,13 +25,18 @@ h6 {
   font-weight: 600 !important;
 }
 
+p {
+  color: #ccc;
+}
+
 button {
-  padding: 16px 22px !important;
+  padding: 16px 22px;
   border-radius: 8px;
   transition: .3s;
 }
 
 .green-btn {
+  padding: 16px 22px;
   background-color: var(--bright-green);
   color: black;
 }
@@ -39,6 +44,27 @@ button {
 .green-btn:hover {
   background-color: black;
   color: white;
+}
+
+.text-btn {
+  padding: 0;
+  background: none;
+  color: #ccc;
+  text-decoration: underline;
+}
+
+.text-btn:hover {
+  color: white;
+}
+
+.heading-container {
+  margin: 3rem auto 0 auto;
+  width: 1050px;
+  text-align: center;
+
+  h1 {
+    font-size: xx-large;
+  }
 }
 
 /* ---------- Main page username section ---------- */
@@ -50,7 +76,7 @@ button {
   justify-self: center;
   justify-content: space-between;
   background-color: var(--lighter-red);
-  border-radius: 8px;
+  border-radius: 10px;
   box-sizing: border-box;
 
   div {
@@ -73,7 +99,7 @@ button {
 .img-container-left {
   background-image: url(../img/mountain-and-flag.jpg);
   background-size: cover;
-  border-radius: 8px 0px 0px 8px;
+  border-radius: 10px 0px 0px 10px;
 }
 
 #username-form {
@@ -111,7 +137,7 @@ button {
   display: flex;
   justify-self: center;
   background-color: var(--lighter-red);
-  border-radius: 8px;
+  border-radius: 10px;
   box-sizing: border-box;
 
   div {
@@ -122,17 +148,21 @@ button {
     gap: 18px;
   }
 
-  div:first-child {
-    width: 70%;
-  }
-
-  div:nth-child(2) {
-    width: 30%;
-  }
-
   h2 {
     font-size: 28px;
   }
+}
+
+.width-30 {
+  width: 30%;
+}
+
+.width-70 {
+  width: 70%;
+}
+
+.smaller-container {
+  max-width: 900px;
 }
 
 #avatar {
@@ -224,21 +254,26 @@ button {
 .profile-container {
   max-width: 1050px;
   margin: auto;
-  padding: 2rem 2rem 5rem;
+  padding: 0 2rem 5rem;
 }
 
 /* avatars */
+#avatar-section {
+  margin: 0 auto;
+  max-width: 900px;
 
-.avatar-section h2 {
-  margin-bottom: 1.2rem;
-  font-size: 1.6rem;
-  font-family: 'DM Sans';
-  font-weight: 800;
+  h2 {
+    margin-bottom: 1.2rem;
+    font-size: 1.6rem;
+    font-family: 'DM Sans';
+    font-weight: 800;
+  }
 }
 
 .avatar-grid {
+  margin-top: 28px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   gap: 1.5rem;
   max-width: 1280px;
   box-sizing: border-box;
@@ -247,24 +282,63 @@ button {
     width: 50%;
     box-sizing: border-box;
   }
+
+  .avatar-box {
+    /* width: calc((100% - 2 * 1.5rem) / 3); */
+    /* max-width: 280px; */
+    padding: 32px 0;
+    aspect-ratio: 1/1;
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    background-color: #693D40;
+    border-radius: 10px;
+    position: relative;
+
+    .avatar-slide {
+      width: 192px;
+      height: 192px;
+      background-color: #8c7b60;
+      border-radius: 100px;
+      text-align: center;
+      position: relative;
+
+      img {
+        width: 100%;
+        height: 100%;
+        padding: .8rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .avatar-title {
+        width: 100%;
+        bottom: -40px;
+        left: 50%;
+        position: absolute;
+        transform: translate(-50%);
+
+      }
+    }
+  }
+
+  .left-padding {
+    padding: 0 0 0 36px;
+
+    #username-form div {
+      width: 82%;
+    }
+  }
 }
 
-.avatar-box {
-  /* width: calc((100% - 2 * 1.5rem) / 3); */
-  /* max-width: 280px; */
-  aspect-ratio: 1/1;
-  display: flex;
-  background-color: #693D40;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 1rem;
-  border-radius: 8px;
-  position: relative;
-}
-
-.avatar-icon {
+.avatar-icon.material-symbols-outlined {
   border-radius: 50px;
+  font-size: 30px;
 }
 
 .avatar-icon:hover {
@@ -273,36 +347,132 @@ button {
 
 .chevron {
   background-color: rgba(50, 50, 50, 0.8);
-  top: 50%;
+  top: 28%;
   position: absolute;
 }
 
-.chevron:nth-of-type(2) {
-  left: 12px;
+.chevron:nth-of-type(1) {
+  left: 20px;
 }
 
-.chevron:nth-of-type(3) {
-  right: 12px;
+.chevron:nth-of-type(2) {
+  right: 20px;
+}
+
+#color-settings {
+  margin-top: 4px;
+  width: 180px;
+  padding: 0 12px;
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px;
+
+  label {
+    width: 100%;
+    font-size: .8em;
+    text-align: center;
+  }
+
+  input[type="color"] {
+    margin: 1px;
+    -webkit-appearance: none;
+    width: 24px;
+    height: 24px;
+    position: relative;
+  }
+
+  input[type="color"]::-webkit-color-swatch-wrapper {
+    padding: 0;
+  }
+
+  input[type="color"]::-webkit-color-swatch {
+    border: none;
+  }
+
+  input[type="color"]:hover {
+    cursor: pointer;
+  }
+
+  /* Pen icon on color picker */
+  input[type="color"]::after {
+    content: "\270E";
+    color: var(--darker-red);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .bg-picker {
+    margin: 1px;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    border-radius: 0;
+  }
+
+  .cp-blue {
+    background-color: #1d85d4;
+  }
+
+  .cp-green {
+    background-color: #12a737;
+  }
+
+  .cp-pink {
+    background-color: #cf219e;
+  }
+
+  .cp-yellow {
+    background-color: #dfcb5a;
+  }
+
+  .cp-orange {
+    background-color: #da7c10;
+  }
+
+  .cp-purple {
+    background-color: #9a3cd4;
+  }
+
+  .cp-beige {
+    background-color: #8c7b60;
+  }
+
+  .cp-gray {
+    background-color: #888;
+  }
+
+  .cp-black {
+    background-color: #1a1a1a;
+  }
 }
 
 #setting-btns {
-  margin-top: 18px;
+  margin: 18px 18px 0 0;
+  width: 100%;
   display: flex;
-  justify-content: space-around;
-}
-
-.close {
-  background-color: rgba(230, 50, 120, 0.8);
-}
-
-.check {
-  background-color: rgba(50, 230, 120, 0.8);
+  justify-content: center;
+  gap: 30px;
 }
 
 #confirmation-msg {
   margin-top: 18px;
   display: inline-block;
   width: 70%;
+}
+
+#forget-user-section {
+  width: 80%;
+
+  p {
+    margin-bottom: 18px;
+  }
+
+  .green-btn {
+    margin-right: 22px;
+  }
 }
 
 @media (max-width: 800px) {
@@ -328,7 +498,7 @@ button {
 /* scoreboard */
 
 .scoreboard {
-  margin-top: 4rem;
+  margin: 4rem auto;
   background: #693D40;
   padding: 2rem;
   border-radius: 12px;

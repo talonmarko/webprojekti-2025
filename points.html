@@ -15,8 +15,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=check,close" />
   <script src="./js/avatar-pick.js" defer></script>
 </head>
 
@@ -51,71 +49,25 @@
         </div>
       </div>
     </nav>
+    <div class="heading-container">
+      <h1>Profiili</h1>
+    </div>
   </header>
 
   <main class="profile-container">
-
-    <!-- avatars -->
-    <section class="avatar-section">
-      <h2>Valitse avatar</h2>
-
-      <div class="avatar-grid">
-        <div>
-          <div class="avatar-box">
-            <img src="./img/pilrgim-boi.png" alt="Hahmo 1">
-            <span>Toivio Koiranen</span>
-
-            <span title="Edellinen" class="avatar-icon chevron material-symbols-outlined">
-              chevron_left
-            </span>
-            <span title="Seuraava" class="avatar-icon chevron material-symbols-outlined">
-              chevron_right
-            </span>
-
-            <div id="setting-btns">
-              <span title="Peru" class="avatar-icon close material-symbols-outlined">
-                close_small
-              </span>
-              <span title="Vahvista" class="avatar-icon check material-symbols-outlined">
-                check_small
-              </span>
-            </div>
-          </div>
+    <section id="user-details">
+      <div id="user-info-container" class="smaller-container">
+        <div class="width-30">
+          <span id="avatar">
+            <img src="./img/patonkikisu.png" alt="Käyttäjän avatar-kuvake">
+          </span>
         </div>
 
-        <div>
-          <form id="username-form">
-            <label for="username">
-              Vaihda nimimerkkiä:
-            </label>
-
-            <div>
-              <input type="text" name="username" placeholder="Uusi nimimerkki" required />
-              <button type="submit" class="green-btn">Tallenna</button>
-            </div>
-          </form>
-          <span id="confirmation-msg"></span>
+        <div class="width-70">
+          <h2 id="welcome-msg"></h2>
+          <p>Näytät aika hurmaavalta! Jos haluat hioa charmiasi, skrollaa sivun alalaitaan muokkaamaan avatariasi.</p>
+          <p>Joko sinulla on enemmän pisteitä kuin hiekanjyviä Saharassa?</p>
         </div>
-
-        <!-- <div class="avatar-box">
-          <img src="./img/peppi-explorer.png" alt="Hahmo 2">
-          <span>Hahmo 2</span>
-        </div>
-
-        <div class="avatar-box">
-          <img src="./img/patonkikisu.png" alt="Hahmo 3">
-          <span>Hahmo 3</span>
-        </div>
-
-        <div class="avatar-box">
-          <img src="./img/riisihattu-miuku.png" alt="Hahmo 4">
-          <span>Hahmo 4</span>
-        </div>
-
-        <div class="avatar-box">
-          <img src="./img/kannisode-onepiece.png" alt="Hahmo 5">
-          <span>Hahmo 5</span>
-        </div> -->
       </div>
     </section>
 
@@ -131,6 +83,85 @@
 
       <div class="score-total">
         <span>Yhteensä</span><span class="dots"></span><span>15</span>
+      </div>
+    </section>
+
+    <!-- avatars -->
+    <section id="avatar-section">
+      <h2>Muokkaa avataria ja nimimerkkiä</h2>
+
+      <div class="avatar-grid">
+        <div>
+          <div class="avatar-box">
+            <div class="avatar-slide">
+              <img src="./img/pilrgim-boi.png" alt="Hahmo 1">
+              <!-- <span class="avatar-title">Toivio Koiranen</span> -->
+            </div>
+
+            <div class="avatar-slide">
+              <img src="./img/peppi-explorer.png" alt="Hahmo 2">
+              <!-- <span class="avatar-title">Hahmo 2</span> -->
+            </div>
+
+            <div class="avatar-slide">
+              <img src="./img/patonkikisu.png" alt="Hahmo 3">
+              <!-- <span class="avatar-title">Hahmo 3</span> -->
+            </div>
+
+            <div class="avatar-slide">
+              <img src="./img/riisihattu-miuku.png" alt="Hahmo 4">
+              <!-- <span class="avatar-title">Hahmo 4</span> -->
+            </div>
+
+            <div class="avatar-slide">
+              <img src="./img/kannisode-onepiece.png" alt="Hahmo 5">
+              <!-- <span class="avatar-title">Hahmo 5</span> -->
+            </div>
+
+            <span title="Edellinen" id="left-btn" class="avatar-icon chevron material-symbols-outlined">
+              chevron_left
+            </span>
+            <span title="Seuraava" id="right-btn" class="avatar-icon chevron material-symbols-outlined">
+              chevron_right
+            </span>
+
+            <div id="color-settings">
+              <label for="background">Valitse taustaväri:</label>
+              <input id="color-picker" name="background" type="color" />
+              <button title="Vaaleanpunainen" class="cp-pink bg-picker"></button>
+              <button title="Oranssi" class="cp-orange bg-picker"></button>
+              <button title="Keltainen" class="cp-yellow bg-picker"></button>
+              <button title="Vihreä" class="cp-green bg-picker"></button>
+              <button title="Sininen" class="cp-blue bg-picker"></button>
+              <button title="Violetti" class="cp-purple bg-picker"></button>
+              <button title="Beige" class="cp-beige bg-picker"></button>
+              <button title="Harmaa" class="cp-gray bg-picker"></button>
+              <button title="Musta" class="cp-black bg-picker"></button>
+            </div>
+
+            <div id="setting-btns">
+              <button id="save-avatar" class="green-btn">Tallenna</button>
+              <button id="reset-avatar" class="text-btn">Peruuta</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="left-padding">
+          <form id="username-form">
+            <label for="username">
+              Vaihda nimimerkkiä:
+            </label>
+
+            <div>
+              <input type="text" name="username" placeholder="Uusi nimimerkki" required />
+              <button type="submit" class="green-btn">Tallenna</button>
+            </div>
+          </form>
+          <span id="confirmation-msg"></span>
+          <div id="forget-user-section">
+            <button id="forget-user-btn" class="text-btn">Unohda minut</button>
+          </div>
+        </div>
       </div>
     </section>
 

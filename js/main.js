@@ -2,11 +2,11 @@
 const userCreationContainer = document.getElementById('user-creation-container')
 const userInfoContainer = document.getElementById('user-info-container')
 const username = localStorage.getItem('username')
-const confirmationMsg = document.getElementById('welcome-msg')
+const welcomeMsg = document.getElementById('welcome-msg')
 
 const checkForUsername = () => {
     if (username != null) {
-        confirmationMsg.textContent = `Tervetuloa pelaamaan, ${username}!`
+        welcomeMsg.textContent = `Tervetuloa pelaamaan, ${username}!`
         userInfoContainer.style.display = 'flex'
         userCreationContainer.style.display = 'none'
     } else {
@@ -31,9 +31,22 @@ const setUserName = (e) => {
     
     localStorage.setItem('username', newUsername)
     
-    confirmationMsg.textContent = `Tervetuloa pelaamaan, ${newUsername}!`
+    welcomeMsg.textContent = `Tervetuloa pelaamaan, ${newUsername}!`
     userInfoContainer.style.display = 'flex'
     userCreationContainer.style.display = 'none'
 }
 
+// Avatar-kuvan näyttäminen oikein
+const avatar = document.getElementById('avatar')
+const avatarURL = localStorage.getItem('avatar')
+const avatarBgColor = localStorage.getItem('background-color')
+
+const showAvatarImg = () => {
+    if (avatarURL && avatarBgColor) {
+        avatar.children[0].src = avatarURL
+        avatar.style.backgroundColor = avatarBgColor
+    }
+}
+
+showAvatarImg()
 checkForUsername()
