@@ -5,6 +5,8 @@ const username = localStorage.getItem('username')
 const welcomeMsg = document.getElementById('welcome-msg')
 
 const checkForUsername = () => {
+    if (!welcomeMsg || !userCreationContainer || !userInfoContainer) return
+
     if (username) {
         welcomeMsg.textContent = `Tervetuloa pelaamaan, ${username}!`
         userInfoContainer.style.display = 'flex'
@@ -28,9 +30,9 @@ const setUserName = (e) => {
     const usernameForm = document.getElementById('username-form')
     const formData = new FormData(usernameForm)
     const newUsername = formData.get('username')
-    
+
     localStorage.setItem('username', newUsername)
-    
+
     welcomeMsg.textContent = `Tervetuloa pelaamaan, ${newUsername}!`
     userInfoContainer.style.display = 'flex'
     userCreationContainer.style.display = 'none'
