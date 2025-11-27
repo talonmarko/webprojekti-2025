@@ -1,3 +1,2 @@
 // for scoreboard
-initScoreboard();
-addPoints(2, 5);
+localStorage.setItem('game2', (Number(localStorage.getItem('game2')) || 0) + points);
