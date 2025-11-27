@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Game5 — Test Placeholder</title>
 
+
     <style>
         
         :root { 
@@ -50,8 +51,18 @@
             border-radius:6px;
             background:transparent
         }
+        .hidden{
+    display: none;
+}
+.correct{
+    background-color: green;
+}
+.incorrect{
+    background-color: red;
+}
 
     </style>
+
 </head>
 
 <body class="min-h-screen flex flex-col">
@@ -95,12 +106,16 @@
 
  <main class="flex-1"> 
     <div class="bg-[#693D40]" id="container">
-        <header>
-            <h1 class="text-center text-xl p-4">Game 5 — Test Placeholder</h1>
-            <small class="flex justify-center p-4 text-xl">
+            <h1 class="text-center text-xl p-4">Game 5 — Test Placeholder
              <!-- scoraboard testing, DELETE LATER -->
-             <button onclick="addPoints(1, 15)">Add 15 to Peli 1</button></small>
-        </header>
+             <form>
+             <h2 id="question"></h2>
+             <input type="radio" name="answer" value="a" checked><label></label><br>
+             <input type="radio" name="answer" value="b"><label></label><br>
+             <input type="radio" name="answer" value="c"><label></label><br>
+             <button type="submit">OK</button>
+    </form>
+    <h2 id="result"></h2></h1>
 
         <div class="bg-[#693D40]" id="board">
             <canvas id="gameCanvas" width="800" height="580"></canvas>
@@ -116,10 +131,9 @@
             </a>
         </div>
     </footer>
-
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="./js/main.js"></script>
-    <script src="./js/game5"></script>
+    <script src="./js/game5.js"></script>
     <link rel="stylesheet" href="./css/styles.css" />
 </body>
 </html>

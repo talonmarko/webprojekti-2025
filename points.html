@@ -78,28 +78,22 @@
           <p>Näytät aika hurmaavalta! Jos haluat hioa charmiasi, skrollaa sivun alalaitaan muokkaamaan avatariasi.</p>
           <p>Joko sinulla on enemmän pisteitä kuin hiekanjyviä Saharassa?</p>
         </div>
+      </div>
     </section>
 
     <!-- scoreboard -->
     <section class="scoreboard">
       <h2>Pistetaulu <span style="color: #1AFF8C; margin-left:20px;">★</span></h2>
 
-      <div class="score-row"><span>Peli 1</span><span class="dots"></span><span>0</span></div>
-      <div class="score-row"><span>Peli 2</span><span class="dots"></span><span>0</span></div>
-      <div class="score-row"><span>Peli 3</span><span class="dots"></span><span>0</span></div>
-      <div class="score-row"><span>Peli 4</span><span class="dots"></span><span>0</span></div>
-      <div class="score-row"><span>Peli 5</span><span class="dots"></span><span>0</span></div>
+      <div class="score-row flex justify-between py-1" id="row-game1" data-game="1"><span id="peli1-label" class="peli-label">Peli 1</span><span class="dots"></span><span id="score-game1">0</span></div>
+      <div class="score-row flex justify-between py-1" id="row-game2"><span id="peli2-label" class="peli-label">Peli 2</span><span class="dots"></span><span id="score-game2">0</span></div>
+      <div class="score-row flex justify-between py-1" id="row-game3"><span id="peli3-label" class="peli-label">Peli 3</span><span class="dots"></span><span id="score-game3">0</span></div>
+      <div class="score-row flex justify-between py-1" id="row-game4"><span id="peli4-label" class="peli-label">Peli 4</span><span class="dots"></span><span id="score-game4">0</span></div>
+      <div class="score-row flex justify-between py-1" id="row-game5"><span id="peli5-label">Peli 5</span><span class="dots"></span><span id="score-game5">0</span></div>
 
-      <div class="score-total">
-        <span>Yhteensä</span><span class="dots"></span><span>0</span>
-      </div>
+      <hr class="mt-8 mb-5" />
+      <div class="score-total flex justify-between font-semibold" id="row-total"><span id="total-label" class="peli-label">Yhteensä</span><span class="dots"></span><span id="score-total">0</span></div>
     </section>
-
-    <!-- scoraboard testing, DELETE LATER -->
-    <button onclick="addPoints(1, 15)">Add 15 to Peli 1</button>
-    <button onclick="addPoints(2, 1)">Add 1 to Peli 2</button>
-    <button onclick="addPoints(3, 3)">Add 3 to Peli 3</button>
-    <br><br><br>
 
     <!-- avatars -->
     <section id="avatar-section">
