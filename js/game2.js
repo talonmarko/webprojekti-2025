@@ -241,9 +241,6 @@ let capitals = [
 let capital = capitals[Math.floor(Math.random() * capitals.length)];
 //let capital = "Tokio";
 
-//Starting the localstorage for scoreboard
-initScoreboard();
-//localStorage.setItem('game2', (Number(localStorage.getItem('game2')) || 0) + points);
 
 //Global variables.
 const num_of_guesses = 6;
@@ -498,7 +495,7 @@ function pointCalculator() {
   if (guessesRemaining == 0) {
     points = 1;
   }
-  addPoints(2, points);
+  localStorage.setItem('game2', (Number(localStorage.getItem('game2')) || 0) + points);
 }
 
 
