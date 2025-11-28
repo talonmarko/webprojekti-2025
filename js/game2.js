@@ -243,6 +243,7 @@ let capital = capitals[Math.floor(Math.random() * capitals.length)];
 
 //Starting the localstorage for scoreboard
 initScoreboard();
+//localStorage.setItem('game2', (Number(localStorage.getItem('game2')) || 0) + points);
 
 //Global variables.
 const num_of_guesses = 6;
@@ -499,6 +500,8 @@ function pointCalculator() {
   }
   addPoints(2, points);
 }
+
+
 
 //Lähteitä koodille
 // https://medium.com/@bgw26/wordle-clone-using-javascript-5593da330891
