@@ -239,7 +239,7 @@ let capitals = [
   "Ngerulmud",
 ];
 let capital = capitals[Math.floor(Math.random() * capitals.length)];
-//let capital = "Tokio";
+//let capital = "Kööpenhamina";
 
 
 //Global variables.
@@ -263,7 +263,7 @@ const newGame = () => {
     for (let j = 0; j < capital.length; j++) {
       let box = document.createElement("div");
       let mark = capital[j];
-      if (/[^a-zA-Z0-9]/.test(mark)) {
+      if (/[^a-zA-Z0-9åäöÅÄÖ]/.test(mark)) {
         box.className = "game2-letterbox no-fill";
         box.textContent = mark;
       } else {
