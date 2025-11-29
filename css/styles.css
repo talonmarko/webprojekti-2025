@@ -189,30 +189,23 @@ button {
   }
 }
 
-/* Infopage's css */
+/*      Infopage        */
 .info-mainpage {
   display: grid;
   max-width: 1050px;
   margin: 0 auto;
-  grid-template-columns: auto auto auto auto auto;
-  grid-template-rows: auto auto auto auto auto auto;
-  background-color: #4C1D20;
-  color: white;
   font-family: "DM Mono", monospace;
   font-weight: 400;
   font-style: normal;
-  grid-template-areas:
-    '. title title title title .'
-    '. picture text text text .'
-    '. picture text text text .'
-    '. picture text text text .'
-    '. picture text text text .'
-    '. picture text text text .'
-  ;
+}
+.info-card {
+  display: grid;
+  grid-template-columns: 175px 1fr;
+  align-items: start;
+  padding: 0 2rem;
 }
 
 .info-mainpage>h1 {
-  grid-area: title;
   justify-self: center;
   text-decoration: underline;
   font-size: 1.3em;
@@ -221,42 +214,49 @@ button {
   font-weight: 800;
 }
 
-.info-container-img {
-  display: grid;
-  grid-area: picture;
-  padding: 1em;
-  margin: 1em;
-}
-
 .info-img {
-  height: 150px;
+  width: 100%;
   margin: 0.5em;
   align-self: center;
-}
-
-.info-container-text {
-  display: grid;
-  grid-area: text;
-  padding: 0.7em;
-  margin: 1em;
 }
 
 .info-maker-text {
   background-color: #693D40;
   padding: 1em;
   margin: 0.5em;
-  align-self: center;
 }
 
 .info-maker-text>h1 {
   padding: 1em 0.2em;
   text-decoration: underline;
-  font-family: "DM Sans", sans-serif;
-  font-weight: 800;
 }
 
 .info-maker-text>p {
   padding: 1em 0.2em;
+}
+
+@media (max-width: 1000px) {
+  .info-card {
+  grid-template-columns: 1fr;
+  text-align: center;
+  margin: 0 auto;
+  }
+  .info-img {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+}
+}
+@media (max-width: 600px) {
+  .info-card {
+    font-size: 0.8rem;
+  }
+  
+  .info-img {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+}
 }
 
 /* profile container */
