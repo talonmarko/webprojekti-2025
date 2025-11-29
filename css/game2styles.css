@@ -117,7 +117,7 @@
     text-decoration: line-through;
 }
 
-/* Boxes with special characters, witch autofill */
+/* Boxes with special characters, which autofill */
 .no-fill {
     background-color: #222222;
     border: 2px solid #222222;
@@ -137,8 +137,8 @@
     border: 2px solid #1dc507;
     justify-items: center;
     align-items: center;
-    padding: 3em;
-    margin: 1em;
+    padding: 2rem;
+    margin: 1rem;
 }
 .rfs_btn:hover {
     background-color: #1dc507;
@@ -147,4 +147,5 @@
 /* Cat gif */
 .cat_gif{
     height: 14rem;
+    margin: 1rem;
 }
