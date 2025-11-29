@@ -149,3 +149,97 @@
     height: 14rem;
     margin: 1rem;
 }
+
+@media (max-width: 600px) {
+.game2-gamebox {
+    height: auto;
+}
+.game2-mainpage h1 {
+    font-size: 2rem;
+    }
+.game2-letterbox {
+    width: 2rem;
+    height: 2rem;
+    font-size: 1.2rem;
+    padding: 1rem;
+}
+.game2-keyboard-box {
+    width: 2rem;
+    height: 2rem;
+    font-size: 1rem;
+}
+.game2-keyboard-wide {
+    width: 5rem;
+    height: 2rem;
+    font-size: 15px;
+}
+.rfs_btn{
+    padding: 1rem;
+    margin: 0.5rem;
+}
+.cat_gif{
+    height: 10rem;
+    margin: 1rem;
+}
+}
+
+@media (max-width: 515px) {
+    .game2-mainpage h1 {
+        font-size: 2rem;
+    }
+    .game2-mainpage p {
+        font-size: 0.9rem;
+}
+/* Sivuun tehty muutos, niin että koko sana pystytään rullaamaan pitkissä sanoissa. Tämä vain tekee boksit pois keskitetystä pienissä sanoissa. */
+    .game2-gamebox{
+        overflow-x: auto;
+        justify-content: start;
+        width: 20rem;
+        padding: 2em 0 2em 0;
+}
+    .game2-keyboard {
+        width: 100%;
+}
+    .game2-keyboard-box {
+        width: 0.35rem;
+        height: 0.35rem;
+        font-size: 0.9rem;
+        margin: 0;
+        justify-content: center;
+        margin: 0.05rem;
+}
+    .game2-keyboard-wide {
+        width: 3rem;
+        height: 1rem;
+        font-size: 12px;
+        margin: 0;
+}
+    .rfs_btn{
+        padding: 1rem;
+        margin: 0.5rem;
+}
+    .cat_gif{
+        height: 10rem;
+        margin: 1rem;
+}
+}
+
+@media (max-width: 400px) {
+    .game2-mainpage h1 {
+        font-size: 1.5rem;
+    }
+    .game2-keyboard-box {
+        width: 0.2rem;
+        height: 0.2rem;
+        font-size: 0.8rem;
+        padding: 0.9rem;
+        margin: 0.05rem;
+}
+    .game2-keyboard-wide {
+        width: 3rem;
+        height: 0.2rem;
+        font-size: 0.8rem;
+        margin: 0.05rem;
+        padding: 0.9rem;
+}
+}
