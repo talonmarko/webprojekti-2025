@@ -1,10 +1,6 @@
 // for scoreboard
 let index = 0;
 let points = 0;
-let questions = [
-    'Mikä on yleisen ohjemointikieli selainohjelmoinnissa?',
-    'Mikä seuraavista on kitaramerkki?'
-];
 
 let answers = [
     ['C++','JS','Kotlin'],
@@ -73,3 +69,44 @@ function setQuestion(){
     }
     document.querySelector('button').disabled = false;
 }
+
+// modal quiz functionality
+
+    const questions = {
+        1: {
+            question: "Which continent is this?",
+            answers: ["Africa", "Europe", "Asia"],
+        },
+        2: {
+            question: "What ocean is this location closest to?",
+            answers: ["Atlantic", "Pacific", "Indian"],
+        },
+        3: {
+            question: "What country is here?",
+            answers: ["USA", "Canada", "Mexico"],
+        }
+    };
+
+    function openQuestion(id) {
+        const modal = document.getElementById("quizModal");
+        const q = questions[id];
+
+        document.getElementById("questionTitle").innerText = q.question;
+
+        // Display answer choices
+        const choicesDiv = document.getElementById("choices");
+        choicesDiv.innerHTML = "";
+        q.answers.forEach(a => {
+            const btn = document.createElement("button");
+            btn.innerText = a;
+            btn.style.display = "block";
+            btn.style.margin = "5px auto";
+            choicesDiv.appendChild(btn);
+        });
+
+        modal.style.display = "flex";
+    }
+
+    function closeModal() {
+        document.getElementById("quizModal").style.display = "none";
+    }
