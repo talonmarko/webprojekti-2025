@@ -54,7 +54,7 @@ canvas {
 }
 
 .info-box {
-    width: 250px;
+    width: 350px;
     height: auto;
     background: #693D40;
     padding: 20px;
@@ -76,6 +76,8 @@ canvas {
     padding: 10px;
     border-radius: 8px;
     box-shadow: 0 0 8px rgba(0,0,0,0.15);
+    max-width: 1000px; 
+    margin: 0 auto;    
 }
 
 .map-wrapper img {
@@ -95,6 +97,12 @@ canvas {
     box-shadow: 0 0 5px rgba(0,0,0,0.3);
     transform: translate(-50%, -50%);
 }
+@media (max-width: 768px) {
+    .map-button {
+        font-size: 12px;
+        padding: 4px 6px;
+    }
+}
 
 .modal {
     position: fixed;
@@ -110,21 +118,47 @@ canvas {
 .modal-content {
     background: #693D40;
     padding: 20px;
-    width: 500px;
+    width: 700px;
     border-radius: 8px;
     text-align: center;
     color: white;
 }
 
-.modal-content button {
+.btn-primary {
     margin-top: 10px;
     background-color: #1AFF8C;
+    border-color: #1AFF8C;
     color: black;
 }
 
-.modal-content button :hover {
-    background-color: #17e676;
+.btn-primary:hover {
+    background-color: #8D5B62;     
+    border-color: #693D40;
 }
+
+.btn-primary:active,
+.btn-primary:focus {
+    background-color: #552E34 !important;
+    border-color: #552E34 !important;
+    box-shadow: none !important;
+}
+
+button:focus,
+.btn:focus {
+    box-shadow: none !important;
+}
+
+.answer-info {
+    background-color: #693D40;   
+    color: #fff;
+    padding: 15px;
+    margin-top: 18px;
+    border-radius: 10px;
+    border: 2px solid #1AFF8C;
+    line-height: 1.4;
+    font-size: 1rem;
+}
+
 
 .site-footer {
     margin-top:auto;

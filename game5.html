@@ -68,19 +68,19 @@
      <div class="info-box">
         <h1>Maantiedon nippelitietovisa</h1>
         <p>Tunnetko eri valtioiden maamerkit? Entä minkälaisia ovat kulttuuri ja ihmiset eri puolella maailmaa? Tässä nippelitietovisassa voit testata taitosi ja oppia uutta!</p>
-        <p style="margin-top:10px;">Paina kartalla näkyviä numeroita päästäksesi kysymyksiin.</p>
+        <p style="margin-top:12px;">Paina kartalla näkyviä numeroita päästäksesi kysymyksiin.</p>
+        <p style="margin-top:25px;" id="scoreDisplay">Pisteet: 0</p></p>
     </div>
 
      <!-- map -->
-     <div class="map-wrapper">
-        <img src="./img/map5.png" alt="World Map">
+     <div class="map-wrapper relative w-full max-w-5xl mx-auto">
+        <img src="./img/map5.png" alt="world map" class="w-full h-auto">
 
         <!-- buttons  -->
-        <button class="map-button" style="top: 33%; left: 52%;" onclick="openQuestion(1)">1</button>
-        <button class="map-button" style="top: 70%; left: 48%;" onclick="openQuestion(2)">2</button>
-        <button class="map-button" style="top: 30%; left: 20%;" onclick="openQuestion(3)">3</button>
-
-        
+        <button class="map-button absolute text-sm sm:text-base md:text-lg p-2 sm:p-3" style="top: 30%; left: 52%;" onclick="openQuestion(1)">1</button>
+        <button class="map-button absolute text-sm sm:text-base md:text-lg p-2 sm:p-3" style="top: 45%; left: 45%;" onclick="openQuestion(2)">2</button>
+        <button class="map-button absolute text-sm sm:text-base md:text-lg p-2 sm:p-3" style="top: 20%; left: 35%;" onclick="openQuestion(3)">3</button>
+        <button class="map-button absolute text-sm sm:text-base md:text-lg p-2 sm:p-3" style="top: 50%; left: 53%;" onclick="openQuestion(4)">4</button>  
     </div>
 </div>
 
