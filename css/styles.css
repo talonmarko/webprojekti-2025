@@ -209,6 +209,23 @@ button {
   }
 }
 
+@media (max-width: 768px) {
+  #user-info-container > div:first-child {
+    width: 100% !important;        
+    display: flex;
+    justify-content: center;        
+  }
+
+  #avatar {
+    margin: 0;                      
+    transform: scale(1.2);          
+  }
+
+  #avatar img {
+    padding: 0;                     
+  }
+}
+
 .width-30 {
   width: 30%;
 }
@@ -235,6 +252,8 @@ button {
     padding: 26px;
   }
 }
+
+
 
 
 /*      Infopage        */
@@ -656,4 +675,24 @@ button {
   height: 5px;
   opacity: .7;
   align-self: center;
+}
+
+@media (max-width: 360px) {
+  .score-row,
+  .score-total {
+    flex-direction: column;        
+    align-items: flex-start;      
+    gap: 4px;                      
+  }
+
+  .score-row .dots,
+  .score-total .dots {
+    width: 100%;                  
+    margin: 0;                     
+  }
+
+  .score-row span:last-child,
+  .score-total span:last-child {
+    align-self: flex-end;          
+  }
 }
