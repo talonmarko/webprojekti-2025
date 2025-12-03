@@ -150,6 +150,37 @@ button {
   }
 }
 
+@media (max-width: 480px) {
+  @media (max-width: 480px) {
+  .left-padding {
+    padding-left: 0   !important;           
+    display: flex;
+    flex-direction: column;
+    align-items: center;          
+    width: 100%;
+  }
+
+  #username-form {
+    width: 100%;               
+    max-width: 320px;
+    padding: 0;
+    margin: 0 auto;          
+  }
+   #username-form div {
+      width: 100% !important;  
+      padding: 0 !important;   
+       margin: 0;  
+     }
+
+  #confirmation-msg,
+  #forget-user-section {
+    width: 100%;
+    text-align: center;
+    margin: 0;               
+    padding: 0;
+  }
+}}
+
 #user-info-container {
   margin-top: 2rem;
   width: 100%;
@@ -312,8 +343,16 @@ button {
   }
 
   @media (max-width: 480px) {
+  .avatar-grid {
+    flex-direction: column;      
+    align-items: center;          
+    gap: 1rem;                    
+  }
+
   .avatar-grid > div {
-    flex: 1 1 100%; 
+    flex: none;
+    width: 100%;
+    max-width: 320px;
   }
 }
 
@@ -602,7 +641,7 @@ button {
 
 .score-total {
   display: grid;
-  grid-template-columns: 100px 1fr 40px;
+  grid-template-columns: 100px 1fr 13px;
   margin: 6px 0;
   font-size: 1.2rem;
   font-weight: bold;
