@@ -13,16 +13,16 @@ let points = 0;
         info: "Itämeri on erityisen herkkä ja altis saasteille, sillä se on matala sisämeri, jonka vesi vaihtuu hitaasti. Ylimääräisten maa- ja metsätalousravinteiden aiheuttama rehevöityminen on Itämeren ongelmista suurin. Myös ylikalastus, ilmastonmuutos, öljykuljetukset sekä lisääntyvä laivaliikenne uhkaavat Itämerta. Itämeren rantavaltiot ovat sitoutuneet parantamaan meren tilaa merkittävästi. Tämä vaatii poliittista sitoutumista ilmastohaittojen vähentämiseen sekä riittävää rahoitusta. (WWF Suomi 2025.)"
         },
         2: {
-            question: "Mistä tunnetusta maamerkistä löytyy alkuperäinen Mona Lisa -teos?",
-            answers: ["Louvre", "Notre-Dame", "Versaillesin palatsi", "Palais Idéal"],
-            correct: 0,
-            info: "Louvre on tunnettu taidemuseo Ranskassa. Se on yksi maailman vanhimpia museoita ja pinta-alaltaan maailman kolmanneksi suurin. Museon tunnetuimpiin teoksiin kuuluvat muun muassa maailman kalleimmaksi maalaukseksi arvioitu Leonardo da Vincin Mona Lisa, Raphaëlin Kaunis puutarhuri (Belle Jardinière), Véronèsen Kaanaan häät (Les Noces de Cana) sekä veistokset Milon Venus ja Samothraken Nike. (Airaksinen & Savolainen 2019.)"
-        },
-        3: {
             question: "Mikä näistä lämpövyöhykkeistä koskevista väitteistä ei pidä paikkaansa?",
             answers: ["Lämpimään eli subtrooppiseen vyöhykkeeseen tyypillistä on leuto, kostea talvi sekä kuuma, kuiva kesä.", "Eurooppa kuuluu suurimmaksi osaksi lauhkeaan vyöhykkeeseen.", "Kylmä vyöhyke sijoittuu pelkästään maapallon pohjoisimmille alueille.", "Kasveja ja eläimiä, kuten hyönteisiä ja matelijoita, on eniten kuumassa vyöhykkeessä."],
             correct: 2,
             info: "Kylmä vyöhyke ei sijaitse pelkästään pohjoisessa, vaan kylmän vyöhykkeen alue on myös maapallon eteläisimmissä osissa etelänavalla. Lämpövyöhykkeet perustuvat alueen etäisyyteen päiväntasaajalta, jolle aurinko paistaa kohtisuoraan. Lisäksi lämpövyöhykkeeseen vaikuttavat tuulet, merivirrat, etäisyys merestä ja pinnanmuodot.  (Peda.net 2025.)"
+        },
+        3: {
+            question: "Mistä tunnetusta maamerkistä löytyy alkuperäinen Mona Lisa -teos?",
+            answers: ["Louvre", "Notre-Dame", "Versaillesin palatsi", "Palais Idéal"],
+            correct: 0,
+            info: "Louvre on tunnettu taidemuseo Ranskassa. Se on yksi maailman vanhimpia museoita ja pinta-alaltaan maailman kolmanneksi suurin. Museon tunnetuimpiin teoksiin kuuluvat muun muassa maailman kalleimmaksi maalaukseksi arvioitu Leonardo da Vincin Mona Lisa, Raphaëlin Kaunis puutarhuri (Belle Jardinière), Véronèsen Kaanaan häät (Les Noces de Cana) sekä veistokset Milon Venus ja Samothraken Nike. (Airaksinen & Savolainen 2019.)"
         },
         4: {
             question: "Mikä saari? Tällä Välimeren saarella aurinko paistaa läpi vuoden. Siellä on roomalaisia raunioita, bysanttilaisia linnoituksia, mosaiikkeja, Afroditen patsaita ja keskiaikaisia kirkkoja. Turistit asuvat usein esimerkiksi Ayia Napassa tai Larnacassa.",
@@ -30,6 +30,19 @@ let points = 0;
             correct: 3,
             info: "Kypros on suosittu matkakohde, joka tarjoaa turisteille sekä aurinkoista säätä että kulttuurillisia elämyksiä. Saaren historiaan ja kulttuuriin ovat vaikuttaneet helleenien, foinikialaisten, roomalaisten, Bysantin ja Osmanian aikakaudet.  Kypros on kuitenkin jakautunut kahtia kreikkalaisen ja turkkilaisen väestön kesken konfliktien seurauksena.  Pohjois-Kyproksen turkkilaiseksi tasavallaksi kutsuttu Turkin miehittämä alue perustettiin vuonna 1983, mutta sitä ei ole tunnustanut yksikään valtio Turkin lisäksi. Kahta kolmasosaa saaresta hallitseva Kyproksen tasavalta liittyi EU:n jäseneksi vuonna 2004. Kyproksen konflikti on yksi syistä, jonka takia Turkki ei edelleenkään ole EU:n jäsen. (Luikku 2023.)"
         },
+        5: {
+            question: "Kuinka monta prosenttia egyptiläisistä asuu Nillin suistoalueella?",
+            answers: ["Noin 75%", "Noin 55%",  "Noin 90%", "Noin 30%"],
+            correct: 2,
+            info: "Niili on joki, joka virtaa koko Egyptin halki Sudanista Välimerelle. Se laskee mereen 250 kilometriä leveänä monihaaraisena suistona. Tällä suistoalueella elää yli 30 miljoonaa ihmistä ja yli 90% Egyptin kaikista asukkaista. Ilman jokea koko Egyptin alue olisi aavikkoa. Niilin tulvien tuoma hedelmällinen liete on ollut maanviljelyn perustana jo tuhansien vuosien ajan. Joki on myös ollut tärkeä kulkuväylä egyptiläisille. (Globalis 2025.)"
+        },
+        6: {
+            question: "Mikä historiallisen kaupan ja tieteen keskuksena tunnettu kaupunki sijaitsee Malissa?", 
+            answers: ["Luxor", "Timbuktu", "Marrakesh", "Kairo"],
+            correct: 1,
+            info: "Timbuktu on historiallinen kaupunki Malissa, joka sijaitsee Saharan autiomaassa. Se oli merkittävä kaupan ja tieteen keskus erityisesti 1400- ja 1500-luvuilla. UNESCO on julistanut Timbuktun maailmanperintökohteeksi vuonna 1988. Sen kirjoituksia ja historiallisia rakennuksia pyritään suojelemaan. Tänä päivänä Malin valtio on sotilaallisessa kriisissä, mikä uhkaa myös Timbuktun kulttuurillista perintöä. (Atlas Guide 2025.)"
+
+        }
     };
 
 

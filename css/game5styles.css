@@ -132,8 +132,9 @@ canvas {
 }
 
 .btn-primary:hover {
-    background-color: #8D5B62;     
-    border-color: #693D40;
+    background-color: #000;     
+    border-color: #000;
+    color: #fff;
 }
 
 .btn-primary:active,
