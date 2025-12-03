@@ -64,22 +64,27 @@
     </div>
   </header>
 
+  <!-- profiiliosio -->
   <main class="profile-container">
     <section id="user-details">
-      <div id="user-info-container" class="smaller-container">
-        <div class="width-30">
-          <span id="avatar">
-            <img src="./img/patonkikisu.png" alt="Käyttäjän avatar-kuvake">
-          </span>
-        </div>
+     <div id="user-info-container" class= "smaller-container flex flex-col md:flex-row gap-4 md:gap-8 max-w-md md:max-w-none mx-auto">
 
-        <div class="width-70">
-          <h2 id="welcome-msg"></h2>
-          <p>Näytät aika hurmaavalta! Jos haluat hioa charmiasi, skrollaa sivun alalaitaan muokkaamaan avatariasi.</p>
-          <p>Joko sinulla on enemmän pisteitä kuin hiekanjyviä Saharassa?</p>
-        </div>
+      <div class="md:w-1/3 w-full">
+        <span id="avatar">
+          <img src="./img/patonkikisu.png" class="w-full max-w-40 h-auto md:max-w-40 object-contain rounded-full" alt="Käyttäjän avatar-kuvake">
+        </span>
       </div>
-    </section>
+
+      <div class="md:w-2/3 w-full">
+        <h2 id="welcome-msg"></h2>
+        <p>Näytät aika hurmaavalta! Jos haluat hioa charmiasi, skrollaa sivun alalaitaan muokkaamaan avatariasi.</p>
+        <p>Joko sinulla on enemmän pisteitä kuin hiekanjyviä Saharassa?</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
 
     <!-- scoreboard -->
     <section class="scoreboard">

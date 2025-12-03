@@ -15,10 +15,6 @@ body {
   color: #ffffff;
 }
 
-@theme{
-  --color-brightgreen: #1AFF8C;
-}
-
 h1,
 h2,
 h3,
@@ -64,11 +60,25 @@ button {
 
 .heading-container {
   margin: 3rem auto 0 auto;
-  width: 1050px;
+  width: 90%;         
+  max-width: 1050px;  
   text-align: center;
+  padding: 0 1rem;    
 
   h1 {
-    font-size: xx-large;
+    font-size: 2.5rem;         
+  }
+}
+
+@media (max-width: 768px) {
+  .heading-container h1 {
+    font-size: 2rem;            
+  }
+}
+
+@media (max-width: 480px) {
+  .heading-container h1 {
+    font-size: 1.5rem;          
   }
 }
 
@@ -141,24 +151,30 @@ button {
 }
 
 #user-info-container {
-  margin-top: 50px;
-  width: 1050px;
+  margin-top: 2rem;
+  width: 100%;
+  max-width: 1050px;
   display: flex;
-  justify-self: center;
+  flex-direction: column; 
+  gap: 1.5rem;
   background-color: var(--lighter-red);
   border-radius: 10px;
   box-sizing: border-box;
+  padding: 1rem;
 
   div {
-    padding: 40px 48px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 18px;
+    padding: 1rem; 
   }
 
   h2 {
-    font-size: 28px;
+    font-size: 1.75rem; 
+  }
+}
+
+@media (min-width: 768px) {
+  #user-info-container {
+    flex-direction: row;
+    padding: 2rem;
   }
 }
 
@@ -188,6 +204,7 @@ button {
     padding: 26px;
   }
 }
+
 
 /*      Infopage        */
 .info-mainpage {
@@ -282,15 +299,23 @@ button {
 .avatar-grid {
   margin-top: 28px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   gap: 1.5rem;
-  max-width: 1280px;
+  max-width: 900px;
   box-sizing: border-box;
 
   div {
-    width: 50%;
+    flex: 1 1 48%; 
+    min-width: 220px;
     box-sizing: border-box;
   }
+
+  @media (max-width: 480px) {
+  .avatar-grid > div {
+    flex: 1 1 100%; 
+  }
+}
 
   .avatar-box {
     /* width: calc((100% - 2 * 1.5rem) / 3); */
@@ -308,22 +333,24 @@ button {
     position: relative;
 
     .avatar-slide {
-      width: 192px;
-      height: 192px;
-      background-color: #8c7b60;
-      border-radius: 100px;
-      text-align: center;
+      width: 100%;
+      max-width: 200px; 
+      aspect-ratio: 1/1;
+      border-radius: 50%;
       position: relative;
+      margin: 0 auto;}
 
-      img {
-        width: 100%;
-        height: 100%;
-        padding: .8rem;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-      }
+       .avatar-slide img {
+         width: 25vw;   
+         max-width: 200px;
+         min-width: 150px;
+         height: auto;
+         object-fit: contain;
+         margin: auto;
+         position: relative;
+         top: 0;
+         left: 0;
+         transform: none;}
 
       .avatar-title {
         width: 100%;
