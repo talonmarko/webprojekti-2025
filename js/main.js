@@ -50,6 +50,29 @@ const showAvatarImg = () => {
     }
 }
 
+const activePage = () => {
+    const currPage = location.pathname.split("/").pop();
+    
+    document.querySelectorAll("nav a").forEach(page => {
+    const href = page.getAttribute("href").replace("./", "");
+    if (currPage === "index.html" && href === "index.html") {
+        return
+    }else {
+            console.log(href)
+        if (href === currPage) {
+            page.classList.add (
+               "border-2", "border-[#1AFF8C]", "hover:bg-black", "hover:text-white"
+            )
+        }
+    }})
+    
+}
+
+activePage()
+
+
+activePage()
+
 showAvatarImg()
 
 checkForUsername()
