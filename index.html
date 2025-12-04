@@ -161,9 +161,7 @@
           <button class="green-btn">Pelaa 3</button>
         </div>
       </a>
-    </div>
 
-    <div class="flex flex-wrap justify-center gap-4 p-6">
       <a href="game4.html" class="block">
         <div
           class="flex flex-col items-center justify-center text-center p-6 m-2 h-[400px] w-[400px] bg-[#693D40] text-white rounded-lg">
@@ -182,24 +180,23 @@
     </div>
   </main>
 
-  <div class="flex flex-wrap justify-center gap-0 p-6">
-     
-        <div
-          class="flex flex-col items-left justify-left text-left p-8 m-2 h-[640px] w-[640px] bg-[#693D40] text-white rounded-lg">
-          <h2 class="font-bold text-[47px]">maantietoa, mainetta & mammonaa</h2>
-          <span class="flex flex-col justify-left text-[19px] p-4 ">Haluatko oppia maantietoa, mutta oppikirjasta pänttääminen tympii? GeoZonessa voit kerrata kokeeseen, testata taitojasi tai oppia uutta pelaamalla maantiedeaiheisia pelejä.
-          </span>
-          
-          <span class="flex flex-col justify-left text-[19px] p-4">Valitse peli ja hyppää mukaan! Profiilisivulta voit valita pelihahmon ja tarkistaa pistesaldosi. Kerää mahdollisimman paljon kolikoita. Päihitätkö kaverisi?
-          </span>
-          <button class="green-btn max-w-40" href="info.html">Infosivu</button>
-        </div>
-      
-      <div 
-          class= "h-[640px] w-[640px]">
-      <img src="./img/Earth.jpg" class="p-4" alt="Earth Picture"/>
-      </div>
-      </div>
+  <div class="flex flex-col lg:flex-row justify-center p-6 mb-10">
+    <div class="flex flex-col text-left p-8 bg-[#693D40] text-white w-full rounded-t-lg lg:rounded-tl-lg lg:rounded-bl-lg lg:rounded-t-none lg:w-1/2">  
+              <h2 class="font-bold text-[47px]">maantietoa, mainetta & mammonaa</h2>
+        <span class="text-[19px] py-2 mt-4">
+          Haluatko oppia maantietoa, mutta oppikirjasta pänttääminen tympii? GeoZonessa voit kerrata kokeeseen, testata taitojasi tai oppia uutta pelaamalla maantiedeaiheisia pelejä.
+        </span>
+    
+        <span class="text-[19px] py-2">
+          Valitse peli ja hyppää mukaan! Profiilisivulta voit valita pelihahmon ja tarkistaa pistesaldosi. Kerää mahdollisimman paljon kolikoita. Päihitätkö kaverisi?
+        </span>
+    <button class="green-btn mt-4 max-w-40" href="info.html">Infosivu</button>
+  </div>
+  
+    <div class="w-full lg:w-1/2 aspect-[4/3] overflow-hidden rounded-b-lg lg:rounded-b-none lg:rounded-tr-lg lg:rounded-br-lg">
+      <img src="./img/Earth.jpg" class="w-full h-full object-fit" alt="Earth Picture"/>
+    </div>
+  </div>
 
   <footer class="w-full site-footer">
     <div class="info-main flex items-center justify-between p-6 bg-[#3A1417] w-full text-base max-[370px]:text-sm">
