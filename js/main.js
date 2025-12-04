@@ -49,7 +49,7 @@ const showAvatarImg = () => {
         avatar.style.backgroundColor = avatarBgColor
     }
 }
-
+//Aktiivisen sivun korostaminen
 const activePage = () => {
     const currPage = location.pathname.split("/").pop();
     
@@ -68,8 +68,23 @@ const activePage = () => {
     
 }
 
-activePage()
+//Hampurilaisvalikon avaaminen ja sulkeminen
 
+const hamburgerMenu = () => {
+    const hamButton = document.getElementById("hamburger-button")
+    const hamMenu = document.getElementById("hamburger-menu")
+
+    hamButton.addEventListener("click", () => {
+        if (hamMenu.classList.contains("hidden")) {
+            hamMenu.classList.remove("hidden")
+        } else {
+            hamMenu.classList.add("hidden")
+        }
+        
+    })
+}
+
+hamburgerMenu()
 
 activePage()
 
