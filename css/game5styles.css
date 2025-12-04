@@ -1,24 +1,17 @@
-
-html, body {
-    height:100%;
-    min-height:100%;
-    margin:0;
-    font-family:system-ui,Segoe UI,Roboto,Arial;
-    background:#4C1D20;
-    color:#0b1220;
-}
 body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    background:#4C1D20;
-    font-family: "DM Mono", monospace;
+display: flex;
+flex-direction: column;
+min-height: 100vh;
+background: #4C1D20;
+font-family: "DM Mono", monospace;
 }
 
-nav a.info-main:hover,
-nav a.info-main:focus {
-  background-color: #1AFF8C !important;
-  color: #000 !important;
+main, .quiz-container {
+flex: 1 0 auto;
+}
+
+footer {
+flex-shrink: 0;
 }
 
 .board {
