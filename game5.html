@@ -9,7 +9,7 @@
    <script src="https://cdn.tailwindcss.com"></script>
    
     <!-- bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- css styles -->
@@ -20,28 +20,30 @@
     <script src="./js/main.js" defer></script>
     <script src="./js/game5.js" defer></script>
 
-   <style>
-     body {
+  <style>
+
+    body {
      display: flex;
      flex-direction: column;
      min-height: 100vh;
      background: #4C1D20;
      font-family: "DM Mono", monospace;
-}
+   }
 
-main, .quiz-container {
-flex: 1 0 auto;
-}
+   main, .quiz-container {
+     flex: 1 0 auto;
+  }
 
-footer {
-flex-shrink: 0;
-} 
+   footer {
+     flex-shrink: 0;
+  } 
+
 </style>
 </head>
 
 <body>
  <header>
-    <nav class="bg-[#3A1417] border-gray-200 p-4">¨
+    <nav class="bg-[#3A1417] border-gray-200 p-4">
       <div class="flex flex-wrap justify-between items-center max-[590px]:justify-end">
         <a href="./index.html" class="flex items-center max-[590px]:hidden">
           <img src="./img/logo.png" class="p-4" alt="Geozone Logo" />
@@ -120,7 +122,7 @@ flex-shrink: 0;
 <main>
    <div class="quiz-container">
 
-     <!-- info Panel -->
+     <!-- info panel -->
      <div class="info-box">
         <h1>Maantiedon nippelitietovisa</h1>
         <p>Tunnetko eri valtioiden maamerkit? Entä minkälaisia ovat kulttuuri ja ihmiset eri puolella maailmaa? Tässä nippelitietovisassa voit testata taitosi ja oppia uutta!</p>
@@ -129,19 +131,21 @@ flex-shrink: 0;
     </div>
 
      <!-- map -->
-     <div class="map-wrapper relative w-full max-w-5xl mx-auto">
-        <img src="./img/map5.png" alt="world map" class="w-full h-auto">
+     <div class="map-wrapper relative w-full max-w-5xl mx-auto" tabindex="0">
+          <div class="map-inner">
+            <img src="./img/map5.png" alt="world map" class="w-full h-auto">
 
-        <!-- buttons  -->
-        <button class="map-button absolute text-sm sm:text-base md:text-lg p-2 sm:p-3" style="top: 30%; left: 52%;" onclick="openQuestion(1)">1</button>
-        <button class="map-button absolute text-sm sm:text-base md:text-lg p-2 sm:p-3" style="top: 20%; left: 35%;" onclick="openQuestion(2)">2</button>
-        <button class="map-button absolute text-sm sm:text-base md:text-lg p-2 sm:p-3" style="top: 45%; left: 45%;" onclick="openQuestion(3)">3</button>
-        <button class="map-button absolute text-sm sm:text-base md:text-lg p-2 sm:p-3" style="top: 50%; left: 53%;" onclick="openQuestion(4)">4</button> 
+           <!-- buttons  -->
+           <button class="map-button absolute text-sm sm:text-base md:text-lg p-2 sm:p-3" style="top: 30%; left: 52%;" onclick="openQuestion(1)">1</button>
+           <button class="map-button absolute text-sm sm:text-base md:text-lg p-2 sm:p-3" style="top: 20%; left: 35%;" onclick="openQuestion(2)">2</button>
+           <button class="map-button absolute text-sm sm:text-base md:text-lg p-2 sm:p-3" style="top: 45%; left: 45%;" onclick="openQuestion(3)">3</button>
+           <button class="map-button absolute text-sm sm:text-base md:text-lg p-2 sm:p-3" style="top: 50%; left: 53%;" onclick="openQuestion(4)">4</button> 
         
-        <button class="map-button absolute text-sm sm:text-base md:text-lg p-2 sm:p-3" style="top: 60%; left: 55%;" onclick="openQuestion(5)">5</button>
-        <button class="map-button absolute text-sm sm:text-base md:text-lg p-2 sm:p-3" style="top: 63%; left: 44%;" onclick="openQuestion(6)">6</button>
+           <button class="map-button absolute text-sm sm:text-base md:text-lg p-2 sm:p-3" style="top: 60%; left: 55%;" onclick="openQuestion(5)">5</button>
+           <button class="map-button absolute text-sm sm:text-base md:text-lg p-2 sm:p-3" style="top: 63%; left: 44%;" onclick="openQuestion(6)">6</button>
+         </div>
+      </div>
     </div>
-</div>
 
 
 <!-- pop-up modal -->
