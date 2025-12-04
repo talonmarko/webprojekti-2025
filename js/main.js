@@ -75,12 +75,13 @@ const hamburgerMenu = () => {
     const hamMenu = document.getElementById("hamburger-menu")
 
     hamButton.addEventListener("click", () => {
-        if (hamMenu.classList.contains("hidden")) {
-            hamMenu.classList.remove("hidden")
-        } else {
+        hamMenu.classList.toggle("hidden")
+    })
+
+    window.addEventListener("resize", () => {
+        if(window.innerWidth >= 1090) {
             hamMenu.classList.add("hidden")
         }
-        
     })
 }
 
