@@ -154,22 +154,19 @@
             </div>
         </div>
     </main>
-    <footer class="w-full site-footer">
-        <div class="info-main flex items-center justify-between p-6 bg-[#3A1417] w-full">
-            <p>
-                &copy;
-                <span class="flex-row justify-center text-center px-4" id="year"></span>Ryhmä 1
-            </p>
-            <a href="#">
-                <img src="./img/logo.png" class="flex" alt="Geozone Logo" />
-            </a>
-        </div>
-    </footer>
+ <footer class="w-full site-footer">
+    <div class="info-main flex items-center justify-between p-6 bg-[#3A1417] w-full text-base max-[370px]:text-sm">
+      <p>&copy; <span class="flex-row justify-center text-center px-4" id="year"></span>Ryhmä 1</p>
+      <a href="index.html">
+        <img src="./img/logo.png" class="flex h-8 md:h-12 max-[370px]:h-5" alt="Geozone Logo"/>
+      </a>
+    </div>
+  </footer>
 
-    <script>
-        // Basic script: set current year
-        document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
+  <script>
+    // Basic script: set current year 
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 
 </html>
