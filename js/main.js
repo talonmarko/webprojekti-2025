@@ -68,8 +68,24 @@ const activePage = () => {
     
 }
 
-activePage()
+//Hampurilaisvalikon avaaminen ja sulkeminen
 
+const hamburgerMenu = () => {
+    const hamButton = document.getElementById("hamburger-button")
+    const hamMenu = document.getElementById("hamburger-menu")
+
+    hamButton.addEventListener("click", () => {
+        hamMenu.classList.toggle("hidden")
+    })
+
+    window.addEventListener("resize", () => {
+        if(window.innerWidth >= 1090) {
+            hamMenu.classList.add("hidden")
+        }
+    })
+}
+
+hamburgerMenu()
 
 activePage()
 

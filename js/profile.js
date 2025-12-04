@@ -237,6 +237,24 @@ const forgetUser = () => {
 forgetUser()
 checkForUsernameAtProfile()
 
+//Hampurilaisvalikon avaaminen ja sulkeminen
+
+const hamburgerMenu = () => {
+    const hamButton = document.getElementById("hamburger-button")
+    const hamMenu = document.getElementById("hamburger-menu")
+
+    hamButton.addEventListener("click", () => {
+        if (hamMenu.classList.contains("hidden")) {
+            hamMenu.classList.remove("hidden")
+        } else {
+            hamMenu.classList.add("hidden")
+        }
+        
+    })
+}
+
+hamburgerMenu()
+
 // SCOREBOARD
 let game1 = Number(localStorage.getItem('game1')) || 0;
 let game2 = Number(localStorage.getItem('game2')) || 0;

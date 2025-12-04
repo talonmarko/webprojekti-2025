@@ -15,37 +15,76 @@
 
 <body>
 
-  <header>
+<header>
     <nav class="bg-[#3A1417] border-gray-200 p-4">
-      <div class="flex flex-wrap justify-between items-center">
-        <a href="./index.html" class="flex items-center">
-          <img src="./img/logo.png" class="p-4 sm:flex" alt="Geozone Logo" />
+      <div class="flex flex-wrap justify-between items-center max-[590px]:justify-end">
+        <a href="./index.html" class="flex items-center max-[590px]:hidden">
+          <img src="./img/logo.png" class="p-4" alt="Geozone Logo" />
         </a>
-
-        <div class="flex items-center lg:order-2">
+  
+        <div class="flex items-center order-2">
           <a href="./points.html">
             <button class="green-btn">&#9733;
               Profiili</button></a>
           <a href="./info.html"
-            class="text-white font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 ml-2 hover:bg-[#1AFF8C] hover:text-black">Info</a>
-        </div>
+            class="text-white font-medium rounded-lg text-sm px-5 py-2.5 mx-2 hover:bg-[#1AFF8C] hover:text-black">Info</a>
 
-        <div class="justify-between items-center w-full lg:flex lg:w-auto" id="menu">
-          <ul class="flex flex-col mt-4 font-medium p-2 sm:p-2 font-[] min-[1090px]:flex-row min-[1090px]:space-x-12" >
+                    <!-- Hampurilaisvalikko -->
+          <div class="flex xl:hidden relative">
+            <button id="hamburger-button">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+              </svg>
+            </button>
+            <ul id="hamburger-menu"
+              class="hidden absolute top-full right-0 w-max z-50 bg-[#3A1417] border-2 border-[#693D40] rounded shadow-lg flex-col font-medium p-4 font-[]">
+              <li>
+                <a href="./game1.html"
+                  class="info-main block p-2 text-white rounded bg-transparent hover:bg-[#1AFF8C] hover:text-black">Peli 1</a>
+              </li>
+              <li>
+                <a href="./game2.html"
+                  class="info-main block p-2 text-white rounded bg-transparent hover:bg-[#1AFF8C] hover:text-black">Peli 2</a>
+              </li>
+              <li>
+                <a href="./game3.html"
+                  class="info-main block p-2 text-white rounded bg-transparent hover:bg-[#1AFF8C] hover:text-black">Peli 3</a>
+              </li>
+              <li>
+                <a href="./game4.html"
+                  class="info-main block p-2 text-white rounded bg-transparent hover:bg-[#1AFF8C] hover:text-black">Peli 4</a>
+              </li>
+              <li>
+                <a href="./game5.html"
+                  class="info-main block p-2 text-white rounded bg-transparent hover:bg-[#1AFF8C] hover:text-black">Peli 5</a>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+        <!-- Nav bar -->
+        <div class="hidden justify-between items-center w-full xl:flex xl:w-auto" id="menu">
+          <ul class="flex flex-col mt-4 font-medium p-6 font-[] lg:flex-row space-x-12">
             <li>
-              <a href="./game1.html" class="info-main block p-2 sm:p-2 text-white rounded bg-transparent hover:bg-[#1AFF8C] hover:text-black">Peli 1</a>
+              <a href="./game1.html"
+                class="info-main block p-6 text-white rounded bg-transparent hover:bg-[#1AFF8C] hover:text-black">Peli 1</a>
             </li>
             <li>
-              <a href="./game2.html" class="info-main block p-2 sm:p-2 text-white rounded bg-transparent hover:bg-[#1AFF8C] hover:text-black">Peli 2</a>
+              <a href="./game2.html"
+                class="info-main block p-6 text-white rounded bg-transparent hover:bg-[#1AFF8C] hover:text-black">Peli 2</a>
             </li>
             <li>
-              <a href="./game3.html" class="info-main block p-2 sm:p-2 text-white rounded bg-transparent hover:bg-[#1AFF8C] hover:text-black">Peli 3</a>
+              <a href="./game3.html"
+                class="info-main block p-6 text-white rounded bg-transparent hover:bg-[#1AFF8C] hover:text-black">Peli 3</a>
             </li>
             <li>
-              <a href="./game4.html" class="info-main block p-2 sm:p-2 text-white rounded bg-transparent hover:bg-[#1AFF8C] hover:text-black">Peli 4</a>
+              <a href="./game4.html"
+                class="info-main block p-6 text-white rounded bg-transparent hover:bg-[#1AFF8C] hover:text-black">Peli 4</a>
             </li>
             <li>
-              <a href="./game5.html" class="info-main block p-2 sm:p-2 text-white rounded bg-transparent hover:bg-[#1AFF8C] hover:text-black">Peli 5</a>
+              <a href="./game5.html"
+                class="info-main block p-6 text-white rounded bg-transparent hover:bg-[#1AFF8C] hover:text-black">Peli 5</a>
             </li>
           </ul>
         </div>
@@ -53,7 +92,8 @@
     </nav>
   </header>
 
-  <section id="user-details">
+  <main class="info-main flex flex-col items-center m-10" id="main" role="main">
+   <section id="user-details">
     <div id="user-creation-container">
       <div class="img-container-left">
       </div>
@@ -90,7 +130,7 @@
       </div>
     </div>
   </section>
-
+</main>
 
 
   <main class="info-main flex flex-col items-center m-10" id="main" role="main" class="container">
@@ -122,9 +162,7 @@
           <button class="green-btn">Pelaa 3</button>
         </div>
       </a>
-    </div>
 
-    <div class="flex flex-wrap justify-center gap-4 p-6">
       <a href="game4.html" class="block">
         <div
           class="flex flex-col items-center justify-center text-center p-6 m-2 h-[400px] w-[400px] bg-[#693D40] text-white rounded-lg">
@@ -143,24 +181,23 @@
     </div>
   </main>
 
-  <div class="flex flex-wrap justify-center gap-0 p-6">
-     
-        <div
-          class="flex flex-col items-left justify-left text-left p-8 m-2 h-[640px] w-[640px] bg-[#693D40] text-white rounded-lg">
-          <h2 class="font-bold text-[47px]">maantietoa, mainetta & mammonaa</h2>
-          <span class="flex flex-col justify-left text-[19px] p-4 ">Haluatko oppia maantietoa, mutta oppikirjasta pänttääminen tympii? GeoZonessa voit kerrata kokeeseen, testata taitojasi tai oppia uutta pelaamalla maantiedeaiheisia pelejä.
-          </span>
-          
-          <span class="flex flex-col justify-left text-[19px] p-4">Valitse peli ja hyppää mukaan! Profiilisivulta voit valita pelihahmon ja tarkistaa pistesaldosi. Kerää mahdollisimman paljon kolikoita. Päihitätkö kaverisi?
-          </span>
-          <button class="green-btn max-w-40" href="info.html">Infosivu</button>
-        </div>
-      
-      <div 
-          class= "h-[640px] w-[640px]">
-      <img src="./img/Earth.jpg" class="p-4" alt="Earth Picture"/>
-      </div>
-      </div>
+  <div class="flex flex-col lg:flex-row justify-center p-6 mb-10 mx-auto w-full lg:w-4/5">
+    <div class="flex flex-col text-left p-8 bg-[#693D40] text-white w-full rounded-t-lg lg:rounded-tl-lg lg:rounded-bl-lg lg:rounded-t-none lg:w-1/2">  
+              <h2 class="font-bold text-[47px]">maantietoa, mainetta & mammonaa</h2>
+        <span class="text-[19px] py-2 mt-4">
+          Haluatko oppia maantietoa, mutta oppikirjasta pänttääminen tympii? GeoZonessa voit kerrata kokeeseen, testata taitojasi tai oppia uutta pelaamalla maantiedeaiheisia pelejä.
+        </span>
+    
+        <span class="text-[19px] py-2">
+          Valitse peli ja hyppää mukaan! Profiilisivulta voit valita pelihahmon ja tarkistaa pistesaldosi. Kerää mahdollisimman paljon kolikoita. Päihitätkö kaverisi?
+        </span>
+    <button class="green-btn mt-4 max-w-40" href="info.html">Infosivu</button>
+  </div>
+  
+    <div class="w-full lg:w-1/2 aspect-[4/3] overflow-hidden rounded-b-lg lg:rounded-b-none lg:rounded-tr-lg lg:rounded-br-lg">
+      <img src="./img/Earth.jpg" class="w-full h-full object-fit" alt="Earth Picture"/>
+    </div>
+  </div>
 
   <footer class="w-full site-footer">
     <div class="info-main flex items-center justify-between p-6 bg-[#3A1417] w-full text-base max-[370px]:text-sm">
