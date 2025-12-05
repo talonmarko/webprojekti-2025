@@ -8,7 +8,7 @@ document.getElementById("scoreDisplay").innerText = `Pisteet: ${points}`;
             question: "Itämeri on altis rehevöitymiselle ja saasteille. Rannikkovesiämme rehevöittävät erityisesti... ",
             answers: ["Risteilyliikenne", "Maa- ja metsätaloudesta valuvat ravinteet", "Mereen päätynyt muovi", "Öljyonnettomuudet"],
             correct: 1, 
-        info: "Itämeri on erityisen herkkä ja altis saasteille, sillä se on matala sisämeri, jonka vesi vaihtuu hitaasti. Ylimääräisten maa- ja metsätalousravinteiden aiheuttama rehevöityminen on Itämeren ongelmista suurin. Myös ylikalastus, ilmastonmuutos, öljykuljetukset sekä lisääntyvä laivaliikenne uhkaavat Itämerta. Itämeren rantavaltiot ovat sitoutuneet parantamaan meren tilaa merkittävästi. Tämä vaatii poliittista sitoutumista ilmastohaittojen vähentämiseen sekä riittävää rahoitusta. (WWF Suomi 2025.)"
+            info: "Itämeri on erityisen herkkä ja altis saasteille, sillä se on matala sisämeri, jonka vesi vaihtuu hitaasti. Ylimääräisten maa- ja metsätalousravinteiden aiheuttama rehevöityminen on Itämeren ongelmista suurin. Myös ylikalastus, ilmastonmuutos, öljykuljetukset sekä lisääntyvä laivaliikenne uhkaavat Itämerta. Itämeren rantavaltiot ovat sitoutuneet parantamaan meren tilaa merkittävästi. Tämä vaatii poliittista sitoutumista ilmastohaittojen vähentämiseen sekä riittävää rahoitusta. (WWF Suomi 2025.)"
         },
         2: {
             question: "Mikä näistä lämpövyöhykkeistä koskevista väitteistä ei pidä paikkaansa?",
@@ -87,7 +87,7 @@ document.getElementById("scoreDisplay").innerText = `Pisteet: ${points}`;
             question: "Montako osavaltiota Yhdysvalloissa on? ",
             answers: ["52", "51", "50", "49"],
             correct: 2,
-            info: "Yhdysvallat on liittovaltio, joka koostuu 50 osavaltiosta. Jokaisella osavaltiolla on oma hallituksensa, lainsäädäntönsä ja erityispiirteensä. Yhdysvaltojen eri osavaltioiden välillä onkin valtavasti kulttuurillisia ja maantieteellisiä eroja. Yhdysvaltojen lipun valkoiset tähdet symboloivat osavaltioita: niitä on lipussa myös 50. (Nieminen, Löyttyniemi & Lehtola, 2024.) Bonus: osaatko kaikki osavaltiot? Tee Ylen testi <a href='https://yle.fi/a/74-20085924' target='_blank' style='color: #1AFF8C; text-decoration: underline;'>täällä</a>!"
+            info: "Yhdysvallat on liittovaltio, joka koostuu 50 osavaltiosta. Jokaisella osavaltiolla on oma hallituksensa, lainsäädäntönsä ja erityispiirteensä. Yhdysvaltojen eri osavaltioiden välillä onkin valtavasti kulttuurillisia ja maantieteellisiä eroja. Yhdysvaltojen lipun valkoiset tähdet symboloivat osavaltioita: niitä on lipussa myös 50. (Nieminen, Löyttyniemi & Lehtola, 2024.) \n\n Bonus: osaatko kaikki osavaltiot? Tee Ylen testi <a href='https://yle.fi/a/74-20085924' target='_blank' style='color: #1AFF8C; text-decoration: underline;'>täällä</a>!"
         },
         15: {
             question: "Perussa sijaitsee maailmankuulu muinainen vuoristokaupunki, joka kuuluu inkojen historiaan. Mikä sen nimi on?",
@@ -112,6 +112,7 @@ function openQuestion(id) {
     const q = questions[id];
 
     document.getElementById("questionTitle").innerText = q.question;
+    document.getElementById("questionTitle").classList.add("text-center");
 
     const choicesDiv = document.getElementById("choices");
     choicesDiv.innerHTML = "";
@@ -135,49 +136,53 @@ function handleAnswer(id, chosenIndex) {
     const q = questions[id];
     const choicesDiv = document.getElementById("choices");
 
-    // Remove/hide all answer buttons
+    // prevent double answering
+    if (answeredQuestions.has(id)) return;
+    answeredQuestions.add(id);
+
+    // disable all buttons
     const buttons = choicesDiv.querySelectorAll("button");
     buttons.forEach(btn => btn.disabled = true);
 
-    // show correct/incorrect message
+    // correct/incorrect feedback
     const resultMsg = document.createElement("p");
     resultMsg.className = "mt-2 fw-bold text-white";
-    if (chosenIndex === q.correct) {
-        resultMsg.innerText = "Oikea vastaus!";
-        points++;
-        console.log("Points:", points);
-    } else {
-        resultMsg.innerText = "Väärä vastaus!";
-    }
+    resultMsg.innerText =
+        chosenIndex === q.correct ? "Oikea vastaus!" : "Väärä vastaus!";
     choicesDiv.appendChild(resultMsg);
 
-    // show current score
+    // score update
+    if (chosenIndex === q.correct) points++;
+
     const scoreMsg = document.createElement("p");
     scoreMsg.className = "mt-2 fw-semibold text-white";
     scoreMsg.innerText = `Sinulla on ${points} pistettä.`;
     choicesDiv.appendChild(scoreMsg);
 
-    // show info text
-    const explanation = document.createElement("p");
-    explanation.className = "answer-info mt-2";
-    explanation.innerHTML = q.info;
-    choicesDiv.appendChild(explanation);
+    localStorage.setItem("game5", points);
+    document.getElementById("scoreDisplay").innerText = `Pisteet: ${points}`;
 
-    document.getElementById("scoreDisplay").innerText = "Pisteet: " + points;
+    const explanation = document.createElement("div");
+    explanation.className = "answer-info mt-3 text-white";
 
-    // save score to localStorage
-   localStorage.setItem('game5', points);
-
-    // update scoreboard on page
-    const scoreDisplay = document.getElementById("scoreDisplay");
-    if (scoreDisplay) {
-        scoreDisplay.innerText = `Pisteet: ${points}`;
+    // split paragraphs by \n\n or \n
+    if (q.info) {
+        q.info.split(/\n+/).forEach(text => {
+            const pElem = document.createElement("p");
+            pElem.innerHTML = text.trim();
+            pElem.style.marginTop = "0.75rem";
+            explanation.appendChild(pElem);
+        });
     }
-    // track answered questions
-    const answeredQuestions = new Set();
-    function handleAnswer(id, chosenIndex) {
-    if (answeredQuestions.has(id)) return; // ignore repeated answers
-    answeredQuestions.add(id);
-}
-}
 
+    // modal image
+    if (q.image) {
+        const img = document.createElement("img");
+        img.src = q.image;
+        img.alt = "";
+        img.className = "img-fluid mt-2 rounded";
+        explanation.appendChild(img);
+    }
+
+    choicesDiv.appendChild(explanation);
+}
