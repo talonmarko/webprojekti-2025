@@ -505,6 +505,5 @@ function pointCalculator() {
 // https://www.youtube.com/watch?v=ckjRsPaWHX8
 // https://www.youtube.com/watch?v=MM9FAV_CEkU
 // Web-ohjelmoinnin hirsipuu tehtävä.
-// Tekoälyltä kysytty apua selvittämään koodin toimimattomuutta, kun itse ei ole selvinnyt,
-// sekä apua miten saa tarkistettua myös ääkköset, joita sanoissa on.
+// Tekoälyltä kysytty apua selvittämään koodin toimivuutta, virheiden havaitsemista sekä muita apuja, kuten ääkkösien tarkistaminen.
 // https://fi.wikipedia.org/w/index.php?title=Luettelo_p%C3%A4%C3%A4kaupungeista_v%C3%A4kiluvun_mukaan&veaction=edit&section=1 lista pääkaupungeista
