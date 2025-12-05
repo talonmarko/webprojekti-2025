@@ -77,12 +77,12 @@ canvas {
 
 .map-button {
     position: absolute;
-    color:#000;
+    color:#fff;
     padding: 6px 8px;
     font-size: 14px;
-    border: none;
+    border: solid 1px #000;
     border-radius: 50%;
-    background: #1AFF8C;
+    background: #552E34;  
     cursor: pointer;
     box-shadow: 0 0 5px rgba(0,0,0,0.3);
     transform: translate(-50%, -50%);
@@ -94,10 +94,14 @@ canvas {
     outline-offset: 2px;
     z-index: 1000; 
 }
+.map-button:hover {
+    background-color: #000;
+    color: white;
+}
 
 .modal {
     position: fixed;
-    top: 150; left: 50;
+    inset: 0;
     width: 100%; 
     height: 100%;
     background: rgba(0,0,0,0.5);
@@ -107,12 +111,19 @@ canvas {
 }
 
 .modal-content {
+    flex-shrink: 0;          
+    width: 90%;
+    max-width: 900px;        
     background: #693D40;
     padding: 20px;
-    width: 700px;
     border-radius: 8px;
-    text-align: center;
     color: white;
+    text-align: center;
+}
+
+#quizModal .modal-dialog {
+    max-width: 900px;   
+    width: 90%;         
 }
 
 .btn-primary {
@@ -176,10 +187,6 @@ button:focus,
 }
 
 @media (max-width: 768px) {
-    .map-button {
-        font-size: 12px;
-        padding: 4px 6px;
-    }
     .quiz-container {
         flex-direction: column;
         align-items: center;
@@ -190,11 +197,6 @@ button:focus,
         overflow-y: hidden;
         -webkit-overflow-scrolling: touch;
         padding: 0;             
-    }
-
-    .map-wrapper img {
-        width: 1200px;           
-        max-width: none;         
     }
 }
 }
@@ -209,10 +211,6 @@ button:focus,
         font-size: 13px;
     }
 
-    .map-button {
-        font-size: 10px !important;
-        padding: 3px 5px !important;
-    }
 }
 
 @media (max-width: 360px) {
@@ -223,5 +221,16 @@ button:focus,
 
     .info-box p {
         font-size: 13px;
+    }
+}
+@media (min-width: 1200px) {  
+    .modal-content {
+        max-width: 800px;
+    }
+}
+
+@media (min-width: 1600px) {
+    .modal-content {
+        max-width: 1000px;
     }
 }
