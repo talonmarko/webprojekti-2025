@@ -15,9 +15,10 @@ canvas {
     background:transparent;
 }
 
-.hidden { display: none; }
-.correct { background-color: green; }
-.incorrect { background-color: red; }
+.fw bold {
+    font-weight: 800px;
+    color: #fff;
+}
 
 .quiz-container {
     display: flex;

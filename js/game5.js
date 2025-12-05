@@ -1,9 +1,7 @@
-// for scoreboard
-let points = 0; 
+points = Number(localStorage.getItem('game5Score')) || 0;
+document.getElementById("scoreDisplay").innerText = `Pisteet: ${points}`;
 
-
-// modal quiz functionality
-
+// questions
 
     const questions = {
         1: {
@@ -131,16 +129,19 @@ function openQuestion(id) {
     modal.show();
 }
 
+const answeredQuestions = new Set();
+
 function handleAnswer(id, chosenIndex) {
     const q = questions[id];
     const choicesDiv = document.getElementById("choices");
 
     // Remove/hide all answer buttons
-    choicesDiv.innerHTML = "";
+    const buttons = choicesDiv.querySelectorAll("button");
+    buttons.forEach(btn => btn.disabled = true);
 
     // show correct/incorrect message
     const resultMsg = document.createElement("p");
-    resultMsg.className = "fw-bold";
+    resultMsg.className = "mt-2 fw-bold text-white";
     if (chosenIndex === q.correct) {
         resultMsg.innerText = "Oikea vastaus!";
         points++;
@@ -150,12 +151,33 @@ function handleAnswer(id, chosenIndex) {
     }
     choicesDiv.appendChild(resultMsg);
 
+    // show current score
+    const scoreMsg = document.createElement("p");
+    scoreMsg.className = "mt-2 fw-semibold text-white";
+    scoreMsg.innerText = `Sinulla on ${points} pistettä.`;
+    choicesDiv.appendChild(scoreMsg);
+
     // show info text
     const explanation = document.createElement("p");
     explanation.className = "answer-info mt-2";
     explanation.innerHTML = q.info;
     choicesDiv.appendChild(explanation);
 
+    document.getElementById("scoreDisplay").innerText = "Pisteet: " + points;
 
-    // localStorage.setItem('game5', (Number(localStorage.getItem('game5')) || 0) + points);
+    // save score to localStorage
+   localStorage.setItem('game5', points);
+
+    // update scoreboard on page
+    const scoreDisplay = document.getElementById("scoreDisplay");
+    if (scoreDisplay) {
+        scoreDisplay.innerText = `Pisteet: ${points}`;
+    }
+    // track answered questions
+    const answeredQuestions = new Set();
+    function handleAnswer(id, chosenIndex) {
+    if (answeredQuestions.has(id)) return; // ignore repeated answers
+    answeredQuestions.add(id);
 }
+}
+
