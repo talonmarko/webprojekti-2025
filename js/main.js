@@ -49,7 +49,7 @@ const showAvatarImg = () => {
         avatar.style.backgroundColor = avatarBgColor
     }
 }
-
+//Aktiivisen sivun korostaminen
 const activePage = () => {
     const currPage = location.pathname.split("/").pop();
     
