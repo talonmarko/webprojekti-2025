@@ -42,7 +42,68 @@ let points = 0;
             correct: 1,
             info: "Timbuktu on historiallinen kaupunki Malissa, joka sijaitsee Saharan autiomaassa. Se oli merkittävä kaupan ja tieteen keskus erityisesti 1400- ja 1500-luvuilla. UNESCO on julistanut Timbuktun maailmanperintökohteeksi vuonna 1988. Sen kirjoituksia ja historiallisia rakennuksia pyritään suojelemaan. Tänä päivänä Malin valtio on sotilaallisessa kriisissä, mikä uhkaa myös Timbuktun kulttuurillista perintöä. (Atlas Guide 2025.)"
 
+        },
+        7: {
+            question: "Montako virallista kieltä on Zimbabwen valtiolla?",
+            answers: ["4", "9", "16", "21"],
+            correct: 2,
+            info: "Zimbabwe on kielellisesti ja etnisesti monimuotoinen valtio, jolla on 16 virallista kieltä. Virallisia kieliä ovat englanti, shona, ndebele, chewa, chibarwe, kalanga, koisan, nambya, ndau, shangani, sotho, tonga, tswana, venda, xhosa sekä viittomakieli. (Original Travel 2025.)" 
+        },
+        8: {
+            question: "Mikä näistä kuuluisista maamerkeistä sijaitsee Etelä-Afrikan valtiossa?",
+            answers: ["Pöytävuori", "Victorian putoukset", "Kilimanjaro", "Bwindin kansallispuisto"],
+            correct: 0,
+            info: "Pöytävuori on kuuluisa hiekkakivivuori Etelä-Afrikan Kapkaupungin lähellä. Se on tunnettu täysin litteästä huipustaan, joka kohoaa 1 087 metrin korkeuteen äkkijyrkillä rinteillä. (Tiedonportailla.fi 2025a.) Victorian putoukset ovat kuuluisa vesiputous, joka sijaitsee Sambian ja Zimbabwen rajalla. Kilimanjaro on Afrikan korkein vuori, joka kohoaa 5895 metrin korkeuteen Tansaniassa. Bwindin kansallispuisto puolestaan sijaitsee Ugandassa. Se on luonnonpuisto, joka on kuuluisa sademetsästään.  (Tourcompass 2019.)" 
+        },
+        9: {
+            question: "Mikä on Venäjän väkiluku?",
+            answers: ["Reilu 132,2 miljoonaa", "Reilu 143,6 miljoonaa", "Reilu 167,1 miljoonaa", "Reilu 190,8 miljoonaa"],
+            correct: 1,
+            info: "Worldometerin koosteen mukaan Venäjän väkiluku on arviolta noin 143 655 000 asukasta vuoden 2025 marraskuussa. Venäjän väkiluku on ollut laskussa vuodesta 1994, jolloin maassa asui 149 miljoonaa ihmistä. Tämän laskusuhdanteen arvioidaan jatkuvan seuraavien vuosien ajan. (Worldometer 2025.) Venäjällä on vuosikymmeniä ollut matala syntyvyys, joka ei yllä korkean kuolleisuuden tasolle. Newsweek-lehden mukaan venäläisten kuolleisuus on myös lisääntynyt merkittävästi sen jälkeen, kun Venäjä aloitti hyökkäyssodan Ukrainaa vastaan vuoden 2022 helmikuussa. (Cole, 2024.)"
+        },
+        10: {
+            question: "Mikä merkittävä vuorenhuippu sijaitsee Nepalin ja Tiibetin rajalla?",
+            answers: ["Mount Everest", "K2", "Fuji", "Aconcagua"],
+            correct: 0,
+            info: "Maailman korkein vuorenhuippu Mount Everest sijoittuu Nepalin ja Tiibetin rajalle. Korkeutta sillä on arvioitu olevan 8 848 metriä. Mount Everest kuuluu merkittävään Himalajan vuoristoon, josta löytyy myös muita maailman korkeimpiin lukeutuvia vuorenhuippuja (mm. Kangchenjunga, Lhotse ja Makalu).  Mount Everest tuo alueelle joka vuosi satoja ulkomaalaisia vuorikiipeilijöitä. Vuonna 2023 Everestille kiipeämisen hinta oli yli 30 000 euroa kiipeilijää kohden. Ikävä kyllä vuorikiipeily on tuonut mukanaan myös ympäristöongelmia, sillä vuosien varrella kiipeilijät ovat jättäneet jälkeensä tonneittain erilaista jätettä. (Globalis 2023a."
+        },
+        11: {
+            question: "Mikä näistä on merkittävin uskonto Intiassa?",
+            answers: ["Islam", "Buddhalaisuus", "Sikhiläisyys", "Hindulaisuus"],
+            correct: 3,
+            info: "Intia on etnisiltä ryhmiltään sekä uskonnoiltaan monimuotoinen maa. Noin 80% maan väestöstä on hindulaisia. Valtiossa on lisäksi myös merkittävä määrä muslimeita (14% väestöstä) sekä muita pienempiä ryhmiä, kuten kristittyjä, sikhiläisiä, buddhalaisia ja jainalaisia.  Hindulaisuus vaikuttaa merkittävästi Intian kulttuuriin sekä perinteisiin. (Globalis 2023b.)"
+        },
+        12: {
+            question: "Kuvassa näkyvä alue tunnetaan nimellä Tyynenmeren tulirengas (Pacific Ring of Fire). Mistä tämä nimitys johtuu?",
+            answers: ["Alueella on tukalan kuuma trooppinen ilmasto.", "Alueella on runsaasti tulivuoria ja maanjäristyksiä.", "Alueella esiintyy usein valtavia metsäpaloja.", "Alueella kulkee lämmin merivirta, joka lämmittää vyöhykkeen ilmastoa."],
+            correct: 1,
+            info: "Alueelle tyypillistä on vulkaaninen eli tulivuorellinen toiminta sekä tektoninen eli litosfäärilaattojen liikettä kuvaava toiminta. Vyöhykkeellä sijaitsee 75% maapallon kaikista tulivuorista ja sinne sijoittuu jopa 90% maapallon kaikista maanjäristyksistä. Vyöhyke on hevosenkengän muotoinen ja 40 000 kilometriä pitkä. Alueella sijaitsevia valtioita ovat muun muassa Japani, Filippiinit, Uusi-Seelanti sekä Chile. (National Geographic 2019.)"
+        },
+        13: {
+            question: "Mikä näistä on tunnettu vesiputous Kanadassa?",
+            answers: ["Iguassun putoukset", "Angelinputous", "Yosemiten putoukset", "Niagaran putoukset"],
+            correct: 3,
+            info: "Niagaran putoukset on kolmiosainen vesiputous, joka sijaitsee Niagarajoessa Eriejärven ja Ontariojärven välissä. Kummallakin puolen jokea putousten kohdalla sijaitsee kaksi erillistä Niagara Falls -nimistä kaupunkia. Kaupunkien välille on rakennettu kaksi siltaa. Niagaran putoukset ovat myös kuuluisa nähtävyys: niitä ihailee vuosittain noin kaksitoista miljoonaa ihmistä. (Tiedonportailla.fi 2025b.)"
+        },
+        14: {
+            question: "Montako osavaltiota Yhdysvalloissa on? ",
+            answers: ["52", "51", "50", "49"],
+            correct: 2,
+            info: "Yhdysvallat on liittovaltio, joka koostuu 50 osavaltiosta. Jokaisella osavaltiolla on oma hallituksensa, lainsäädäntönsä ja erityispiirteensä. Yhdysvaltojen eri osavaltioiden välillä onkin valtavasti kulttuurillisia ja maantieteellisiä eroja. Yhdysvaltojen lipun valkoiset tähdet symboloivat osavaltioita: niitä on lipussa myös 50. (Nieminen, Löyttyniemi & Lehtola, 2024.) Bonus: osaatko kaikki osavaltiot? Tee Ylen testi <a href='https://yle.fi/a/74-20085924' target='_blank' style='color: #1AFF8C; text-decoration: underline;'>täällä</a>!"
+        },
+        15: {
+            question: "Perussa sijaitsee maailmankuulu muinainen vuoristokaupunki, joka kuuluu inkojen historiaan. Mikä sen nimi on?",
+            answers: ["Mesa Verde", "Chichen Itza", "Machu Picchu", "Teotihuacan"],
+            correct: 2,
+            info: "Machu Picchu on ketšuan kieltä ja tarkoittaa “vanhaa vuorta” tai “vanhaa huippua”. Kaupunki sijoittuu 2430 metrin korkeuteen Andien rinteelle lähelle inkavaltakunnan pääkaupunkia. Machu Picchu on nykyisin Perun suosituin turistikohde sekä yksi koko Etelä-Amerikan tärkeimmistä arkeologisista keskuksista. Vuonna 1983 Unesco lisäsi sen maailmanperintökohteeksi. Se kuuluu myös NewOpenWorld Corporationin uusiin maailman seitsemään ihmeeseen. (Unesco World Heritage Centre 2025.)"
+        },
+        16: {
+         question: "Brasilian merkittävin elinkeino on maa- ja metsätalous. Mikä näistä Brasilian maatalouteen liittyvistä väitteistä ei pidä paikkaansa?",
+            answers: ["Maatalous on jakautunut tasaisesti ympäri valtiota ja valtaosa maatiloista on suurtiloja.", "Brasilian valtiontuki maataloudelle sekä laaja maataloustutkimus on edesauttanut maatalouden kasvua ja kehitystä.", "Brasilia on maailman suurin kahvin ja sokerin tuottaja ja viejä.", "Brasilialla on maailman suurimmat makean veden varannot, mikä edesauttaa maataloutta."],
+            correct: 0,
+            info: "Brasilia on maailman suurin kahvin, sokerin ja appelsiinimehun tuottaja ja viejä sekä maailman toiseksi suurin soijapapujen viejä. Brasiliassa merkittävää on myös karjatalous. 2000-luvulta lähtien valtion maatalouskeskittymä on sijoittunut maan keskiosiin trooppiseen savannialue cerradoon. Brasilian maatalous on hyvin keskittynyttä, sillä vain pieni osa valtion maatiloista tuottaa valtaosan maan maataloustuloista. Enemmistö maatiloista on pienviljelytiloja. (Ulkoministeriö 2016.)"
         }
+
     };
 
 
@@ -92,7 +153,7 @@ function handleAnswer(id, chosenIndex) {
     // show info text
     const explanation = document.createElement("p");
     explanation.className = "answer-info mt-2";
-    explanation.innerText = q.info || "No additional info.";
+    explanation.innerHTML = q.info;
     choicesDiv.appendChild(explanation);
 
 
