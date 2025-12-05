@@ -294,7 +294,8 @@ button {
 .info-maker-text {
   background-color: #693D40;
   padding: 1em;
-  margin: 0.5em;
+  margin: 1em 1em 1em 2em;
+  
 }
 
 .info-maker-text>h1 {
