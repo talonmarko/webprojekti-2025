@@ -1,4 +1,4 @@
-points = Number(localStorage.getItem('game5Score')) || 0;
+points = Number(localStorage.getItem('game5')) || 0;
 document.getElementById("scoreDisplay").innerText = `Pisteet: ${points}`;
 
 // questions
@@ -142,9 +142,18 @@ function handleAnswer(id, chosenIndex) {
 
     // disable all buttons
     const buttons = choicesDiv.querySelectorAll("button");
-    buttons.forEach(btn => btn.disabled = true);
 
-    // correct/incorrect feedback
+    buttons.forEach((btn, index) => {btn.disabled = true; btn.classList.remove("btn-primary");
+
+     // answer feedback
+        if (index === q.correct) {
+            btn.classList.add("answer-correct");   
+        }
+        if (index === chosenIndex && chosenIndex !== q.correct) {
+            btn.classList.add("answer-wrong");     
+        }
+    });
+
     const resultMsg = document.createElement("p");
     resultMsg.className = "mt-2 fw-bold text-white";
     resultMsg.innerText =

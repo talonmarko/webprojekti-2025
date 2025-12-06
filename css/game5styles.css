@@ -73,6 +73,13 @@ canvas {
     display: inline-block;
 }
 
+#questionTitle {
+    font-size: 1.5rem;
+    color: white;
+    font-weight: bold;
+    text-shadow: 0 0 4px rgba(0,0,0,0.3);
+}
+
 .map-button {
     position: absolute;
     color:#fff;
@@ -97,7 +104,7 @@ canvas {
     color: white;
 }
 
-.modal {
+.custom-modal {
     position: fixed;
     inset: 0;
     width: 100%; 
@@ -137,27 +144,38 @@ canvas {
     color: #fff;
 }
 
-.btn-primary:active,
-.btn-primary:focus {
-    background-color: #552E34 !important;
-    border-color: #552E34 !important;
-    box-shadow: none !important;
+.btn:disabled,
+.btn.disabled {
+  opacity: 0.9;             
+  color: #ddd;
+  border-color: currentColor;
+  background-color: transparent; 
 }
+
+.btn.answer-correct[disabled] {
+  background:#1AFF8C !important;
+  border-color:#1AFF8C !important;
+  color:black !important; }
+
+.btn.answer-wrong[disabled] {
+  background:#ff4d4d !important;
+  border-color:#ff4d4d !important;
+  color:white !important; }
 
 button:focus,
 .btn:focus {
-    box-shadow: none !important;
+  box-shadow: none !important;
 }
 
 .answer-info {
-    background-color: #693D40;   
-    color: #fff;
-    padding: 15px;
-    margin-top: 18px;
-    border-radius: 10px;
-    border: 2px solid #1AFF8C;
-    line-height: 1.4;
-    font-size: 1rem;
+  background-color: #693D40;   
+  color: #fff;
+  padding: 15px;
+  margin-top: 18px;
+  border-radius: 10px;
+  border: 2px solid #1AFF8C;
+  line-height: 1.4;
+ font-size: 1rem;
 }
 
 
@@ -205,11 +223,15 @@ button:focus,
 
 @media (max-width: 480px) {
     .info-box h1 {
-        font-size: 16px;
+     font-size: 16px;
     }
 
     .info-box p {
-        font-size: 13px;
+     font-size: 13px;
+    }
+    #questionTitle {
+     font-size: 1.1rem;   
+     line-height: 1.2;    
     }
 
 }
@@ -217,21 +239,21 @@ button:focus,
 @media (max-width: 360px) {
     .info-box,
     .map-wrapper {
-        padding: 10px;
+     padding: 10px;
     }
 
     .info-box p {
-        font-size: 13px;
+     font-size: 13px;
     }
 }
 @media (min-width: 1200px) {  
     .modal-content {
-        max-width: 800px;
+     max-width: 800px;
     }
 }
 
 @media (min-width: 1600px) {
     .modal-content {
-        max-width: 1000px;
+     max-width: 1000px;
     }
 }
