@@ -20,13 +20,13 @@ document.getElementById("scoreDisplay").innerText = `Pisteet: ${points}`;
             question: "Mistä tunnetusta maamerkistä löytyy alkuperäinen Mona Lisa -teos?",
             answers: ["Louvre", "Notre-Dame", "Versaillesin palatsi", "Palais Idéal"],
             correct: 0,
-            info: "Louvre on tunnettu taidemuseo Ranskassa. Se on yksi maailman vanhimpia museoita ja pinta-alaltaan maailman kolmanneksi suurin. Museon tunnetuimpiin teoksiin kuuluvat muun muassa maailman kalleimmaksi maalaukseksi arvioitu Leonardo da Vincin Mona Lisa, Raphaëlin Kaunis puutarhuri (Belle Jardinière), Véronèsen Kaanaan häät (Les Noces de Cana) sekä veistokset Milon Venus ja Samothraken Nike. (Airaksinen & Savolainen 2019.)"
+            info: "Louvre on tunnettu taidemuseo Ranskassa. Se on yksi maailman vanhimpia museoita ja pinta-alaltaan maailman kolmanneksi suurin. Museon tunnetuimpiin teoksiin kuuluvat muun muassa maailman kalleimmaksi maalaukseksi arvioitu <b>Leonardo da Vincin</b> <i>Mona Lisa</i>, <b>Raphaëlin</b> <i>Kaunis puutarhuri (Belle Jardinière)</i>, <b>Véronèsen</b> <i>Kaanaan häät (Les Noces de Cana)</i> sekä veistokset <i>Milon Venus</i> ja <i>Samothraken Nike.</i> (Airaksinen & Savolainen 2019.)"
         },
         4: {
             question: "Mikä saari? Tällä Välimeren saarella aurinko paistaa läpi vuoden. Siellä on roomalaisia raunioita, bysanttilaisia linnoituksia, mosaiikkeja, Afroditen patsaita ja keskiaikaisia kirkkoja. Turistit asuvat usein esimerkiksi Ayia Napassa tai Larnacassa.",
             answers: ["Rodos", "Kreeta", "Sardinia", "Kypros"],
             correct: 3,
-            info: "Kypros on suosittu matkakohde, joka tarjoaa turisteille sekä aurinkoista säätä että kulttuurillisia elämyksiä. Saaren historiaan ja kulttuuriin ovat vaikuttaneet helleenien, foinikialaisten, roomalaisten, Bysantin ja Osmanian aikakaudet.  Kypros on kuitenkin jakautunut kahtia kreikkalaisen ja turkkilaisen väestön kesken konfliktien seurauksena.  Pohjois-Kyproksen turkkilaiseksi tasavallaksi kutsuttu Turkin miehittämä alue perustettiin vuonna 1983, mutta sitä ei ole tunnustanut yksikään valtio Turkin lisäksi. Kahta kolmasosaa saaresta hallitseva Kyproksen tasavalta liittyi EU:n jäseneksi vuonna 2004. Kyproksen konflikti on yksi syistä, jonka takia Turkki ei edelleenkään ole EU:n jäsen. (Luikku 2023.)"
+            info: "Kypros on suosittu matkakohde, joka tarjoaa turisteille sekä aurinkoista säätä että kulttuurillisia elämyksiä. Saaren historiaan ja kulttuuriin ovat vaikuttaneet helleenien, foinikialaisten, roomalaisten, Bysantin ja Osmanian aikakaudet. \n\n Kypros on kuitenkin jakautunut kahtia kreikkalaisen ja turkkilaisen väestön kesken konfliktien seurauksena.  Pohjois-Kyproksen turkkilaiseksi tasavallaksi kutsuttu Turkin miehittämä alue perustettiin vuonna 1983, mutta sitä ei ole tunnustanut yksikään valtio Turkin lisäksi. Kahta kolmasosaa saaresta hallitseva Kyproksen tasavalta liittyi EU:n jäseneksi vuonna 2004. (Luikku 2023.)"
         },
         5: {
             question: "Kuinka monta prosenttia egyptiläisistä asuu Nillin suistoalueella?",
@@ -51,7 +51,7 @@ document.getElementById("scoreDisplay").innerText = `Pisteet: ${points}`;
             question: "Mikä näistä kuuluisista maamerkeistä sijaitsee Etelä-Afrikan valtiossa?",
             answers: ["Pöytävuori", "Victorian putoukset", "Kilimanjaro", "Bwindin kansallispuisto"],
             correct: 0,
-            info: "Pöytävuori on kuuluisa hiekkakivivuori Etelä-Afrikan Kapkaupungin lähellä. Se on tunnettu täysin litteästä huipustaan, joka kohoaa 1 087 metrin korkeuteen äkkijyrkillä rinteillä. (Tiedonportailla.fi 2025a.) Victorian putoukset ovat kuuluisa vesiputous, joka sijaitsee Sambian ja Zimbabwen rajalla. Kilimanjaro on Afrikan korkein vuori, joka kohoaa 5895 metrin korkeuteen Tansaniassa. Bwindin kansallispuisto puolestaan sijaitsee Ugandassa. Se on luonnonpuisto, joka on kuuluisa sademetsästään.  (Tourcompass 2019.)" 
+            info: "Pöytävuori on kuuluisa hiekkakivivuori Etelä-Afrikan Kapkaupungin lähellä. Se on tunnettu täysin litteästä huipustaan, joka kohoaa 1 087 metrin korkeuteen äkkijyrkillä rinteillä. (Tiedonportailla.fi 2025a.) \n\n\ Victorian putoukset ovat kuuluisa vesiputous, joka sijaitsee Sambian ja Zimbabwen rajalla. Kilimanjaro on Afrikan korkein vuori, joka kohoaa 5 895 metrin korkeuteen Tansaniassa. Bwindin kansallispuisto puolestaan sijaitsee Ugandassa. Se on luonnonpuisto, joka on kuuluisa sademetsästään.  (Tourcompass 2019.)" 
         },
         9: {
             question: "Mikä on Venäjän väkiluku?",
@@ -63,7 +63,7 @@ document.getElementById("scoreDisplay").innerText = `Pisteet: ${points}`;
             question: "Mikä merkittävä vuorenhuippu sijaitsee Nepalin ja Tiibetin rajalla?",
             answers: ["Mount Everest", "K2", "Fuji", "Aconcagua"],
             correct: 0,
-            info: "Maailman korkein vuorenhuippu Mount Everest sijoittuu Nepalin ja Tiibetin rajalle. Korkeutta sillä on arvioitu olevan 8 848 metriä. Mount Everest kuuluu merkittävään Himalajan vuoristoon, josta löytyy myös muita maailman korkeimpiin lukeutuvia vuorenhuippuja (mm. Kangchenjunga, Lhotse ja Makalu).  Mount Everest tuo alueelle joka vuosi satoja ulkomaalaisia vuorikiipeilijöitä. Vuonna 2023 Everestille kiipeämisen hinta oli yli 30 000 euroa kiipeilijää kohden. Ikävä kyllä vuorikiipeily on tuonut mukanaan myös ympäristöongelmia, sillä vuosien varrella kiipeilijät ovat jättäneet jälkeensä tonneittain erilaista jätettä. (Globalis 2023a."
+            info: "Maailman korkein vuorenhuippu Mount Everest sijoittuu Nepalin ja Tiibetin rajalle. Korkeutta sillä on arvioitu olevan 8 848 metriä. Mount Everest kuuluu Himalajan vuoristoon. Mount Everest tuo alueelle joka vuosi satoja ulkomaalaisia vuorikiipeilijöitä. Vuorikiipeily on tuonut mukanaan myös ympäristöongelmia, sillä vuosien varrella kiipeilijät ovat jättäneet jälkeensä tonneittain erilaista jätettä. (Globalis 2023a.)"
         },
         11: {
             question: "Mikä näistä on merkittävin uskonto Intiassa?",
@@ -75,7 +75,9 @@ document.getElementById("scoreDisplay").innerText = `Pisteet: ${points}`;
             question: "Kuvassa näkyvä alue tunnetaan nimellä Tyynenmeren tulirengas (Pacific Ring of Fire). Mistä tämä nimitys johtuu?",
             answers: ["Alueella on tukalan kuuma trooppinen ilmasto.", "Alueella on runsaasti tulivuoria ja maanjäristyksiä.", "Alueella esiintyy usein valtavia metsäpaloja.", "Alueella kulkee lämmin merivirta, joka lämmittää vyöhykkeen ilmastoa."],
             correct: 1,
-            info: "Alueelle tyypillistä on vulkaaninen eli tulivuorellinen toiminta sekä tektoninen eli litosfäärilaattojen liikettä kuvaava toiminta. Vyöhykkeellä sijaitsee 75% maapallon kaikista tulivuorista ja sinne sijoittuu jopa 90% maapallon kaikista maanjäristyksistä. Vyöhyke on hevosenkengän muotoinen ja 40 000 kilometriä pitkä. Alueella sijaitsevia valtioita ovat muun muassa Japani, Filippiinit, Uusi-Seelanti sekä Chile. (National Geographic 2019.)"
+            info: "Alueelle tyypillistä on vulkaaninen eli tulivuorellinen toiminta sekä tektoninen eli litosfäärilaattojen liikettä kuvaava toiminta. Vyöhykkeellä sijaitsee 75% maapallon kaikista tulivuorista ja sinne sijoittuu jopa 90% maapallon kaikista maanjäristyksistä. Vyöhyke on hevosenkengän muotoinen ja 40 000 kilometriä pitkä. Alueella sijaitsevia valtioita ovat muun muassa Japani, Filippiinit, Uusi-Seelanti sekä Chile. (National Geographic 2019.)",
+            image: "./img/ringoffire.png"
+            
         },
         13: {
             question: "Mikä näistä on tunnettu vesiputous Kanadassa?",
@@ -117,13 +119,20 @@ function openQuestion(id) {
     const choicesDiv = document.getElementById("choices");
     choicesDiv.innerHTML = "";
 
+    // modal image
+    if (q.image) {
+        const img = document.createElement("img");
+        img.src = q.image;
+        img.alt = "";
+        img.className = "img-fluid mt-2 rounded";
+        choicesDiv.appendChild(img);
+    }
+
     q.answers.forEach((answerText, index) => {
         const btn = document.createElement("button");
         btn.className = "btn btn-primary w-100 my-2";
         btn.innerText = answerText;
-
         btn.onclick = () => handleAnswer(id, index);
-
         choicesDiv.appendChild(btn);
     });
 
@@ -136,11 +145,10 @@ function handleAnswer(id, chosenIndex) {
     const q = questions[id];
     const choicesDiv = document.getElementById("choices");
 
-    // prevent double answering
+    
     if (answeredQuestions.has(id)) return;
     answeredQuestions.add(id);
 
-    // disable all buttons
     const buttons = choicesDiv.querySelectorAll("button");
 
     buttons.forEach((btn, index) => {btn.disabled = true; btn.classList.remove("btn-primary");
@@ -184,14 +192,18 @@ function handleAnswer(id, chosenIndex) {
         });
     }
 
-    // modal image
-    if (q.image) {
-        const img = document.createElement("img");
-        img.src = q.image;
-        img.alt = "";
-        img.className = "img-fluid mt-2 rounded";
-        explanation.appendChild(img);
-    }
-
     choicesDiv.appendChild(explanation);
+}
+
+function resetQuiz() {
+    answeredQuestions.clear();
+    points = 0;
+    localStorage.setItem("game5", points);
+    document.getElementById("scoreDisplay").innerText = `Pisteet: ${points}`;
+
+        
+    // close modal if open
+    const modalElement = document.getElementById("quizModal");
+    const modal = bootstrap.Modal.getInstance(modalElement);
+    if (modal) modal.hide();
 }

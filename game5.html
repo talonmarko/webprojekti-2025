@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Game5 — Test Placeholder</title>
+    <title>Peli 5 — Maantiedon nippelitietovisa</title>
 
     <!-- Tailwind -->
    <script src="https://cdn.tailwindcss.com"></script>
@@ -125,9 +125,10 @@
      <!-- info panel -->
      <div class="info-box">
         <h1>Maantiedon nippelitietovisa</h1>
-        <p>Tunnetko eri valtioiden maamerkit? Entä minkälaisia ovat kulttuuri ja ihmiset eri puolella maailmaa? Tässä nippelitietovisassa voit testata taitosi ja oppia uutta!</p>
-        <p style="margin-top:12px;">Paina kartalla näkyviä numeroita päästäksesi kysymyksiin. Vastattuasi kysymykseen opit hieman lisää aiheesta.</p>
-        <p style="margin-top:25px;" id="scoreDisplay">Pisteet: 0</p>
+        <p style="margin-top:1rem;">Tunnetko eri valtioiden maamerkit? Entä minkälaisia ovat kulttuuri ja ihmiset eri puolella maailmaa? Tässä nippelitietovisassa voit testata taitosi ja oppia uutta!</p>
+        <p style="margin-top:1.5rem;">Paina kartalla näkyviä numeroita päästäksesi kysymyksiin. Voit vastata kysymyksiin uudelleen painamalla alla olevaa nappia.</p>
+        <p style="margin-top:1.5rem; font-weight:bold;" id="scoreDisplay">Pisteet: 0</p>
+        <button type="button" class="btn btn-secondary" style="margin-top: 1.5rem;" onclick="resetQuiz()">Pelaa uudestaan</button>
     </div>
 
      <!-- map -->
