@@ -49,6 +49,44 @@ const showAvatarImg = () => {
         avatar.style.backgroundColor = avatarBgColor
     }
 }
+//Aktiivisen sivun korostaminen
+const activePage = () => {
+    const currPage = location.pathname.split("/").pop();
+    
+    document.querySelectorAll("nav a").forEach(page => {
+    const href = page.getAttribute("href").replace("./", "");
+    if (currPage === "index.html" && href === "index.html") {
+        return
+    }else {
+        if (href === currPage) {
+            page.classList.add (
+               "border-2", "border-[#1AFF8C]", "hover:bg-black", "hover:text-white"
+            )
+        }
+    }})
+    
+}
+
+//Hampurilaisvalikon avaaminen ja sulkeminen
+
+const hamburgerMenu = () => {
+    const hamButton = document.getElementById("hamburger-button")
+    const hamMenu = document.getElementById("hamburger-menu")
+
+    hamButton.addEventListener("click", () => {
+        hamMenu.classList.toggle("hidden")
+    })
+
+    window.addEventListener("resize", () => {
+        if(window.innerWidth >= 1090) {
+            hamMenu.classList.add("hidden")
+        }
+    })
+}
+
+hamburgerMenu()
+
+activePage()
 
 showAvatarImg()
 

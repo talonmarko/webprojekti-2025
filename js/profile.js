@@ -238,80 +238,39 @@ const forgetUser = () => {
 forgetUser()
 checkForUsernameAtProfile()
 
+//Hampurilaisvalikon avaaminen ja sulkeminen
+
+const hamburgerMenu = () => {
+    const hamButton = document.getElementById("hamburger-button")
+    const hamMenu = document.getElementById("hamburger-menu")
+
+    hamButton.addEventListener("click", () => {
+        if (hamMenu.classList.contains("hidden")) {
+            hamMenu.classList.remove("hidden")
+        } else {
+            hamMenu.classList.add("hidden")
+        }
+        
+    })
+}
+
+hamburgerMenu()
+
 // SCOREBOARD
-const GAME_KEYS = ["game1", "game2", "game3", "game4", "game5"];
+let game1 = Number(localStorage.getItem('game1')) || 0;
+let game2 = Number(localStorage.getItem('game2')) || 0;
+let game3 = Number(localStorage.getItem('game3')) || 0;
+let game4 = Number(localStorage.getItem('game4')) || 0;
+let game5 = Number(localStorage.getItem('game5')) || 0;
 
-function parseScoresSafe() {
-    try {
-        const raw = localStorage.getItem("scores");
-        if (!raw) return null;
-        const parsed = JSON.parse(raw);
+let total = game1 + game2 + game3 + game4 + game5;
 
-        if (typeof parsed !== "object" || parsed === null) return null;
+document.querySelector('#score-game1').textContent = game1;
+document.querySelector('#score-game2').textContent = game2;
+document.querySelector('#score-game3').textContent = game3;
+document.querySelector('#score-game4').textContent = game4;
+document.querySelector('#score-game5').textContent = game5;
 
-        const out = {};
-        GAME_KEYS.forEach(k => out[k] = Number(parsed[k] || 0));
-        out.total = Number(parsed.total ?? GAME_KEYS.reduce((sum, k) => sum + out[k], 0));
-        return out;
-    } catch {
-        console.warn("Invalid scores in localStorage");
-        return null;
-    }
-}
+document.querySelector('#score-total').textContent = total;
 
-function initScoreboard() {
-    if (!localStorage.getItem("scores")) {
-        const defaultScores = Object.fromEntries(GAME_KEYS.map(k => [k, 0]));
-        defaultScores.total = 0;
-        localStorage.setItem("scores", JSON.stringify(defaultScores));
-    }
-}
 
-function updateTotal(scores) {
-    scores.total = GAME_KEYS.reduce((sum, k) => sum + (scores[k] || 0), 0);
-    localStorage.setItem("scores", JSON.stringify(scores));
-}
-
-function loadScores() {
-    const scoreboard = document.querySelector(".scoreboard");
-    if (!scoreboard) return;
-
-    const scores = parseScoresSafe() || GAME_KEYS.reduce((acc, k) => (acc[k] = 0, acc), { total: 0 });
-
-    const rows = scoreboard.querySelectorAll(".score-row");
-    GAME_KEYS.forEach((key, i) => {
-        const el = rows[i]?.querySelector("span:last-child");
-        if (el) el.textContent = scores[key];
-    });
-
-    const totalEl = scoreboard.querySelector(".score-total span:last-child");
-    if (totalEl) totalEl.textContent = scores.total;
-}
-
-function addPoints(gameNumber, points) {
-    const scores = parseScoresSafe() || Object.fromEntries(GAME_KEYS.map(k => [k, 0]));
-    const key = `game${gameNumber}`;
-    scores[key] = (scores[key] || 0) + Number(points || 0);
-    updateTotal(scores);
-    loadScores();
-}
-
-function runScoreboard() {
-    initScoreboard();
-    loadScores();
-}
-
-if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", () => {
-        runScoreboard();
-    });
-} else {
-    runScoreboard();
-}
-
-// when localstorage changes in another tab!!
-window.addEventListener('storage', e => {
-    if (e.key === 'scores') loadScores();
-});
-
-window.addEventListener('pageshow', runScoreboard);
