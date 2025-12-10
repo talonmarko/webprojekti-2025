@@ -59,17 +59,21 @@
 
     <main>
         <div id="game-container">
+            <div class="game-container-overlay"></div>
             <div id="game-score-container">Pisteet: <span id="game-score">0</span></div>
-            <div id="flags">
-                <div class="game-btn flag">Suomi</div>
-                <div class="game-btn flag">Ruotsi</div>
-                <div class="game-btn flag">Norja</div>
+            <div id="game-buttons">
+                <div id="flags">
+                </div>
+                <div id="country-names">
+                </div>
             </div>
-            <div id="country-names">
-                <div class="game-btn country">Suomi</div>
-                <div class="game-btn country">Ruotsi</div>
-                <div class="game-btn country">Norja</div>
+            <div>
+                <button id="new-game" class="green-btn">Uusi peli</button>
+                <button id="stop-game" class="black-btn">Lopeta peli</button>
             </div>
+        </div>
+        <div id="character-img"><img src="./img/kissa-korissa.png" alt="Kissa korissa"></div>
+
     </main>
 
     <footer class="w-full site-footer">
