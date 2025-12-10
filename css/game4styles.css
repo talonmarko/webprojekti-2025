@@ -144,36 +144,6 @@ main {
     }
 }
 
-@media (max-width: 768px) {
-    #game-container {
-        width: 100%;
-        flex-wrap: wrap;
-    }
-
-    .game-btn {
-        min-width: 0;
-    }
-}
-
-@media (max-width: 480px) {
-    h1 {
-        font-size: 34px !important;
-        max-width: 200px;
-    }
-
-    #game-container {
-        padding: 30px 12px;
-    }
-
-    #game-buttons {
-        gap: 8px;
-    }
-
-    .game-btn {
-        padding: 8px;
-    }
-}
-
 .game-setting-btns {
     display: flex;
     padding: 0 8px;
@@ -243,7 +213,39 @@ main {
     position: absolute;
 }
 
-/* ---------- Animations ---------- */
+/* ---------- Responsiivisuus ---------- */
+
+@media (max-width: 768px) {
+    #game-container {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .game-btn {
+        min-width: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 34px !important;
+        max-width: 200px;
+    }
+
+    #game-container {
+        padding: 30px 12px;
+    }
+
+    #game-buttons {
+        gap: 8px;
+    }
+
+    .game-btn {
+        padding: 8px;
+    }
+}
+
+/* ---------- Animaatiot ---------- */
 
 @keyframes matching {
     0% {
