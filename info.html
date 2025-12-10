@@ -1,79 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Info</title>    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Info</title>
     <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="./css/styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+        rel="stylesheet" />
+    <script src="./js/main.js" defer></script>
 </head>
+
 <body>
-    <header class="flex justify-center p-6 bg-emerald-200 w-full" role="banner">
-        <div class="container">
-            <h1 class="flex justify-center items-center text-4xl">Geovisa</h1>
-            <nav role="navigation" aria-label="Main navigation">
-                <ul class="flex justify-center m-4 px-6 space-x-4 text-2xl">
-                    <li><a href="index.html">Etusivu</a></li>
-                    <li><a href="#">Pelit</a></li>
-                    <li><a href="points.html">Pisteet</a></li>
-                    <li><a href="info.html">Info</a></li>
-                </ul>
-            </nav>
+  <header>
+    <nav class="bg-[#3A1417] border-gray-200 p-4">
+      <div class="flex flex-wrap justify-between items-center max-[590px]:justify-end">
+        <a href="./index.html" class="flex items-center max-[590px]:hidden">
+          <img src="./img/logo.png" class="p-4" alt="Geozone Logo" />
+        </a>
+  
+        <div class="flex items-center order-2">
+          <a href="./points.html">
+            <button class="green-btn">&#9733;
+              Profiili</button></a>
+          <a href="./info.html"
+            class="text-white font-medium rounded-lg text-sm px-5 py-2.5 mx-2 hover:bg-[#1AFF8C] hover:text-black">Info</a>
+  
+          <!-- Hampurilaisvalikko -->
+          <div class="flex xl:hidden relative">
+            <button id="hamburger-button">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+              </svg>
+            </button>
+            <ul id="hamburger-menu"
+              class="hidden absolute top-full right-0 w-max z-50 bg-[#3A1417] border-2 border-[#693D40] rounded shadow-lg flex-col font-medium p-4 font-[]">
+              <li>
+                <a href="./game1.html"
+                  class="info-main block p-2 text-white rounded bg-transparent hover:bg-[#1AFF8C] hover:text-black">Peli 1</a>
+              </li>
+              <li>
+                <a href="./game2.html"
+                  class="info-main block p-2 text-white rounded bg-transparent hover:bg-[#1AFF8C] hover:text-black">Peli 2</a>
+              </li>
+              <li>
+                <a href="./game3.html"
+                  class="info-main block p-2 text-white rounded bg-transparent hover:bg-[#1AFF8C] hover:text-black">Peli 3</a>
+              </li>
+              <li>
+                <a href="./game4.html"
+                  class="info-main block p-2 text-white rounded bg-transparent hover:bg-[#1AFF8C] hover:text-black">Peli 4</a>
+              </li>
+              <li>
+                <a href="./game5.html"
+                  class="info-main block p-2 text-white rounded bg-transparent hover:bg-[#1AFF8C] hover:text-black">Peli 5</a>
+              </li>
+            </ul>
+          </div>
+  
         </div>
-    </header>
-    
-    <main class="info-main">
+        <!-- Nav bar -->
+        <div class="hidden justify-between items-center w-full xl:flex xl:w-auto" id="menu">
+          <ul class="flex flex-col mt-4 font-medium p-6 font-[] lg:flex-row space-x-12">
+            <li>
+              <a href="./game1.html"
+                class="info-main block p-6 text-white rounded bg-transparent hover:bg-[#1AFF8C] hover:text-black">Peli 1</a>
+            </li>
+            <li>
+              <a href="./game2.html"
+                class="info-main block p-6 text-white rounded bg-transparent hover:bg-[#1AFF8C] hover:text-black">Peli 2</a>
+            </li>
+            <li>
+              <a href="./game3.html"
+                class="info-main block p-6 text-white rounded bg-transparent hover:bg-[#1AFF8C] hover:text-black">Peli 3</a>
+            </li>
+            <li>
+              <a href="./game4.html"
+                class="info-main block p-6 text-white rounded bg-transparent hover:bg-[#1AFF8C] hover:text-black">Peli 4</a>
+            </li>
+            <li>
+              <a href="./game5.html"
+                class="info-main block p-6 text-white rounded bg-transparent hover:bg-[#1AFF8C] hover:text-black">Peli 5</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+    <main class="info-mainpage mb-12">
         <h1>Tekijät</h1>
-        <!-- Picture boxes -->
-        <div class="info-container-img">
-            <img src="./img/pilrgim-boi.png" alt="pyhiinvaeltaja koira" class="info-img">
-            <img src="./img/peppi-explorer.png" alt="tutkijamatkailija koira" class="info-img">
-            <img src="./img/patonkikisu.png" alt="ranskalainen kissa" class="info-img">
-            <img src="./img/riisihattu-miuku.png" alt="aasialainen kissa" class="info-img">
-            <img src="./img/kannisode-onepiece.png" alt="piirroshahmoinen kissa" class="info-img">
-        </div>
-        <!-- Text boxes -->
-        <div class="info-container-text">
+        <div class="info-card">
+            <img src="./img/pilrgim-boi.png" alt="pyhiinvaeltaja koira" class="info-img" />
             <div class="info-maker-text">
                 <h1>Pelintekijä 1</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae ipsa sequi placeat quas tenetur? 
-                    Voluptate laborum rerum tenetur voluptas facilis modi consequatur dicta, debitis doloribus a porro autem commodi veniam?</p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
+                    ipsa sequi placeat quas tenetur? Voluptate laborum rerum tenetur
+                    voluptas facilis modi consequatur dicta, debitis doloribus a porro
+                    autem commodi veniam?
+                </p>
+                </div>
             </div>
-            <div class="info-maker-text">
-                <h1>Pelintekijä 2</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae ipsa sequi placeat quas tenetur? 
-                    Voluptate laborum rerum tenetur voluptas facilis modi consequatur dicta, debitis doloribus a porro autem commodi veniam?</p>
+            <div class="info-card">
+                <img src="./img/kannisode-onepiece.png" alt="piirroshahmoinen kissa" class="info-img" />
+                <div class="info-maker-text">
+                    <h1>Tuire</h1>
+                    <p>
+                        Moikka! Mä oon Jyväskylässä asuva ja kotoisin oleva tietojenkäsittely opiskelija! Minulla on kaksi kissaa, joiden kuvat pääsivät täällä hyötykäyttöön.
+                        Puuhasin GeoZoneen pelin <b>numero 2</b> <i>(Pääpaikka hukassa!)</i>. Inspiraationa peliin toimi monillekin tuttu Wordle ja siitä suomalainen versio Sanuli. Kädenjälkeäni näkee myös tässä infosivulla sekä 
+                        navikaatiopalkin responsiivisuudessa.
+                    </p>
+                </div>
             </div>
-            <div class="info-maker-text">
-                <h1>Pelintekijä 3</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae ipsa sequi placeat quas tenetur? 
-                    Voluptate laborum rerum tenetur voluptas facilis modi consequatur dicta, debitis doloribus a porro autem commodi veniam?</p>
+            <div class="info-card">
+                <img src="./img/linimentti.png" alt="tutkijamatkailija koira" class="info-img" />
+                <div class="info-maker-text">
+                    <h1>Marko</h1>
+                    <p>
+                        Moikka! Olen Oulussa asuva tietojenkäsittelyn opiskelija. Minulla on koira, jonka voit valita täällä avatariksesi. 
+                        Vastasin GeoZonen pelistä <b>numero 3</b> (<i>"Piilosana"</i>). Inspiraationa peliin toimi ristikot ja sanaristikot, joita olen lapsesta asti tykännyt täytellä.
+                        Vastuualueinani projektissa olivat mm. versionhallinta Githubissa ja pelisivuston ulkoasun suunnittelu Tailwind CSS:llä. 
+                    </p>
+                </div>
             </div>
-            <div class="info-maker-text">
-                <h1>Pelintekijä 4</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae ipsa sequi placeat quas tenetur? 
-                    Voluptate laborum rerum tenetur voluptas facilis modi consequatur dicta, debitis doloribus a porro autem commodi veniam?</p>
+            <div class="info-card">
+                <img src="./img/patonkikisu.png" alt="ranskalainen kissa" class="info-img" />
+                <div class="info-maker-text">
+                    <h1>Sari</h1>
+                    <p>
+                        Moi! Olen oululainen tietojenkäsittelyn opiskelija, jolla on taustalla graafisen suunnittelun osaamista. Tekemässäni pelissä nimeltä <i>"Liput silmillä"</i> (eli GeoZonen peli <b>numero 4</b>) saa arvuutella, minkä maan lippu on minkäkin näköinen. Vastuualueina tässä projektissa minulla oli GeoZonen logon suunnittelu, alustava UI-suunnitelma sekä hahmonimen ja kuvakkeen luomisen funktionaalisuus ja tallennus muistiin.
+                    </p>
+                </div>
             </div>
-            <div class="info-maker-text">
-                <h1>Pelintekijä 5</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae ipsa sequi placeat quas tenetur? 
-                    Voluptate laborum rerum tenetur voluptas facilis modi consequatur dicta, debitis doloribus a porro autem commodi veniam?</p>
+            <div class="info-card">
+                <img src="./img/riisihattu-miuku.png" alt="aasialainen kissa" class="info-img" />
+                <div class="info-maker-text">
+                    <h1>Sonja</h1>
+                    <p>
+                        Oululainen tietojenkäsittelyn opiskelija, jonka koira- ja kissakuvat pääsivät koristamaan tätä sivustoa muun muassa avatarien muodossa. Vastasin GeoZonessa pelistä <b>numero 5</b> (<i>"Maantiedon nippelitietovisa"</i>). Lisäksi vastasin seuraavista osa-alueista: pistetaulukon suunnittelu ja toiminnallisuus, profiili-sivun responsiivisuus ja saavutettavuus sekä projektin dokumentointi.
+                    </p>
+                </div>
             </div>
         </div>
     </main>
-        <footer class="flex justify-center p-6" role="contentinfo" class="site-footer">
-        <div class="container flex justify-center p-6 bg-emerald-200 rounded-lg w-auto">
-            <p>&copy; <span id="year"></span> Ryhmä 1</p>
-        </div>
-    </footer>
+    
+  <footer class="w-full site-footer">
+    <div class="info-main flex items-center justify-between p-6 bg-[#3A1417] w-full text-base max-[370px]:text-sm">
+      <p>&copy; <span class="flex-row justify-center text-center px-4" id="year"></span>Ryhmä 1</p>
+      <a href="index.html">
+        <img src="./img/logo.png" class="flex h-8 md:h-12 max-[370px]:h-5" alt="Geozone Logo" />
+      </a>
+    </div>
+  </footer>
 
-    <script>
-        // Basic script: set current year 
-        document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
+  <script>
+    // Basic script: set current year 
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
+
 </html>
