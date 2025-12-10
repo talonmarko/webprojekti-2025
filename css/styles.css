@@ -42,7 +42,7 @@ button {
 }
 
 .green-btn {
-  padding: 16px 22px;
+  padding: 16px 22px !important;
   background-color: var(--bright-green);
   color: black;
 }
