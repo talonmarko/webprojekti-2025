@@ -159,6 +159,7 @@ const saveAvatarSettings = () => {
         showAvatarImg()
         location.reload()
     })
+    //teeppäs tämä
     // resetAvatarBtn.addEventListener('click')
 }
 
