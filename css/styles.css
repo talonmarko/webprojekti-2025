@@ -42,7 +42,7 @@ button {
 }
 
 .green-btn {
-  padding: 16px 22px !important;
+  padding: 18px 22px !important;
   background-color: var(--bright-green);
   color: black;
 }
@@ -93,9 +93,14 @@ button {
 
 /* ---------- Main page username section ---------- */
 
+#user-details {
+  padding: 0 32px;
+}
+
 #user-creation-container {
   margin-top: 50px;
-  width: 1050px;
+  width: 100%;
+  max-width: 1050px;
   display: flex;
   justify-self: center;
   justify-content: space-between;
@@ -109,6 +114,7 @@ button {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    box-sizing: border-box;
   }
 
   h2 {
@@ -123,6 +129,7 @@ button {
 .img-container-left {
   background-image: url(../img/mountain-and-flag.jpg);
   background-size: cover;
+  background-position: center;
   border-radius: 10px 0px 0px 10px;
 }
 
@@ -155,7 +162,7 @@ button {
   }
 }
 
-@media (max-width: 480px) {
+/* @media (max-width: 480px) {
   .left-padding {
     padding-left: 0 !important;
     display: flex;
@@ -184,7 +191,7 @@ button {
     margin: 0;
     padding: 0;
   }
-}
+} */
 
 #user-info-container {
   margin-top: 2rem;
@@ -192,7 +199,7 @@ button {
   max-width: 1050px;
   display: flex;
   justify-self: center;
-  flex-direction: column;
+  flex-direction: row;
   gap: 1.5rem;
   background-color: var(--lighter-red);
   border-radius: 10px;
@@ -208,30 +215,6 @@ button {
 
   h2 {
     font-size: 28px;
-  }
-}
-
-@media (min-width: 768px) {
-  #user-info-container {
-    flex-direction: row;
-    padding: 2rem;
-  }
-}
-
-@media (max-width: 768px) {
-  #user-info-container>div:first-child {
-    width: 100% !important;
-    display: flex;
-    justify-content: center;
-  }
-
-  #avatar {
-    margin: 0;
-    transform: scale(1.2);
-  }
-
-  #avatar img {
-    padding: 0;
   }
 }
 
@@ -344,12 +327,20 @@ button {
 }
 
 /* avatars */
+#avatar-section {
+  margin: 0 auto;
+  max-width: 900px;
+
+  h2 {
+    font-size: 36px;
+  }
+}
+
 .avatar-grid {
   margin-top: 28px;
   display: flex;
   justify-content: space-between;
   gap: 1.5rem;
-  max-width: 1280px;
   box-sizing: border-box;
 
   div {
@@ -410,7 +401,148 @@ button {
   }
 }
 
-@media (max-width: 480px) {
+
+@media (max-width: 1024px) {
+  #user-creation-container {
+    gap: 0;
+
+    div {
+      padding: 2rem 2.2rem;
+    }
+
+    h2 {
+      font-size: 2em;
+    }
+
+    #username-form {
+      div {
+        padding: 0;
+        width: 90%;
+      }
+    }
+  }
+
+  #user-info-container {
+    gap: 0;
+
+    div {
+      padding: 2rem 2.2rem;
+    }
+  }
+
+  .profile-container {
+    #user-info-container {
+      flex-wrap: wrap;
+
+      div {
+        flex-wrap: wrap;
+      }
+    }
+
+    #avatar {
+      width: 150px;
+      height: 150px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  #user-creation-container {
+    flex-direction: column;
+
+    div {
+      width: 100%;
+    }
+  }
+
+  .img-container-left {
+    min-height: 380px;
+    border-radius: 10px 10px 0px 0px;
+  }
+
+  #user-info-container {
+    min-width: 70%;
+    width: min-content;
+    flex-direction: column-reverse;
+
+    div {
+      padding: 1.8rem 2.2rem 1.9rem 2.2rem;
+      width: 100%;
+    }
+  }
+
+  #avatar {
+    margin-top: 18px;
+    align-self: center;
+  }
+
+  .profile-container {
+    #user-details {
+      padding: 0;
+    }
+
+    #user-info-container {
+      width: 100%;
+      flex-direction: column;
+    }
+  }
+
+  .width-70 {
+    flex-direction: row !important;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+    h2 {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  #avatar-section {
+    h2 {
+      text-align: center;
+    }
+  }
+
+  .avatar-grid {
+    gap: 30px;
+    flex-direction: column;
+    align-items: center;
+
+    div {
+      width: 100%;
+      max-width: 450px;
+    }
+
+    .avatar-box {
+      width: 100%;
+    }
+
+    .left-padding {
+      padding: 0px;
+
+      #username-form div {
+        width: 100%;
+      }
+    }
+
+    #forget-user-section {
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .avatar-grid {
+    .avatar-slide {
+      max-width: 160px;
+      max-height: 160px;
+    }
+  }
+}
+
+/* @media (max-width: 480px) {
   .avatar-grid {
     flex-direction: column;
     align-items: center;
@@ -435,8 +567,8 @@ button {
   .avatar-slide img {
     width: 70vw;
     min-width: 100px;
-  }
-}
+  } */
+/* } */
 
 .avatar-icon.material-symbols-outlined {
   border-radius: 50px;
@@ -551,14 +683,6 @@ button {
   }
 }
 
-#setting-btns button,
-#username-form button,
-.green-btn,
-.text-btn {
-  padding: 12px 18px;
-  font-size: 0.9rem;
-}
-
 #setting-btns {
   margin: 18px 18px 0 0;
   width: 100%;
@@ -585,7 +709,7 @@ button {
   }
 }
 
-@media (max-width: 400px) {
+/* @media (max-width: 400px) {
   #setting-btns button,
   #username-form button {
     padding: 8px 12px;
@@ -598,19 +722,19 @@ button {
     gap: 0.5rem;
     align-items: center;
   }
-}
+} */
 
-@media (max-width: 800px) {
+/* @media (max-width: 800px) {
   .avatar-box {
     width: calc((100% - 1.5rem) / 2);
   }
-}
+} */
 
-@media (max-width: 480px) {
+/* @media (max-width: 480px) {
   .avatar-box {
     width: 100%;
   }
-}
+} */
 
 .avatar-box img {
   max-width: 80%;

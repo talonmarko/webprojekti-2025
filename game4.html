@@ -5,86 +5,149 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="./css/game4styles.css" />
     <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/game4styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Slackey&display=swap"
+        rel="stylesheet">
     <script src="./js/game4.js" defer></script>
+    <script src="./js/main.js" defer></script>
     <title>Liput silmillä – GeoZone</title>
+    <meta name="description" content="Maantietopeli, jossa yhdistetään lippu maan nimeen." />
 </head>
 
 <body>
     <header>
-        <nav class="bg-[#3A1417] border-gray-200">
-            <div class="flex flex-wrap justify-between items-center">
-                <a href="./index.html" class="flex items-center">
-                    <img src="./img/logo.png" class="logo" alt="Geozone Logo" />
+        <nav class="bg-[#3A1417] border-gray-200 p-4">
+            <div class="flex flex-wrap justify-between items-center max-[590px]:justify-end">
+                <a href="./index.html" class="flex items-center max-[590px]:hidden">
+                    <img src="./img/logo.png" class="p-4" alt="Geozone Logo" />
                 </a>
 
-                <div class="flex items-center lg:order-2">
-                    <a href="./points.html"
-                        class="green-btn text-black font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2">&#9733;
-                        Profiili</a>
+                <div class="flex items-center order-2">
+                    <a href="./points.html">
+                        <button class="green-btn">&#9733;
+                            Profiili</button></a>
                     <a href="./info.html"
-                        class="text-white font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2">Info</a>
-                </div>
+                        class="text-white font-medium rounded-lg text-sm px-5 py-2.5 mx-2 hover:bg-[#1AFF8C] hover:text-black">Info</a>
 
-                <div class="justify-between items-center w-full lg:flex lg:w-auto" id="menu">
-                    <ul class="flex flex-col font-medium p-6 font-[] lg:flex-row space-x-12">
+                    <!-- Hampurilaisvalikko -->
+                    <div class="flex xl:hidden relative">
+                        <button id="hamburger-button">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                            </svg>
+                        </button>
+                        <ul id="hamburger-menu"
+                            class="hidden absolute top-full right-0 w-max z-50 bg-[#3A1417] border-2 border-[#693D40] rounded shadow-lg flex-col font-medium p-4 font-[]">
+                            <li>
+                                <a href="./game1.html"
+                                    class="info-main block p-2 text-white rounded bg-transparent hover:bg-[#1AFF8C] hover:text-black">Peli
+                                    1</a>
+                            </li>
+                            <li>
+                                <a href="./game2.html"
+                                    class="info-main block p-2 text-white rounded bg-transparent hover:bg-[#1AFF8C] hover:text-black">Peli
+                                    2</a>
+                            </li>
+                            <li>
+                                <a href="./game3.html"
+                                    class="info-main block p-2 text-white rounded bg-transparent hover:bg-[#1AFF8C] hover:text-black">Peli
+                                    3</a>
+                            </li>
+                            <li>
+                                <a href="./game4.html"
+                                    class="info-main block p-2 text-white rounded bg-transparent hover:bg-[#1AFF8C] hover:text-black">Peli
+                                    4</a>
+                            </li>
+                            <li>
+                                <a href="./game5.html"
+                                    class="info-main block p-2 text-white rounded bg-transparent hover:bg-[#1AFF8C] hover:text-black">Peli
+                                    5</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+                <!-- Nav bar -->
+                <div class="hidden justify-between items-center w-full xl:flex xl:w-auto" id="menu">
+                    <ul class="flex flex-col mt-4 font-medium p-6 font-[] lg:flex-row space-x-12">
                         <li>
-                            <a href="./game1.html" class="info-main block p-6 text-white rounded bg-transparent">Peli
+                            <a href="./game1.html"
+                                class="info-main block p-6 text-white rounded bg-transparent hover:bg-[#1AFF8C] hover:text-black">Peli
                                 1</a>
                         </li>
                         <li>
-                            <a href="./game2.html" class="info-main block p-6 text-white rounded bg-transparent">Peli
+                            <a href="./game2.html"
+                                class="info-main block p-6 text-white rounded bg-transparent hover:bg-[#1AFF8C] hover:text-black">Peli
                                 2</a>
                         </li>
                         <li>
-                            <a href="./game3.html" class="info-main block p-6 text-white rounded bg-transparent">Peli
+                            <a href="./game3.html"
+                                class="info-main block p-6 text-white rounded bg-transparent hover:bg-[#1AFF8C] hover:text-black">Peli
                                 3</a>
                         </li>
                         <li>
-                            <a href="./game4.html" class="info-main block p-6 text-white rounded bg-transparent">Peli
+                            <a href="./game4.html"
+                                class="info-main block p-6 text-white rounded bg-transparent hover:bg-[#1AFF8C] hover:text-black">Peli
                                 4</a>
                         </li>
                         <li>
-                            <a href="./game5.html" class="info-main block p-6 text-white rounded bg-transparent">Peli
+                            <a href="./game5.html"
+                                class="info-main block p-6 text-white rounded bg-transparent hover:bg-[#1AFF8C] hover:text-black">Peli
                                 5</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
-        <h1>Liput silmillä</h1>
-        <span id="welcome-msg"></span>
     </header>
 
     <main>
         <div id="game-container">
+            <h1>Liput silmillä</h1>
             <div class="game-container-overlay"></div>
-            <div id="game-score-container">Pisteet: <span id="game-score">0</span></div>
+            <div class="game-setting-btns">
+                <span id="welcome-msg"></span>
+                <div id="game-score-container">Pisteet: <span id="game-score">0</span></div>
+            </div>
             <div id="game-buttons">
                 <div id="flags">
                 </div>
                 <div id="country-names">
                 </div>
             </div>
-            <div>
+            <div class="game-setting-btns center">
                 <button id="new-game" class="green-btn">Uusi peli</button>
                 <button id="stop-game" class="black-btn">Lopeta peli</button>
             </div>
         </div>
-        <div id="character-img"><img src="./img/kissa-korissa.png" alt="Kissa korissa"></div>
-
+        <!-- <div id="character-img"><img src="./img/kissa-korissa.png" alt="Kissa korissa"></div> -->
     </main>
 
+    <section class="custom-text-container">
+        <p>Tässä pelissä arvaat eri maiden (myös osavaltioiden) lippuja. Paina lipun kuvaa sekä lipun edustavan maan nimeä, tai toisin päin. </p>
+        <p>Lippuja on melko monta. Mikäli sinulle tulee kiire ja peli jää kesken, älä huoli, sillä pisteet tallentuvat tilillesi
+            automaattisesti.</p>
+    </section>
+
     <footer class="w-full site-footer">
-        <div class="info-main flex items-center justify-between p-6 bg-[#3A1417] w-full">
+        <div class="info-main flex items-center justify-between p-6 bg-[#3A1417] w-full text-base max-[370px]:text-sm">
             <p>&copy; <span class="flex-row justify-center text-center px-4" id="year"></span>Ryhmä 1</p>
-            <a href="#">
-                <img src="/img/logo.png" class="flex" alt="Geozone Logo" />
+            <a href="index.html">
+                <img src="./img/logo.png" class="flex h-8 md:h-12 max-[370px]:h-5" alt="Geozone Logo" />
             </a>
         </div>
-        <footer>
-        </footer>
+    </footer>
+
+    <script>
+        // Basic script: set current year 
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
 </body>
 
 </html>

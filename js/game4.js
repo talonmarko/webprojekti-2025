@@ -1,11 +1,22 @@
 const flagsContainer = document.getElementById('flags')
 const countryNamesContainer = document.getElementById('country-names')
+const gameUsername = localStorage.getItem('username')
+const playerName = document.getElementById('welcome-msg')
+const gameScore = document.getElementById('game-score')
+const gameBtns = document.querySelectorAll('.game-btn')
+
 const countryCodes = []
 const countryNames = []
-const visibleCountriesAmount = 6
 const shuffledIndexes = []
+
+// Säätää pelissä yhtä aikaa näkyvien maiden määrää
+const visibleCountriesAmount = 6
+
+let gameCounter = 0
 let score = 0
-let allFlagsAreMatched = false
+let currentMatches = 0
+let activeFlag = ''
+let activeCountry = ''
 
 const getData = async () => {
     const URL = 'https://flagcdn.com/fi/codes.json'
@@ -55,7 +66,7 @@ const createFlags = () => {
 
     // Liput
     for (let i = 0; i < visibleCountriesAmount; i++) {
-        const index = shuffledIndexes[i + score]
+        const index = shuffledIndexes[i + gameCounter]
         const flagBtn = document.createElement('button')
         const flagImg = document.createElement('img')
 
@@ -85,21 +96,14 @@ const createFlags = () => {
     clickGameButtons()
 }
 
-const username = localStorage.getItem('username')
-const welcomeMsg = document.getElementById('welcome-msg')
-const gameScore = document.getElementById('game-score')
-const gameBtns = document.querySelectorAll('.game-btn')
-
-let currentMatches = 0
-let activeFlag = ''
-let activeCountry = ''
-
-const checkForUsername = () => {
-    if (username != null) {
-        welcomeMsg.textContent = `Tervetuloa pelaamaan, ${username}!`
+// Näytä käyttäjänimi peliruudulla
+const showUsername = () => {
+    if (gameUsername != null) {
+        playerName.textContent = `Pelaaja: ${gameUsername}`
     }
 }
 
+// Tarkista, sopivatko lippu ja maan nimi toisiinsa
 const checkForMatch = (flag, country) => {
     const flagBtns = document.querySelectorAll('.flag')
     flagBtns.forEach(f => f.classList.remove('no-match'))
@@ -124,9 +128,12 @@ const checkForMatch = (flag, country) => {
             })
 
             gameScore.textContent = ++score
+            ++gameCounter
+            savePoints(1)
             ++currentMatches
             activeFlag = ''
             activeCountry = ''
+
         } else if (flag != '' && country != '') {
             flagBtns.forEach(f => {
                 if (f.children[0].alt === flag) {
@@ -142,10 +149,17 @@ const checkForMatch = (flag, country) => {
                 }
             })
 
+            if (gameScore.textContent > 0) {
+                gameScore.textContent = --score
+                savePoints(-1)
+            }
+
             activeFlag = ''
             activeCountry = ''
         }
     }
+
+    // Seuraavat liput ja maiden nimet näkyville viiveen kautta
     if (currentMatches === visibleCountriesAmount && score < shuffledIndexes.length) {
         setTimeout(() => {
             flagsContainer.replaceChildren()
@@ -156,6 +170,7 @@ const checkForMatch = (flag, country) => {
     }
 }
 
+// Pelipainikkeiden toiminta
 const clickGameButtons = () => {
     const flagBtns = document.querySelectorAll('.flag')
     flagBtns.forEach((flag, index) => flag.addEventListener('click', () => {
@@ -166,7 +181,6 @@ const clickGameButtons = () => {
             } else {
                 flag.classList.add('active-btn')
                 activeFlag = flag.children[0].alt
-                console.log(activeFlag)
 
                 for (i = 0; i < flagBtns.length; i++) {
                     if (i != index) {
@@ -198,7 +212,10 @@ const clickGameButtons = () => {
             }
         }
     }))
+}
 
+// Uusi peli ja lopeta peli
+const newGame = () => {
     const stopGameBtn = document.getElementById('stop-game')
     const newGameBtn = document.getElementById('new-game')
     const scoreContainer = document.getElementById('game-score-container')
@@ -218,8 +235,12 @@ const clickGameButtons = () => {
     })
 }
 
-checkForUsername()
-getData()
+// Pisteiden lasku
+const savePoints = (points) => {
+    const savedPoints = Number(localStorage.getItem('game4'))
+    localStorage.setItem('game4', savedPoints + points)
+}
 
-// for scoreboard
-localStorage.setItem('game4', (Number(localStorage.getItem('game4')) || 0) + points);
+showUsername()
+newGame()
+getData()

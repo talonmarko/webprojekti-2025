@@ -46,6 +46,8 @@ const imagesArr = ['/img/pilrgim-boi.png', '/img/peppi-explorer.png', '/img/pato
 const colorsArr = ['#1d85d4', '#12a737', '#cf219e', '#dfcb5a', '#da7c10', '#9a3cd4', '#8c7b60', '#888888', '#1a1a1a']
 
 const showAvatarImg = () => {
+    if (!avatar) return
+
     const randomImg = Math.floor(Math.random() * imagesArr.length)
     const randomColor = Math.floor(Math.random() * colorsArr.length)
     if (avatarURL && avatarBgColor) {
@@ -62,19 +64,20 @@ const showAvatarImg = () => {
 //Aktiivisen sivun korostaminen
 const activePage = () => {
     const currPage = location.pathname.split("/").pop();
-    
+
     document.querySelectorAll("nav a").forEach(page => {
-    const href = page.getAttribute("href").replace("./", "");
-    if (currPage === "index.html" && href === "index.html") {
-        return
-    }else {
-        if (href === currPage) {
-            page.classList.add (
-               "border-2", "border-[#1AFF8C]", "hover:bg-black", "hover:text-white"
-            )
+        const href = page.getAttribute("href").replace("./", "");
+        if (currPage === "index.html" && href === "index.html") {
+            return
+        } else {
+            if (href === currPage) {
+                page.classList.add(
+                    "border-2", "border-[#1AFF8C]", "hover:bg-black", "hover:text-white"
+                )
+            }
         }
-    }})
-    
+    })
+
 }
 
 //Hampurilaisvalikon avaaminen ja sulkeminen
@@ -88,7 +91,7 @@ const hamburgerMenu = () => {
     })
 
     window.addEventListener("resize", () => {
-        if(window.innerWidth >= 1090) {
+        if (window.innerWidth >= 1090) {
             hamMenu.classList.add("hidden")
         }
     })
@@ -113,4 +116,6 @@ let total = game1 + game2 + game3 + game4 + game5;
 
 const totalScore = document.getElementById('total-score')
 
-totalScore.textContent = total
+if (totalScore) {
+    totalScore.textContent = total
+}
