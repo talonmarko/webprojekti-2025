@@ -58,7 +58,6 @@ const activePage = () => {
     if (currPage === "index.html" && href === "index.html") {
         return
     }else {
-            console.log(href)
         if (href === currPage) {
             page.classList.add (
                "border-2", "border-[#1AFF8C]", "hover:bg-black", "hover:text-white"
