@@ -101,3 +101,16 @@ activePage()
 showAvatarImg()
 
 checkForUsername()
+
+// Pisteet
+let game1 = Number(localStorage.getItem('game1')) || 0;
+let game2 = Number(localStorage.getItem('game2')) || 0;
+let game3 = Number(localStorage.getItem('game3')) || 0;
+let game4 = Number(localStorage.getItem('game4')) || 0;
+let game5 = Number(localStorage.getItem('game5')) || 0;
+
+let total = game1 + game2 + game3 + game4 + game5;
+
+const totalScore = document.getElementById('total-score')
+
+totalScore.textContent = total
