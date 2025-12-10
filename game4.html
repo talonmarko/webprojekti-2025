@@ -1,114 +1,90 @@
 <!doctype html>
-<html lang="en">
+<html lang="fi">
+
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Game4 — Test Placeholder</title>
-        <script src="https://cdn.tailwindcss.com"></script>
-
-    <style>
-        
-        :root { 
-            --card:#fff; 
-            --accent:#0ea5a0; 
-            --muted:#6b7280; 
-        }
-        
-        html,body{
-            height:100%;
-            margin:0;
-            font-family:system-ui,Segoe UI,Roboto,Arial;
-            background:var(--bg);
-            color:#0b1220
-        }
-        
-        .container{
-            max-width:920px;
-            margin:32px auto;
-            padding:24px;
-            display:flex;
-            flex-direction:column;
-            gap:16px
-        }
-
-        header h1{
-            margin:0;
-            font-size:1.25rem
-        }
-
-        .board{
-            width:100%;
-            height:400px;
-            border-radius:8px;
-            background:linear-gradient(180deg,#0b1220,#07101a);
-            display:flex;
-            align-items:center;
-            justify-content:center;
-            box-shadow:0 6px 18px rgba(2,6,23,0.08)
-        }
-
-        canvas{
-            border-radius:6px;
-            background:transparent
-        }
-
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./css/game4styles.css" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <script src="./js/game4.js" defer></script>
+    <title>Liput silmillä – GeoZone</title>
 </head>
 
-<header>
-    <nav class="bg-[#3A1417] border-gray-200 p-4">
-        <div class="flex flex-wrap justify-between items-center">
-            <a href="#" class="flex items-center">
-                <img src="/img/logo.png" class="p-4 alt="Geozone Logo" />
-            </a>
+<body>
+    <header>
+        <nav class="bg-[#3A1417] border-gray-200">
+            <div class="flex flex-wrap justify-between items-center">
+                <a href="./index.html" class="flex items-center">
+                    <img src="./img/logo.png" class="logo" alt="Geozone Logo" />
+                </a>
 
-            <div class="flex items-center lg:order-2">
-                <a href="#" class="green-btn text-black font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2">&#9733; Profiili</a>
-                <a href="#" class="text-white font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2">Info</a>
+                <div class="flex items-center lg:order-2">
+                    <a href="./points.html"
+                        class="green-btn text-black font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2">&#9733;
+                        Profiili</a>
+                    <a href="./info.html"
+                        class="text-white font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2">Info</a>
+                </div>
+
+                <div class="justify-between items-center w-full lg:flex lg:w-auto" id="menu">
+                    <ul class="flex flex-col font-medium p-6 font-[] lg:flex-row space-x-12">
+                        <li>
+                            <a href="./game1.html" class="info-main block p-6 text-white rounded bg-transparent">Peli
+                                1</a>
+                        </li>
+                        <li>
+                            <a href="./game2.html" class="info-main block p-6 text-white rounded bg-transparent">Peli
+                                2</a>
+                        </li>
+                        <li>
+                            <a href="./game3.html" class="info-main block p-6 text-white rounded bg-transparent">Peli
+                                3</a>
+                        </li>
+                        <li>
+                            <a href="./game4.html" class="info-main block p-6 text-white rounded bg-transparent">Peli
+                                4</a>
+                        </li>
+                        <li>
+                            <a href="./game5.html" class="info-main block p-6 text-white rounded bg-transparent">Peli
+                                5</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
+        </nav>
+        <h1>Liput silmillä</h1>
+        <span id="welcome-msg"></span>
+    </header>
 
-            <div class="justify-between items-center w-full lg:flex lg:w-auto" id="menu">
-                <ul class="flex flex-col mt-4 font-medium p-6 font-[] lg:flex-row space-x-12">
-                    <li>
-                        <a href="#" class="info-main block p-6 text-white rounded bg-transparent">Peli 1</a>
-                    </li>
-                    <li>
-                        <a href="#" class="info-main block p-6 text-white rounded bg-transparent">Peli 2</a>
-                    </li>
-                    <li>
-                        <a href="#" class="info-main block p-6 text-white rounded bg-transparent">Peli 3</a>
-                    </li>
-                    <li>
-                        <a href="#" class="info-main block p-6 text-white rounded bg-transparent">Peli 4</a>
-                    </li>
-                    <li>
-                        <a href="#" class="info-main block p-6 text-white rounded bg-transparent">Peli 5</a>
-                    </li>
-                </ul>
+    <main>
+        <div id="game-container">
+            <div class="game-container-overlay"></div>
+            <div id="game-score-container">Pisteet: <span id="game-score">0</span></div>
+            <div id="game-buttons">
+                <div id="flags">
+                </div>
+                <div id="country-names">
+                </div>
+            </div>
+            <div>
+                <button id="new-game" class="green-btn">Uusi peli</button>
+                <button id="stop-game" class="black-btn">Lopeta peli</button>
             </div>
         </div>
-    </nav>
-</header>
+        <div id="character-img"><img src="./img/kissa-korissa.png" alt="Kissa korissa"></div>
 
-    <div class="bg-[#693D40]" id=container">
-        <header>
-            <h1 class="text-center text-xl p-4">Game 4 — Test Placeholder</h1>
-            <small class="flex justify-center p-4 text-xl">Quick test page for layout.</small>
-        </header>
-
-        <div class="bg-[#693D40]" id="board">
-            <canvas id="gameCanvas" width="800" height="360"></canvas>
-        </div>
-    </div>
+    </main>
 
     <footer class="w-full site-footer">
         <div class="info-main flex items-center justify-between p-6 bg-[#3A1417] w-full">
-            <p>&copy; <span class="flex-row justify-center text-center px-4"id="year"></span>Ryhmä 1</p>
+            <p>&copy; <span class="flex-row justify-center text-center px-4" id="year"></span>Ryhmä 1</p>
             <a href="#">
                 <img src="/img/logo.png" class="flex" alt="Geozone Logo" />
             </a>
         </div>
-    </footer>
-
+        <footer>
+        </footer>
 </body>
+
 </html>
