@@ -253,10 +253,12 @@ const forgetUser = () => {
         localStorage.removeItem('game3')
         localStorage.removeItem('game4')
         localStorage.removeItem('game5')
+        localStorage.removeItem('game4HighScore')
         p.remove()
         acceptBtn.remove()
         cancelBtn.remove()
         userDetails.style.display = 'none'
+
         location.reload()
     })
 

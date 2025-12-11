@@ -110,10 +110,13 @@
     <main>
         <div id="game-container">
             <h1>Liput silmillä</h1>
-            <div class="game-container-overlay"></div>
+            <div class="game-container-overlay">
+                <div id="character-img"><img src="./img/kissa-korissa.png" alt="Kissa korissa"></div>
+            </div>
             <div class="game-setting-btns">
                 <span id="welcome-msg"></span>
                 <div id="game-score-container">Pisteet: <span id="game-score">0</span></div>
+                <div id="high-score-container" class="centered-score"></div>
             </div>
             <div id="game-buttons">
                 <div id="flags">
@@ -126,12 +129,13 @@
                 <button id="stop-game" class="black-btn">Lopeta peli</button>
             </div>
         </div>
-        <!-- <div id="character-img"><img src="./img/kissa-korissa.png" alt="Kissa korissa"></div> -->
     </main>
 
     <section class="custom-text-container">
-        <p>Tässä pelissä arvaat eri maiden (myös osavaltioiden) lippuja. Paina lipun kuvaa sekä lipun edustavan maan nimeä, tai toisin päin. </p>
-        <p>Lippuja on melko monta. Mikäli sinulle tulee kiire ja peli jää kesken, älä huoli, sillä pisteet tallentuvat tilillesi
+        <p>Tässä pelissä arvaat eri maiden (myös osavaltioiden) lippuja. Paina lipun kuvaa sekä lipun edustavan maan
+            nimeä, tai toisin päin. </p>
+        <p>Lippuja on melko monta. Mikäli sinulle tulee kiire ja peli jää kesken, älä huoli, sillä pisteet tallentuvat
+            tilillesi
             automaattisesti.</p>
     </section>
 

@@ -50,7 +50,7 @@ main {
         margin-bottom: 24px;
         width: 300px;
         font-family: "Slackey", system-ui;
-        font-size: 50px !important;
+        font-size: 50px;
         text-transform: uppercase;
         text-align: center;
         color: white;
@@ -61,6 +61,7 @@ main {
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         filter: drop-shadow(0px -3px rgb(52, 11, 133)) drop-shadow(3px 4px rgb(52, 11, 133)) drop-shadow(-3px 4px rgb(52, 11, 133));
+        z-index: 2000;
     }
 }
 
@@ -74,8 +75,7 @@ main {
 .game-container-overlay {
     width: 100%;
     height: 100%;
-    background: linear-gradient(rgb(23, 162, 217), rgb(61, 3, 92));
-    opacity: 0.85;
+    background: linear-gradient(rgba(23, 162, 217, 0.85), rgba(61, 3, 92, 0.85));
     border-radius: 10px;
     top: 0;
     left: 0;
@@ -85,11 +85,20 @@ main {
 }
 
 .centered-score {
-    top: 45%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
     position: absolute;
     z-index: 1;
+}
+
+#high-score-container {
+    margin-bottom: 18px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    top: 45%;
+    display: none;
 }
 
 #new-game {
@@ -207,10 +216,17 @@ main {
 }
 
 #character-img {
-    width: 200px;
-    right: 10%;
-    bottom: 0;
+    display: none;
+    width: 230px;
+    right: 25%;
+    bottom: 5%;
     position: absolute;
+    transform: rotate(0deg);
+    animation: left-to-right 2.5s ease-in-out alternate infinite;
+
+    img {
+        animation: wavy .6s ease-in-out alternate infinite;
+    }
 }
 
 /* ---------- Responsiivisuus ---------- */
@@ -228,7 +244,7 @@ main {
 
 @media (max-width: 480px) {
     h1 {
-        font-size: 34px !important;
+        font-size: 32px !important;
         max-width: 200px;
     }
 
@@ -242,6 +258,10 @@ main {
 
     .game-btn {
         padding: 8px;
+    }
+
+    #character-img {
+        animation: left-right 2.5s ease-in-out alternate infinite;
     }
 }
 
@@ -267,5 +287,35 @@ main {
 
     100% {
         background-color: var(--darker-red);
+    }
+}
+
+@keyframes wavy {
+    0% {
+        transform: rotate(-10deg);
+    }
+
+    100% {
+        transform: rotate(5deg);
+    }
+}
+
+@keyframes left-to-right {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-120px);
+    }
+}
+
+@keyframes left-right {
+    0% {
+        transform: translateX(50px);
+    }
+
+    100% {
+        transform: translateX(-40px);
     }
 }
