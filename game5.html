@@ -25,7 +25,6 @@
     body {
      display: flex;
      flex-direction: column;
-     min-height: 100vh;
      background: #4C1D20;
      font-family: "DM Mono", monospace;
    }
@@ -43,25 +42,25 @@
 
 <body>
 <header>
-    <nav class="bg-[#3A1417] border-gray-200 p-4">
-      <div class="flex flex-wrap justify-between items-center max-[590px]:justify-end">
-        <a href="./index.html" class="flex items-center max-[590px]:hidden">
-          <img src="./img/logo.png" class="p-4" alt="Geozone Logo" />
-        </a>
+    <nav class="bg-[#3A1417] border-gray-200 game5-nav px-6">
+     <div class="flex flex-wrap justify-between items-center max-[590px]:justify-end">
+       <a href="./index.html" class="flex items-center max-[590px]:hidden">
+         <img src="./img/logo.png" class="h-10 md:h-12" alt="Geozone Logo" />
+       </a>
   
-        <div class="flex items-center order-2">
-          <a href="./points.html">
-            <button class="green-btn">&#9733;
-              Profiili</button></a>
-          <a href="./info.html"
-            class="text-white font-medium rounded-lg text-sm px-5 py-2.5 mx-2 hover:bg-[#1AFF8C] hover:text-black">Info</a>
+     <div class="flex items-center order-2 gap-2">
+       <a href="./points.html">
+         <button class="green-btn text-sm px-3 py-2">&#9733; Profiili</button>
+      </a>
+      <a href="./info.html"
+         class="nav-hover text-white font-medium rounded-lg text-sm px-3 py-2 hover:bg-[#1AFF8C] hover:text-black">Info</a>
   
           <!-- Hampurilaisvalikko -->
-          <div class="flex xl:hidden relative">
-            <button id="hamburger-button">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                stroke="currentColor" class="size-6">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        <div class="flex xl:hidden relative">
+          <button id="hamburger-button">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+              stroke="currentColor" class="size-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
               </svg>
             </button>
             <ul id="hamburger-menu"
@@ -95,23 +94,23 @@
           <ul class="flex flex-col mt-4 font-medium p-6 font-[] lg:flex-row space-x-12">
             <li>
               <a href="./game1.html"
-                class="info-main block p-6 text-white rounded bg-transparent hover:bg-[#1AFF8C] hover:text-black">Peli 1</a>
+                class="nav-hover info-main block p-6 text-white rounded bg-transparent hover:bg-[#1AFF8C] hover:text-black">Peli 1</a>
             </li>
             <li>
               <a href="./game2.html"
-                class="info-main block p-6 text-white rounded bg-transparent hover:bg-[#1AFF8C] hover:text-black">Peli 2</a>
+                class="nav-hover info-main block p-6 text-white rounded bg-transparent hover:bg-[#1AFF8C] hover:text-black">Peli 2</a>
             </li>
             <li>
               <a href="./game3.html"
-                class="info-main block p-6 text-white rounded bg-transparent hover:bg-[#1AFF8C] hover:text-black">Peli 3</a>
+                class="nav-hover info-main block p-6 text-white rounded bg-transparent hover:bg-[#1AFF8C] hover:text-black">Peli 3</a>
             </li>
             <li>
               <a href="./game4.html"
-                class="info-main block p-6 text-white rounded bg-transparent hover:bg-[#1AFF8C] hover:text-black">Peli 4</a>
+                class="nav-hover info-main block p-6 text-white rounded bg-transparent hover:bg-[#1AFF8C] hover:text-black">Peli 4</a>
             </li>
             <li>
               <a href="./game5.html"
-                class="info-main block p-6 text-white rounded bg-transparent hover:bg-[#1AFF8C] hover:text-black">Peli 5</a>
+                class="nav-hover info-main block p-6 text-white rounded bg-transparent hover:bg-[#1AFF8C] hover:text-black">Peli 5</a>
             </li>
           </ul>
         </div>
@@ -125,8 +124,8 @@
      <!-- info panel -->
      <div class="info-box">
         <h1>Maantiedon nippelitietovisa</h1>
-        <p style="margin-top:1rem;">Tunnetko eri valtioiden maamerkit? Entä minkälaisia ovat kulttuuri ja ihmiset eri puolella maailmaa? Tässä nippelitietovisassa voit testata taitosi ja oppia uutta!</p>
-        <p style="margin-top:1.5rem;">Paina kartalla näkyviä numeroita päästäksesi kysymyksiin. Voit vastata kysymyksiin uudelleen painamalla alla olevaa nappia.</p>
+        <p style="margin-top:0.9rem;">Tunnetko eri valtioiden maamerkit? Entä minkälaisia ovat kulttuuri ja ihmiset eri puolella maailmaa? Tässä nippelitietovisassa voit testata taitosi ja oppia uutta!</p>
+        <p style="margin-top:0.9rem;">Paina kartalla näkyviä numeroita päästäksesi kysymyksiin. Voit vastata kysymyksiin uudelleen painamalla alla olevaa nappia.</p>
         <p style="margin-top:1.5rem; font-weight:bold;" id="scoreDisplay">Pisteet: 0</p>
         <button type="button" class="btn btn-secondary" style="margin-top: 1.5rem;" onclick="resetQuiz()">Pelaa uudestaan</button>
     </div>

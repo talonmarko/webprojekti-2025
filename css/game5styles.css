@@ -1,4 +1,17 @@
 
+nav.game5-nav {
+  padding-top: 1.5rem !important;
+  padding-bottom: 1.5rem !important;
+}
+.nav-hover:hover,
+.nav-hover:focus {
+  background-color: #1AFF8C !important;
+  color: black !important;
+}
+nav.game5-nav .green-btn {
+    font-size: 1rem !important; 
+}
+
 .board {
   width:100%;
   height:400px;
@@ -197,10 +210,14 @@ button:focus,
     }
 }
 
-@media (min-width: 1200px) {  
-    .modal-content {
-      max-width: 800px;
-    }
+@media (min-width: 1280px) {  
+  .modal-content {
+    max-width: 800px;
+  }
+  nav.game5-nav {
+    padding-top: 0.7rem !important;
+    padding-bottom: 0.7em !important;
+  }
 }
 
 @media (max-width: 900px) {
@@ -241,8 +258,6 @@ button:focus,
       padding: 0;             
     }
 }
-
-
 
 @media (max-width: 480px) {
     .info-box h1 {
