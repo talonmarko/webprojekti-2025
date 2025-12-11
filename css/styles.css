@@ -8,7 +8,6 @@
   --bright-green: #1AFF8C;
 }
 
-
 body {
   margin: 0;
   font-family: "DM Mono", monospace;
@@ -200,6 +199,10 @@ button {
   img {
     padding: 26px;
   }
+}
+
+.site-footer {
+  margin-top: auto;
 }
 
 /*      Infopage        */
