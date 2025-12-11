@@ -107,17 +107,19 @@ document.getElementById("scoreDisplay").innerText = `Pisteet: ${points}`;
     };
 
 
-
 function openQuestion(id) {
     const modalElement = document.getElementById("quizModal");
     const modal = new bootstrap.Modal(modalElement);
     const q = questions[id];
 
+    const choicesDiv = document.getElementById("choices");
+    choicesDiv.innerHTML = "";
+    
+    answeredQuestions.delete(id);
+
     document.getElementById("questionTitle").innerText = q.question;
     document.getElementById("questionTitle").classList.add("text-center");
 
-    const choicesDiv = document.getElementById("choices");
-    choicesDiv.innerHTML = "";
 
     // modal image
     if (q.image) {
