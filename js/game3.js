@@ -105,10 +105,14 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
 
+    //lisää pisteet jos käyttäjä vastasi oikein kysymyksiin
+    if (correct) {
+      addPointsGame3(6);
+    }
+
     // näytä vastaus
-    hiddenWordEl.textContent = correct
-      ? "Oikea vastaus: " + verticalWord
-      : "Jotain meni pieleen. Yritä uudelleen!";
+    hiddenWordEl.innerHTML = correct
+      ? "Sait kaikki oikein, ansaitsit 6 pistettä! <br>Oikea vastaus on: " + verticalWord + "<br>" : "Jotain meni pieleen. Yritä uudelleen!";
   });
 
   // tyhjennä ristikko
@@ -120,3 +124,10 @@ document.addEventListener("DOMContentLoaded", () => {
     hiddenWordEl.textContent = "";
   });
 });
+
+// funktio pisteiden lisäämiseksi peli 3
+function addPointsGame3(points) {
+    let currentPoints = Number(localStorage.getItem('game3')) || 0;
+    currentPoints += points;
+    localStorage.setItem('game3', currentPoints);
+}
