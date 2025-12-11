@@ -160,13 +160,15 @@ const checkForMatch = (flag, country) => {
     }
 
     // Seuraavat liput ja maiden nimet näkyville viiveen kautta
-    if (currentMatches === visibleCountriesAmount && score < shuffledIndexes.length) {
+    if (gameCounter < countryNames.length && currentMatches === visibleCountriesAmount && score < shuffledIndexes.length) {
         setTimeout(() => {
             flagsContainer.replaceChildren()
             countryNamesContainer.replaceChildren()
             createFlags()
             currentMatches = 0
         }, 1200)
+    } else if (gameCounter === countryNames.length) {
+        endGame()
     }
 }
 
@@ -214,6 +216,31 @@ const clickGameButtons = () => {
     }))
 }
 
+const endGame = () => {
+    const scoreContainer = document.getElementById('game-score-container')
+    const gameOverlay = document.querySelector('.game-container-overlay')
+    const newGameBtn = document.getElementById('new-game')
+    const characterImg = document.getElementById('character-img')
+    const highScoreContainer = document.getElementById('high-score-container')
+
+    scoreContainer.classList.add('centered-score')
+    gameOverlay.style.display = 'block'
+    newGameBtn.style.display = 'block'
+
+    // Näyttää piste-ennätyksen jos se on suurempi kuin 0
+    const highScore = Number(localStorage.getItem('game4HighScore'))
+    if (highScore > 0) {
+        highScoreContainer.textContent = `Korkeimmat pisteet: ${highScore}`
+        highScoreContainer.style.display = 'block'
+
+        if (score === highScore) {
+            characterImg.style.display = 'block'
+        } else {
+            characterImg.style.display = 'none'
+        }
+    }
+}
+
 // Uusi peli ja lopeta peli
 const newGame = () => {
     const stopGameBtn = document.getElementById('stop-game')
@@ -221,34 +248,16 @@ const newGame = () => {
     const scoreContainer = document.getElementById('game-score-container')
     const gameOverlay = document.querySelector('.game-container-overlay')
     const highScoreContainer = document.getElementById('high-score-container')
-    const characterImg = document.getElementById('character-img')
 
     newGameBtn.addEventListener('click', () => {
-        window.location.reload()
+        location.reload()
         scoreContainer.classList.remove('centered-score')
         gameOverlay.style.display = 'none'
         newGameBtn.style.display = 'none'
         highScoreContainer.style.display = 'none'
     })
 
-    stopGameBtn.addEventListener('click', () => {
-        scoreContainer.classList.add('centered-score')
-        gameOverlay.style.display = 'block'
-        newGameBtn.style.display = 'block'
-
-        // Näyttää piste-ennätyksen jos se on suurempi kuin 0
-        const highScore = Number(localStorage.getItem('game4HighScore'))
-        if (highScore > 0) {
-            highScoreContainer.textContent = `Korkeimmat pisteet: ${highScore}`
-            highScoreContainer.style.display = 'block'
-
-            if (score === highScore) {
-                characterImg.style.display = 'block'
-            } else {
-                characterImg.style.display = 'none'
-            }
-        }
-    })
+    stopGameBtn.addEventListener('click', endGame)
 }
 
 // Pisteiden lasku
