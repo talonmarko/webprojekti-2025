@@ -3,13 +3,14 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Game5 — Test Placeholder</title>
-
-    <!-- bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Peli 5 — Maantiedon nippelitietovisa</title>
 
     <!-- Tailwind -->
    <script src="https://cdn.tailwindcss.com"></script>
+   
+    <!-- bootstrap -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- css styles -->
    <link rel="stylesheet" href="./css/styles.css" />
@@ -19,42 +20,97 @@
     <script src="./js/main.js" defer></script>
     <script src="./js/game5.js" defer></script>
 
-    <style></style>
+  <style>
+
+    body {
+     display: flex;
+     flex-direction: column;
+     background: #4C1D20;
+     font-family: "DM Mono", monospace;
+   }
+
+   main, .quiz-container {
+     flex: 1 0 auto;
+  }
+
+   footer {
+     flex-shrink: 0;
+  } 
+
+</style>
 </head>
 
-
 <body>
-    <header>
-    <nav class="bg-[#3A1417] border-gray-200 p-3.5">
-      <div class="flex flex-wrap justify-between items-center">
-        <a href="./index.html" class="flex items-center">
-          <img src="./img/logo.png" class="p-4" alt="Geozone Logo" />
-        </a>
-
-        <div class="flex items-center lg:order-2">
-          <a href="./points.html">
-            <button class="green-btn">&#9733;
-              Profiili</button></a>
-          <a href="./info.html"
-            class="text-white font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2">Info</a>
+<header>
+    <nav class="bg-[#3A1417] border-gray-200 game5-nav px-6">
+     <div class="flex flex-wrap justify-between items-center max-[590px]:justify-end">
+       <a href="./index.html" class="flex items-center max-[590px]:hidden">
+         <img src="./img/logo.png" class="h-10 md:h-12" alt="Geozone Logo" />
+       </a>
+  
+     <div class="flex items-center order-2 gap-2">
+       <a href="./points.html">
+         <button class="green-btn text-sm px-3 py-2">&#9733; Profiili</button>
+      </a>
+      <a href="./info.html"
+         class="nav-hover text-white font-medium rounded-lg text-sm px-3 py-2 hover:bg-[#1AFF8C] hover:text-black">Info</a>
+  
+          <!-- Hampurilaisvalikko -->
+          <div class="flex min-[1293px]:hidden relative">
+            <button id="hamburger-button">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+              </svg>
+            </button>
+            <ul id="hamburger-menu"
+              class="hidden absolute top-full right-0 w-max z-50 bg-[#3A1417] border-2 border-[#693D40] rounded shadow-lg flex-col font-medium p-4 font-[]">
+              <li>
+                <a href="./game1.html"
+                  class="info-main block p-2 text-white rounded bg-transparent hover:bg-[#1AFF8C] hover:text-black">Peli 1</a>
+              </li>
+              <li>
+                <a href="./game2.html"
+                  class="info-main block p-2 text-white rounded bg-transparent hover:bg-[#1AFF8C] hover:text-black">Peli 2</a>
+              </li>
+              <li>
+                <a href="./game3.html"
+                  class="info-main block p-2 text-white rounded bg-transparent hover:bg-[#1AFF8C] hover:text-black">Peli 3</a>
+              </li>
+              <li>
+                <a href="./game4.html"
+                  class="info-main block p-2 text-white rounded bg-transparent hover:bg-[#1AFF8C] hover:text-black">Peli 4</a>
+              </li>
+              <li>
+                <a href="./game5.html"
+                  class="info-main block p-2 text-white rounded bg-transparent hover:bg-[#1AFF8C] hover:text-black">Peli 5</a>
+              </li>
+            </ul>
+          </div>
+  
         </div>
-
-        <div class="justify-between items-center w-full lg:flex lg:w-auto" id="menu">
-          <ul class="flex flex-col mt-4 font-medium p-6 font-[] lg:flex-row space-x-12" >
+        <!-- Nav bar -->
+        <div class="hidden justify-between items-center w-full min-[1293px]:flex min-[1293px]:w-auto" id="menu">
+          <ul class="flex flex-col mt-4 font-medium p-6 font-[] lg:flex-row space-x-12">
             <li>
-              <a href="./game1.html" class="info-main block p-6 text-white rounded bg-transparent hover:bg-[#1AFF8C] hover:text-black">Peli 1</a>
+              <a href="./game1.html"
+                class="info-main block p-6 text-white rounded bg-transparent hover:bg-[#1AFF8C] hover:text-black">Peli 1</a>
             </li>
             <li>
-              <a href="./game2.html" class="info-main block p-6 text-white rounded bg-transparent hover:bg-[#1AFF8C] hover:text-black">Peli 2</a>
+              <a href="./game2.html"
+                class="info-main block p-6 text-white rounded bg-transparent hover:bg-[#1AFF8C] hover:text-black">Peli 2</a>
             </li>
             <li>
-              <a href="./game3.html" class="info-main block p-6 text-white rounded bg-transparent hover:bg-[#1AFF8C] hover:text-black">Peli 3</a>
+              <a href="./game3.html"
+                class="info-main block p-6 text-white rounded bg-transparent hover:bg-[#1AFF8C] hover:text-black">Peli 3</a>
             </li>
             <li>
-              <a href="./game4.html" class="info-main block p-6 text-white rounded bg-transparent hover:bg-[#1AFF8C] hover:text-black">Peli 4</a>
+              <a href="./game4.html"
+                class="info-main block p-6 text-white rounded bg-transparent hover:bg-[#1AFF8C] hover:text-black">Peli 4</a>
             </li>
             <li>
-              <a href="./game5.html" class="info-main block p-6 text-white rounded bg-transparent hover:bg-[#1AFF8C] hover:text-black">Peli 5</a>
+              <a href="./game5.html"
+                class="info-main block p-6 text-white rounded bg-transparent hover:bg-[#1AFF8C] hover:text-black">Peli 5</a>
             </li>
           </ul>
         </div>
@@ -62,55 +118,83 @@
     </nav>
   </header>
 
+<main>
    <div class="quiz-container">
 
-     <!-- info Panel -->
+     <!-- info panel -->
      <div class="info-box">
         <h1>Maantiedon nippelitietovisa</h1>
-        <p>Tunnetko eri valtioiden maamerkit? Entä minkälaisia ovat kulttuuri ja ihmiset eri puolella maailmaa? Tässä nippelitietovisassa voit testata taitosi ja oppia uutta!</p>
-        <p style="margin-top:12px;">Paina kartalla näkyviä numeroita päästäksesi kysymyksiin. Vastattuasi kysymykseen opit hieman lisää aiheesta.</p>
-        <p style="margin-top:25px;" id="scoreDisplay">Pisteet: 0</p></p>
+        <p style="margin-top:0.9rem;">Tunnetko eri valtioiden maamerkit? Entä minkälaisia ovat kulttuuri ja ihmiset eri puolella maailmaa? Tässä nippelitietovisassa voit testata taitosi ja oppia uutta!</p>
+        <p style="margin-top:0.9rem;">Paina kartalla näkyviä numeroita päästäksesi kysymyksiin. Voit vastata kysymyksiin uudelleen painamalla alla olevaa nappia.</p>
+        <p style="margin-top:1.5rem; font-weight:bold;" id="scoreDisplay">Pisteet: 0</p>
+        <button type="button" class="btn btn-secondary" style="margin-top: 1.5rem;" onclick="resetQuiz()">Pelaa uudestaan</button>
     </div>
 
      <!-- map -->
-     <div class="map-wrapper relative w-full max-w-5xl mx-auto">
-        <img src="./img/map5.png" alt="world map" class="w-full h-auto">
+     <div class="map-wrapper relative w-full max-w-5xl mx-auto" tabindex="0">
+          <div class="map-inner">
+            <img src="./img/map5.png" alt="world map" class="w-full h-auto">
 
-        <!-- buttons  -->
-        <button class="map-button absolute text-sm sm:text-base md:text-lg p-2 sm:p-3" style="top: 30%; left: 52%;" onclick="openQuestion(1)">1</button>
-        <button class="map-button absolute text-sm sm:text-base md:text-lg p-2 sm:p-3" style="top: 45%; left: 45%;" onclick="openQuestion(2)">2</button>
-        <button class="map-button absolute text-sm sm:text-base md:text-lg p-2 sm:p-3" style="top: 20%; left: 35%;" onclick="openQuestion(3)">3</button>
-        <button class="map-button absolute text-sm sm:text-base md:text-lg p-2 sm:p-3" style="top: 50%; left: 53%;" onclick="openQuestion(4)">4</button>  
+           <!-- buttons  -->
+           <button class="map-button absolute text-sm sm:text-base md:text-lg p-2 sm:p-3" style="top: 16%; left: 45%;" onclick="openQuestion(1)">1</button>
+           <button class="map-button absolute text-sm sm:text-base md:text-lg p-2 sm:p-3" style="top: 10%; left: 28%;" onclick="openQuestion(2)">2</button>
+           <button class="map-button absolute text-sm sm:text-base md:text-lg p-2 sm:p-3" style="top: 30%; left: 38%;" onclick="openQuestion(3)">3</button>
+           <button class="map-button absolute text-sm sm:text-base md:text-lg p-2 sm:p-3" style="top: 39%; left: 45%;" onclick="openQuestion(4)">4</button> 
+  
+           <button class="map-button absolute text-sm sm:text-base md:text-lg p-2 sm:p-3" style="top: 47%; left: 48%;" onclick="openQuestion(5)">5</button>
+           <button class="map-button absolute text-sm sm:text-base md:text-lg p-2 sm:p-3" style="top: 54%; left: 37%;" onclick="openQuestion(6)">6</button>
+           <button class="map-button absolute text-sm sm:text-base md:text-lg p-2 sm:p-3" style="top: 75%; left: 48%;" onclick="openQuestion(7)">7</button>
+           <button class="map-button absolute text-sm sm:text-base md:text-lg p-2 sm:p-3" style="top: 85%; left: 45%;" onclick="openQuestion(8)">8</button>
+
+           <button class="map-button absolute text-sm sm:text-base md:text-lg p-2 sm:p-3" style="top: 15%; left: 58%;" onclick="openQuestion(9)">9</button>
+           <button class="map-button absolute text-sm sm:text-base md:text-lg p-2 sm:p-3" style="top: 44%; left: 65%;" onclick="openQuestion(10)">10</button>
+           <button class="map-button absolute text-sm sm:text-base md:text-lg p-2 sm:p-3" style="top: 58%; left: 62%;" onclick="openQuestion(11)">11</button>
+           <button class="map-button absolute text-sm sm:text-base md:text-lg p-2 sm:p-3" style="top: 40%; left: 83%;" onclick="openQuestion(12)">12</button>
+
+           <button class="map-button absolute text-sm sm:text-base md:text-lg p-2 sm:p-3" style="top: 30%; left: 13%;" onclick="openQuestion(13)">13</button>
+           <button class="map-button absolute text-sm sm:text-base md:text-lg p-2 sm:p-3" style="top: 40%; left: 8%;" onclick="openQuestion(14)">14</button>
+           <button class="map-button absolute text-sm sm:text-base md:text-lg p-2 sm:p-3" style="top: 70%; left: 16%;" onclick="openQuestion(15)">15</button>
+           <button class="map-button absolute text-sm sm:text-base md:text-lg p-2 sm:p-3" style="top: 75%; left: 25%;" onclick="openQuestion(16)">16</button>
+         </div>
+      </div>
     </div>
-</div>
-
+   <div class="w-full flex justify-center mt-1">
+     <a href="./documents/sources_game5.pdf" target="_blank" class="text-white font-medium px-4 py-2 hover:bg-black hover:text-white mt-4 mb-8">Kysymysten ja infotekstien lähteet (PDF)</a>
+   </div>
 
 <!-- pop-up modal -->
 <div class="modal fade" id="quizModal" tabindex="-1">
   <div class="modal-dialog">
     <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="questionTitle"></h5>
-        <button class="btn-close" data-bs-dismiss="modal"></button>
-      </div>
+      <div class="modal-header justify-content-center">
+         <h5 id="questionTitle" class="modal-title text-center"></h5>
+       </div>
       
       <div class="modal-body">
         <div id="choices"></div>
       </div>
 
       <div class="modal-footer">
-        <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Sulje</button>
       </div>
     </div>
   </div>
 </div>
+</main>
 
-<footer class="w-full site-footer">
-    <div class="info-main flex items-center justify-between p-6 bg-[#3A1417] w-full">
-      <p>&copy; <span class="flex-row justify-center text-center px-4"id="year"></span>Ryhmä 1</p>
-      <a href="#"><img src="/img/logo.png" class="flex" alt="Geozone Logo" /></a>
+  <footer class="w-full site-footer">
+    <div class="info-main flex items-center justify-between p-6 bg-[#3A1417] w-full text-base max-[370px]:text-sm">
+      <p>&copy; <span class="flex-row justify-center text-center px-4" id="year"></span>Ryhmä 1</p>
+      <a href="index.html">
+        <img src="./img/logo.png" class="flex h-8 md:h-12 max-[370px]:h-5" alt="Geozone Logo" />
+      </a>
     </div>
-</footer>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </footer>
+
+  <script>
+    // Basic script: set current year 
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
+
 </html>

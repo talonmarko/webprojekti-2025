@@ -17,7 +17,7 @@
 </head>
 
 <body>
- <header>
+  <header>
     <nav class="bg-[#3A1417] border-gray-200 p-4">
       <div class="flex flex-wrap justify-between items-center max-[590px]:justify-end">
         <a href="./index.html" class="flex items-center max-[590px]:hidden">
@@ -30,9 +30,9 @@
               Profiili</button></a>
           <a href="./info.html"
             class="text-white font-medium rounded-lg text-sm px-5 py-2.5 mx-2 hover:bg-[#1AFF8C] hover:text-black">Info</a>
-
-                    <!-- Hampurilaisvalikko -->
-          <div class="flex xl:hidden relative">
+  
+          <!-- Hampurilaisvalikko -->
+          <div class="flex min-[1293px]:hidden relative">
             <button id="hamburger-button">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                 stroke="currentColor" class="size-6">
@@ -63,10 +63,10 @@
               </li>
             </ul>
           </div>
-
+  
         </div>
         <!-- Nav bar -->
-        <div class="hidden justify-between items-center w-full xl:flex xl:w-auto" id="menu">
+        <div class="hidden justify-between items-center w-full min-[1293px]:flex min-[1293px]:w-auto" id="menu">
           <ul class="flex flex-col mt-4 font-medium p-6 font-[] lg:flex-row space-x-12">
             <li>
               <a href="./game1.html"
@@ -99,12 +99,9 @@
         <div class="info-card">
             <img src="./img/pilrgim-boi.png" alt="pyhiinvaeltaja koira" class="info-img" />
             <div class="info-maker-text">
-                <h1>Pelintekijä 1</h1>
+                <h1>Joni</h1>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
-                    ipsa sequi placeat quas tenetur? Voluptate laborum rerum tenetur
-                    voluptas facilis modi consequatur dicta, debitis doloribus a porro
-                    autem commodi veniam?
+                   Terve! Olen Porilainen tietojenkäsittelyn opiskelija, Pelintekijä ja ohjelmistonikkari! Tähän sivustoon väsäilin pelin <b>numero 1</b> "KarttaCaptcha". Pelin lisäksi nikkarointiani näkyy etusivulla ja sivuston navikointipalkissa osioissa.
                 </p>
                 </div>
             </div>
@@ -120,23 +117,22 @@
                 </div>
             </div>
             <div class="info-card">
-                <img src="./img/liineppi.png" alt="tutkijamatkailija koira" class="info-img" />
+                <img src="./img/linimentti.png" alt="tutkijamatkailija koira" class="info-img" />
                 <div class="info-maker-text">
-                    <h1>Pelintekijä 3</h1>
+                    <h1>Marko</h1>
                     <p>
-                        Moikka! Olen Oulussa asuva tietojenkäsittelyn opiskelija. Minulla on koira, jonka voit valita täällä avatariksesi. Vastasin GeoZonen pelistä <b>numero 3</b> (<i>"Piilosana"</i>). Inspiraationa peliin toimi ristikot ja sanaristikot, joita olen lapsesta asti tykännyt täytellä. 
+                        Moikka! Olen Oulussa asuva tietojenkäsittelyn opiskelija. Minulla on koira, jonka voit valita täällä avatariksesi. 
+                        Vastasin GeoZonen pelistä <b>numero 3</b> (<i>"Piilosana"</i>). Inspiraationa peliin toimi ristikot ja sanaristikot, joita olen lapsesta asti tykännyt täytellä.
+                        Vastuualueinani projektissa olivat mm. versionhallinta Githubissa ja pelisivuston ulkoasun suunnittelu Tailwind CSS:llä. 
                     </p>
                 </div>
             </div>
             <div class="info-card">
                 <img src="./img/patonkikisu.png" alt="ranskalainen kissa" class="info-img" />
                 <div class="info-maker-text">
-                    <h1>Pelintekijä 4</h1>
+                    <h1>Sari</h1>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Repudiandae ipsa sequi placeat quas tenetur? Voluptate laborum
-                        rerum tenetur voluptas facilis modi consequatur dicta, debitis
-                        doloribus a porro autem commodi veniam?
+                        Moi! Olen oululainen tietojenkäsittelyn opiskelija, jolla on taustalla graafisen suunnittelun osaamista. Tekemässäni pelissä nimeltä <i>"Liput silmillä"</i> (eli GeoZonen peli <b>numero 4</b>) saa arvuutella, minkä maan lippu on minkäkin näköinen. Vastuualueina tässä projektissa minulla oli GeoZonen logon suunnittelu, alustava UI-suunnitelma sekä hahmonimen ja kuvakkeen luomisen funktionaalisuus ja tallennus muistiin.
                     </p>
                 </div>
             </div>
@@ -151,11 +147,12 @@
             </div>
         </div>
     </main>
- <footer class="w-full site-footer">
+    
+  <footer class="w-full site-footer">
     <div class="info-main flex items-center justify-between p-6 bg-[#3A1417] w-full text-base max-[370px]:text-sm">
       <p>&copy; <span class="flex-row justify-center text-center px-4" id="year"></span>Ryhmä 1</p>
       <a href="index.html">
-        <img src="./img/logo.png" class="flex h-8 md:h-12 max-[370px]:h-5" alt="Geozone Logo"/>
+        <img src="./img/logo.png" class="flex h-8 md:h-12 max-[370px]:h-5" alt="Geozone Logo" />
       </a>
     </div>
   </footer>

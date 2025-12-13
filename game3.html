@@ -62,38 +62,81 @@
         line-height: 2rem;
     }
   </style>
+  <link rel="stylesheet" href="./css/styles.css" />
+  <script src="./js/main.js" defer></script>
 </head>
 
 <body>
-    <header>
-        <nav class="bg-[#3A1417] border-gray-200 p-3.5">
-            <div class="flex flex-wrap justify-between items-center">
-                <a href="./index.html" class="flex items-center">
-                    <img src="./img/logo.png" class="p-4" alt="Geozone Logo" />
-                </a>
-
-            <div class="flex items-center lg:order-2">
-                <a href="./points.html">
-                    <button class="green-btn">&#9733;Profiili</button>  
-                <a href="./info.html" class="text-white font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2">Info</a>
-            </div>
-
-        <div class="justify-between items-center w-full lg:flex lg:w-auto" id="menu">
-          <ul class="flex flex-col mt-4 font-medium p-6 font-[] lg:flex-row space-x-12" >
+  <header>
+    <nav class="bg-[#3A1417] border-gray-200 p-4">
+      <div class="flex flex-wrap justify-between items-center max-[590px]:justify-end">
+        <a href="./index.html" class="flex items-center max-[590px]:hidden">
+          <img src="./img/logo.png" class="p-4" alt="Geozone Logo" />
+        </a>
+  
+        <div class="flex items-center order-2">
+          <a href="./points.html">
+            <button class="green-btn">&#9733;
+              Profiili</button></a>
+          <a href="./info.html"
+            class="text-white font-medium rounded-lg text-sm px-5 py-2.5 mx-2 hover:bg-[#1AFF8C] hover:text-black">Info</a>
+  
+          <!-- Hampurilaisvalikko -->
+          <div class="flex min-[1293px]:hidden relative">
+            <button id="hamburger-button">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+              </svg>
+            </button>
+            <ul id="hamburger-menu"
+              class="hidden absolute top-full right-0 w-max z-50 bg-[#3A1417] border-2 border-[#693D40] rounded shadow-lg flex-col font-medium p-4 font-[]">
+              <li>
+                <a href="./game1.html"
+                  class="info-main block p-2 text-white rounded bg-transparent hover:bg-[#1AFF8C] hover:text-black">Peli 1</a>
+              </li>
+              <li>
+                <a href="./game2.html"
+                  class="info-main block p-2 text-white rounded bg-transparent hover:bg-[#1AFF8C] hover:text-black">Peli 2</a>
+              </li>
+              <li>
+                <a href="./game3.html"
+                  class="info-main block p-2 text-white rounded bg-transparent hover:bg-[#1AFF8C] hover:text-black">Peli 3</a>
+              </li>
+              <li>
+                <a href="./game4.html"
+                  class="info-main block p-2 text-white rounded bg-transparent hover:bg-[#1AFF8C] hover:text-black">Peli 4</a>
+              </li>
+              <li>
+                <a href="./game5.html"
+                  class="info-main block p-2 text-white rounded bg-transparent hover:bg-[#1AFF8C] hover:text-black">Peli 5</a>
+              </li>
+            </ul>
+          </div>
+  
+        </div>
+        <!-- Nav bar -->
+        <div class="hidden justify-between items-center w-full min-[1293px]:flex min-[1293px]:w-auto" id="menu">
+          <ul class="flex flex-col mt-4 font-medium p-6 font-[] lg:flex-row space-x-12">
             <li>
-              <a href="./game1.html" class="info-main block p-6 text-white rounded bg-transparent hover:bg-[#1AFF8C] hover:text-black">Peli 1</a>
+              <a href="./game1.html"
+                class="info-main block p-6 text-white rounded bg-transparent hover:bg-[#1AFF8C] hover:text-black">Peli 1</a>
             </li>
             <li>
-              <a href="./game2.html" class="info-main block p-6 text-white rounded bg-transparent hover:bg-[#1AFF8C] hover:text-black">Peli 2</a>
+              <a href="./game2.html"
+                class="info-main block p-6 text-white rounded bg-transparent hover:bg-[#1AFF8C] hover:text-black">Peli 2</a>
             </li>
             <li>
-              <a href="./game3.html" class="info-main block p-6 text-white rounded bg-transparent hover:bg-[#1AFF8C] hover:text-black">Peli 3</a>
+              <a href="./game3.html"
+                class="info-main block p-6 text-white rounded bg-transparent hover:bg-[#1AFF8C] hover:text-black">Peli 3</a>
             </li>
             <li>
-              <a href="./game4.html" class="info-main block p-6 text-white rounded bg-transparent hover:bg-[#1AFF8C] hover:text-black">Peli 4</a>
+              <a href="./game4.html"
+                class="info-main block p-6 text-white rounded bg-transparent hover:bg-[#1AFF8C] hover:text-black">Peli 4</a>
             </li>
             <li>
-              <a href="./game5.html" class="info-main block p-6 text-white rounded bg-transparent hover:bg-[#1AFF8C] hover:text-black">Peli 5</a>
+              <a href="./game5.html"
+                class="info-main block p-6 text-white rounded bg-transparent hover:bg-[#1AFF8C] hover:text-black">Peli 5</a>
             </li>
           </ul>
         </div>
@@ -130,12 +173,20 @@
 
     <!-- javascript -->
     <script src="./js/game3.js"></script>
+    
 </body>
 
-    <footer class="w-full site-footer">
-        <div class="info-main flex items-center justify-between p-6 bg-[#3A1417] w-full">
-            <p>&copy; <span class="flex-row justify-center text-center px-4"id="year"></span>Ryhmä 1</p>
-            <a href="#"><img src="/img/logo.png" class="flex" alt="Geozone Logo" /></a>
-        </div>
-    </footer>
+  <footer class="w-full site-footer">
+    <div class="info-main flex items-center justify-between p-6 bg-[#3A1417] w-full text-base max-[370px]:text-sm">
+      <p>&copy; <span class="flex-row justify-center text-center px-4" id="year"></span>Ryhmä 1</p>
+      <a href="index.html">
+        <img src="./img/logo.png" class="flex h-8 md:h-12 max-[370px]:h-5" alt="Geozone Logo" />
+      </a>
+    </div>
+  </footer>
+
+    <script>
+        // Basic script: set current year 
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
 </html>

@@ -13,6 +13,7 @@ const showAvatarImg = () => {
 showAvatarImg()
 
 // Avatar-kuvan valinta ja muokkaus
+const avatarSection = document.getElementById('avatar-section')
 const avatarSlides = document.querySelectorAll('.avatar-slide')
 const avatarBtns = document.querySelectorAll('.avatar-icon')
 const leftBtn = document.getElementById('left-btn')
@@ -23,6 +24,14 @@ const saveAvatarBtn = document.getElementById('save-avatar')
 const resetAvatarBtn = document.getElementById('reset-avatar')
 
 let slideIndex = 0
+
+const showAvatarSection = () => {
+    if (avatarURL && avatarBgColor) {
+        avatarSection.style.display = 'block'
+    } else {
+        avatarSection.style.display = 'none'
+    }
+}
 
 // Selaa avatar-kuvia vasemmalle
 leftBtn.addEventListener('click', () => {
@@ -65,16 +74,19 @@ const rgbToHex = (rgb) => {
 }
 
 // Vaihtaa värinvalitsimen väriä taustan värin mukaiseksi
-const setColorPicker = () => {
-    let bgColor = ''
-    avatarSlides.forEach(slide => {
-        const computedStyles = window.getComputedStyle(slide)
-        bgColor = computedStyles.backgroundColor
-    })
+const setColorPicker = (color) => {
+    if (color) {
+        let bgColor = color
 
-    bgColor = rgbToHex(bgColor)
-    colorPicker.value = bgColor
-    return bgColor
+        if (color.includes('rgb')) {
+            bgColor = rgbToHex(color)
+        }
+
+        colorPicker.value = bgColor
+        return bgColor
+    } else {
+        colorPicker.value = '#888888'
+    }
 }
 
 // Tekee toiminnallisuuden ennalta määritellyille väripainikkeille
@@ -85,7 +97,7 @@ const useColorOptions = () => {
 
         avatarSlides.forEach(slide => {
             slide.style.backgroundColor = bgColor
-            setColorPicker()
+            setColorPicker(bgColor)
         })
     }))
 
@@ -121,7 +133,7 @@ const setSlideIndex = () => {
     if (avatarURL) {
         avatarSlides.forEach((slide, index) => {
             const slideURL = slide.children[0].src
-            if (slideURL === avatarURL) {
+            if (slideURL.includes(avatarURL)) {
                 slide.style.display = 'block'
                 slideIndex = index
             } else {
@@ -145,27 +157,43 @@ const showSlide = (slideIndex) => {
     })
 }
 
+// Avatar-asetusten tallentaminen
 const saveAvatarSettings = () => {
     saveAvatarBtn.addEventListener('click', () => {
+        let bgColor = ''
         avatarSlides.forEach((slide, index) => {
             if (slideIndex === index) {
                 const imgSrc = slide.children[0].src
                 localStorage.setItem('avatar', imgSrc)
             }
+            const computedStyles = window.getComputedStyle(slide)
+            bgColor = computedStyles.backgroundColor
         })
-
-        const bgColor = setColorPicker()
         localStorage.setItem('background-color', bgColor)
         showAvatarImg()
         location.reload()
     })
-    // resetAvatarBtn.addEventListener('click')
+
+    resetAvatarBtn.addEventListener('click', () => {
+        useColorOptions()
+        let bgColor = ''
+        avatarSlides.forEach((slide, index) => {
+            const imgSrc = slide.children[0].src
+            const computedStyles = window.getComputedStyle(slide)
+            bgColor = computedStyles.backgroundColor
+            if (imgSrc === avatarURL) {
+                showSlide(index)
+            }
+        })
+        setColorPicker(bgColor)
+    })
 }
 
 saveAvatarSettings()
 setSlideIndex()
-setColorPicker()
+setColorPicker(avatarBgColor)
 useColorOptions()
+showAvatarSection()
 
 // Käyttäjänimen vaihtaminen 
 const userDetails = document.getElementById('user-details')
@@ -220,10 +248,18 @@ const forgetUser = () => {
         localStorage.removeItem('username')
         localStorage.removeItem('avatar')
         localStorage.removeItem('background-color')
+        localStorage.removeItem('game1')
+        localStorage.removeItem('game2')
+        localStorage.removeItem('game3')
+        localStorage.removeItem('game4')
+        localStorage.removeItem('game5')
+        localStorage.removeItem('game4HighScore')
         p.remove()
         acceptBtn.remove()
         cancelBtn.remove()
         userDetails.style.display = 'none'
+
+        location.reload()
     })
 
     cancelBtn.addEventListener('click', () => {
@@ -249,7 +285,7 @@ const hamburgerMenu = () => {
         } else {
             hamMenu.classList.add("hidden")
         }
-        
+
     })
 }
 

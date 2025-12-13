@@ -25,7 +25,7 @@
 </head>
 
 <body>
- <header>
+  <header>
     <nav class="bg-[#3A1417] border-gray-200 p-4">
       <div class="flex flex-wrap justify-between items-center max-[590px]:justify-end">
         <a href="./index.html" class="flex items-center max-[590px]:hidden">
@@ -34,13 +34,13 @@
   
         <div class="flex items-center order-2">
           <a href="./points.html">
-            <button class="green-btn">&#9733;
+            <button class="green-btn text-white bg-transparent border-2 border-[#1AFF8C] hover:bg-black hover:text-white">&#9733;
               Profiili</button></a>
           <a href="./info.html"
             class="text-white font-medium rounded-lg text-sm px-5 py-2.5 mx-2 hover:bg-[#1AFF8C] hover:text-black">Info</a>
-
-                    <!-- Hampurilaisvalikko -->
-          <div class="flex xl:hidden relative">
+  
+          <!-- Hampurilaisvalikko -->
+          <div class="flex min-[1293px]:hidden relative">
             <button id="hamburger-button">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                 stroke="currentColor" class="size-6">
@@ -71,10 +71,10 @@
               </li>
             </ul>
           </div>
-
+  
         </div>
         <!-- Nav bar -->
-        <div class="hidden justify-between items-center w-full xl:flex xl:w-auto" id="menu">
+        <div class="hidden justify-between items-center w-full min-[1293px]:flex min-[1293px]:w-auto" id="menu">
           <ul class="flex flex-col mt-4 font-medium p-6 font-[] lg:flex-row space-x-12">
             <li>
               <a href="./game1.html"
@@ -102,18 +102,19 @@
     </nav>
   </header>
 
+  
   <!-- profiiliosio -->
-  <main class="profile-container">
+  <main class="profile-container pb-32">
     <section id="user-details">
-     <div id="user-info-container" class="smaller-container flex flex-col md:flex-row gap-4 md:gap-8 max-w-md md:max-w-none mx-auto items-center md:items-start">
+     <div id="user-info-container" class="smaller-container">
 
-      <div class="md:w-1/3 w-full">
-        <span id="avatar"  class="flex justify-center w-full md:w-auto">
-          <img src="./img/patonkikisu.png" class="w-full max-w-40 h-auto md:max-w-40 object-contain rounded-full" alt="Käyttäjän avatar-kuvake">
+      <div class="width-30">
+        <span id="avatar">
+          <img src="./img/patonkikisu.png" alt="Käyttäjän avatar-kuvake">
         </span>
       </div>
 
-      <div class="md:w-2/3 w-full flex flex-col gap-4 p-4">
+      <div class="width-70">
         <h2 id="welcome-msg"></h2>
         <p>Näytät aika hurmaavalta! Jos haluat hioa charmiasi, skrollaa sivun alalaitaan muokkaamaan avatariasi.</p>
         <p>Joko sinulla on enemmän pisteitä kuin hiekanjyviä Saharassa?</p>
@@ -147,27 +148,26 @@
           <div class="avatar-box">
             <div class="avatar-slide">
               <img src="./img/pilrgim-boi.png" alt="Hahmo 1">
-              <!-- <span class="avatar-title">Toivio Koiranen</span> -->
             </div>
 
             <div class="avatar-slide">
               <img src="./img/peppi-explorer.png" alt="Hahmo 2">
-              <!-- <span class="avatar-title">Hahmo 2</span> -->
             </div>
 
             <div class="avatar-slide">
               <img src="./img/patonkikisu.png" alt="Hahmo 3">
-              <!-- <span class="avatar-title">Hahmo 3</span> -->
             </div>
 
             <div class="avatar-slide">
               <img src="./img/riisihattu-miuku.png" alt="Hahmo 4">
-              <!-- <span class="avatar-title">Hahmo 4</span> -->
             </div>
 
             <div class="avatar-slide">
               <img src="./img/kannisode-onepiece.png" alt="Hahmo 5">
-              <!-- <span class="avatar-title">Hahmo 5</span> -->
+            </div>
+
+            <div class="avatar-slide">
+              <img src="./img/linimentti.png" alt="Hahmo 6">
             </div>
 
             <span title="Edellinen" id="left-btn" class="avatar-icon chevron material-symbols-outlined">
@@ -219,11 +219,11 @@
   </main>
 
   <!-- footer -->
-   <footer class="w-full site-footer">
+  <footer class="w-full site-footer mt-20">
     <div class="info-main flex items-center justify-between p-6 bg-[#3A1417] w-full text-base max-[370px]:text-sm">
       <p>&copy; <span class="flex-row justify-center text-center px-4" id="year"></span>Ryhmä 1</p>
       <a href="index.html">
-        <img src="./img/logo.png" class="flex h-8 md:h-12 max-[370px]:h-5" alt="Geozone Logo"/>
+        <img src="./img/logo.png" class="flex h-8 md:h-12 max-[370px]:h-5" alt="Geozone Logo" />
       </a>
     </div>
   </footer>
