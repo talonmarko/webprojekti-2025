@@ -1,98 +1,114 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Game1 — Test Placeholder</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        
-        :root { 
-            --card:#fff; 
-            --accent:#0ea5a0; 
-            --muted:#6b7280; 
-        }
-        
-        html,body{
-            height:100%;
-            margin:0;
-            font-family:system-ui,Segoe UI,Roboto,Arial;
-            background:var(--bg);
-            color:#0b1220
-        }
-        
-        .container{
-            max-width:920px;
-            margin:32px auto;
-            padding:24px;
-            display:flex;
-            flex-direction:column;
-            gap:16px
-        }
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Geovisa</title>
+  <meta name="description" content="Brief description of the project." />
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/game1styles.css" />
 
-        .board{
-            width:100%;
-            height:400px;
-            border-radius:8px;
-            background:linear-gradient(180deg,#0b1220,#07101a);
-            display:flex;
-            align-items:center;
-            justify-content:center;
-            box-shadow:0 6px 18px rgba(2,6,23,0.08)
-        }
-
-        canvas{
-            border-radius:6px;
-            background:transparent
-        }
-
-    </style>
+  <!-- <link rel="icon" href="favicon.ico"> -->
+  <script src="./js/main.js" defer></script>
+  <script src="./js/game1.js"defer></script>
 </head>
+
+<body>
 <header>
     <nav class="bg-[#3A1417] border-gray-200 p-4">
-        <div class="flex flex-wrap justify-between items-center">
-            <a href="#" class="flex items-center">
-                <img src="/img/logo.png" class="p-4 alt="Geozone Logo" />
-            </a>
+      <div class="flex flex-wrap justify-between items-center max-[590px]:justify-end">
+        <a href="./index.html" class="flex items-center max-[590px]:hidden">
+          <img src="./img/logo.png" class="p-4" alt="Geozone Logo" />
+        </a>
+  
+        <div class="flex items-center order-2">
+          <a href="./points.html">
+            <button class="green-btn">&#9733;
+              Profiili</button></a>
+          <a href="./info.html"
+            class="text-white font-medium rounded-lg text-sm px-5 py-2.5 mx-2 hover:bg-[#1AFF8C] hover:text-black">Info</a>
 
-            <div class="flex items-center lg:order-2">
-                <a href="#" class="green-btn text-black font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2">&#9733; Profiili</a>
-                <a href="#" class="text-white font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2">Info</a>
-            </div>
+                    <!-- Hampurilaisvalikko -->
+          <div class="flex xl:hidden relative">
+            <button id="hamburger-button">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+              </svg>
+            </button>
+            <ul id="hamburger-menu"
+              class="hidden absolute top-full right-0 w-max z-50 bg-[#3A1417] border-2 border-[#693D40] rounded shadow-lg flex-col font-medium p-4 font-[]">
+              <li>
+                <a href="./game1.html"
+                  class="info-main block p-2 text-white rounded bg-transparent hover:bg-[#1AFF8C] hover:text-black">Peli 1</a>
+              </li>
+              <li>
+                <a href="./game2.html"
+                  class="info-main block p-2 text-white rounded bg-transparent hover:bg-[#1AFF8C] hover:text-black">Peli 2</a>
+              </li>
+              <li>
+                <a href="./game3.html"
+                  class="info-main block p-2 text-white rounded bg-transparent hover:bg-[#1AFF8C] hover:text-black">Peli 3</a>
+              </li>
+              <li>
+                <a href="./game4.html"
+                  class="info-main block p-2 text-white rounded bg-transparent hover:bg-[#1AFF8C] hover:text-black">Peli 4</a>
+              </li>
+              <li>
+                <a href="./game5.html"
+                  class="info-main block p-2 text-white rounded bg-transparent hover:bg-[#1AFF8C] hover:text-black">Peli 5</a>
+              </li>
+            </ul>
+          </div>
 
-            <div class="justify-between items-center w-full lg:flex lg:w-auto" id="menu">
-                <ul class="flex flex-col mt-4 font-medium p-6 font-[] lg:flex-row space-x-12">
-                    <li>
-                        <a href="#" class="info-main block p-6 text-white rounded bg-transparent">Peli 1</a>
-                    </li>
-                    <li>
-                        <a href="#" class="info-main block p-6 text-white rounded bg-transparent">Peli 2</a>
-                    </li>
-                    <li>
-                        <a href="#" class="info-main block p-6 text-white rounded bg-transparent">Peli 3</a>
-                    </li>
-                    <li>
-                        <a href="#" class="info-main block p-6 text-white rounded bg-transparent">Peli 4</a>
-                    </li>
-                    <li>
-                        <a href="#" class="info-main block p-6 text-white rounded bg-transparent">Peli 5</a>
-                    </li>
-                </ul>
-            </div>
         </div>
+        <!-- Nav bar -->
+        <div class="hidden justify-between items-center w-full xl:flex xl:w-auto" id="menu">
+          <ul class="flex flex-col mt-4 font-medium p-6 font-[] lg:flex-row space-x-12">
+            <li>
+              <a href="./game1.html"
+                class="info-main block p-6 text-white rounded bg-transparent hover:bg-[#1AFF8C] hover:text-black">Peli 1</a>
+            </li>
+            <li>
+              <a href="./game2.html"
+                class="info-main block p-6 text-white rounded bg-transparent hover:bg-[#1AFF8C] hover:text-black">Peli 2</a>
+            </li>
+            <li>
+              <a href="./game3.html"
+                class="info-main block p-6 text-white rounded bg-transparent hover:bg-[#1AFF8C] hover:text-black">Peli 3</a>
+            </li>
+            <li>
+              <a href="./game4.html"
+                class="info-main block p-6 text-white rounded bg-transparent hover:bg-[#1AFF8C] hover:text-black">Peli 4</a>
+            </li>
+            <li>
+              <a href="./game5.html"
+                class="info-main block p-6 text-white rounded bg-transparent hover:bg-[#1AFF8C] hover:text-black">Peli 5</a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </nav>
-</header>
+  </header>
 
-    <div class="bg-[#693D40]" id=container">
-        <header>
-            <h1 class="text-center text-xl p-4">Game 1 — Test Placeholder</h1>
-            <small class="flex justify-center p-4 text-xl">Quick test page for layout.</small>
-        </header>
+    <div class="game1">
+   
+    <h3 id="Questions"></h3>
 
-        <div class="bg-[#693D40]" id="board">
-            <canvas id="gameCanvas" width="800" height="360"></canvas>
-        </div>
-    </div>
+    <!-- Image grid -->
+    <div id="Picgrid" class="grid"></div>
+
+    <!-- Verify button -->
+    <button id="Submitbtn">Verify</button>
+
+    <!-- Result text (correct/incorrect) -->
+    <div id="Result"></div>
+  </div>
+
+  <!-- Load the multi-level CAPTCHA logic -->
+  <script src="game1.js"></script>
 
     <footer class="w-full site-footer">
         <div class="info-main flex items-center justify-between p-6 bg-[#3A1417] w-full">
