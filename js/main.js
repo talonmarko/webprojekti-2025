@@ -42,7 +42,7 @@ const setUserName = (e) => {
 const avatar = document.getElementById('avatar')
 const avatarURL = localStorage.getItem('avatar')
 const avatarBgColor = localStorage.getItem('background-color')
-const imagesArr = ['/img/pilrgim-boi.png', '/img/peppi-explorer.png', '/img/patonkikisu.png', '/img/riisihattu-miuku.png', '/img/kannisode-onepiece.png', '/img/linimentti.png']
+const imagesArr = ['./img/pilrgim-boi.png', './img/peppi-explorer.png', './img/patonkikisu.png', './img/riisihattu-miuku.png', './img/kannisode-onepiece.png', './img/linimentti.png']
 const colorsArr = ['#1d85d4', '#12a737', '#cf219e', '#dfcb5a', '#da7c10', '#9a3cd4', '#8c7b60', '#888888', '#1a1a1a']
 
 const showAvatarImg = () => {
