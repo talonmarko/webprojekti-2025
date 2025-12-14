@@ -133,7 +133,8 @@ const setSlideIndex = () => {
     if (avatarURL) {
         avatarSlides.forEach((slide, index) => {
             const slideURL = slide.children[0].src
-            if (slideURL.includes(avatarURL)) {
+            const newAvatarURL = avatarURL.substring(1)
+            if (slideURL.includes(newAvatarURL)) {
                 slide.style.display = 'block'
                 slideIndex = index
             } else {
